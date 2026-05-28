@@ -1,26 +1,51 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* Draft V1 landing (dark) */
+  --background: #080f16;
+  --foreground: #a7b8c6;
+  --surface: #0b1620;
+  --muted: #76838f;
+  --border: #1a2a38;
+
+  /* Figma variables (Colors / Light mode) */
+  --primitive-colors-primary-400: #57abff;
+  --primitive-colors-primary-500: #2f91e8;
+  --primitive-colors-primary-800: #032f4f;
+  --primitive-colors-primary-300: #6cb5ff;
+  --primitive-colors-gray-200: #a7b8c6;
+  --primitive-colors-gray-300: #76838f;
+  --primitive-colors-gray-600: #1a2a38;
+
+  --heading: #e3eaf2;
 }
 
 @theme inline {
   --color-background: var(--background);
   --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+  --color-surface: var(--surface);
+  --color-muted: var(--muted);
+  --color-border: var(--border);
+  --color-heading: var(--heading);
+  --font-sans: var(--font-inter);
+  --font-display: var(--font-orbitron);
 }
 
 body {
   background: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter), Arial, Helvetica, sans-serif;
+}
+
+@keyframes logo-marquee {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(-50%);
+  }
+}
+
+.animate-logo-marquee {
+  animation: logo-marquee var(--logo-marquee-duration, 22s) linear infinite;
 }

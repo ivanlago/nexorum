@@ -1,0 +1,170 @@
+{
+  "common": {
+    "brand": "nexorum",
+    "siteTitle": "Nexorum",
+    "siteDescription": "Nexorum official website",
+    "welcome": "Welcome!",
+    "seeHowItWorks": "See how it works",
+    "talkToSpecialist": "Talk to a specialist"
+  },
+  "hero": {
+    "headline": "ANTICIPATE IMPACTS, PROTECT\nMARGIN AND GOVERN DECISIONS\nWITH ARTIFICIAL INTELLIGENCE.",
+    "description": "The decision intelligence infrastructure connects real execution, learns from deviations, and recommends actions before schedule, cost, and margin impacts turn into loss."
+  },
+  "language": {
+    "options": {
+      "ptBR": "BRA - Portuguese",
+      "enUS": "USA - English"
+    }
+  },
+  "features": {
+    "items": [
+      { "title": "Detect deviations", "description": "Identifies critical risks in operations." },
+      { "title": "Alert risks", "description": "Notifies risks before they become losses." },
+      { "title": "Recommend actions", "description": "Suggests paths by responsible area." },
+      { "title": "Simulate scenarios", "description": "Predictive comparison of schedule, cost, and outcome." },
+      { "title": "Govern decisions", "description": "Records decisions and human validation." }
+    ]
+  },
+  "section02": {
+    "heading": "BUILT FROM\nREAL, COMPLEX OPERATIONS",
+    "lead": "The solution was shaped by more than 10,000 hours observing complex operations: field data, critical routines, high-pressure decisions, and global references applied to managing schedule, cost, margin, and outcome.",
+    "cards": [
+      {
+        "subtitle": "Over 10,000 hours observing complex operations.",
+        "title": "Hours of observation",
+        "description": "Routines, deviations, and critical decisions mapped with senior professionals."
+      },
+      {
+        "subtitle": "Real execution data organized to reveal patterns.",
+        "title": "Real execution data",
+        "description": "Real-world datasets structured to build integrated decision intelligence."
+      },
+      {
+        "subtitle": "Where operations lose schedule, margin, and predictability.",
+        "title": "Loss points",
+        "description": "Delays, rework, and cross-team disconnects identified in the operation."
+      },
+      {
+        "subtitle": "Refined with those who decide in critical environments.",
+        "title": "Validated by specialists",
+        "description": "Refined with people who live planning, contracts, and execution."
+      }
+    ],
+    "systemsHeading": "EXISTING SYSTEMS. CONNECTED DECISIONS.",
+    "systemsLead": "The infrastructure integrates ERP, contracts, BI, schedules, and execution data without replacing the systems already used by the operation—turning scattered information into actionable decisions.",
+    "apisLead": "Connects operational data to leading AI models."
+  },
+  "section03": {
+    "linkLabel": "See how Nexorum solves it",
+    "heading": "THE CORE PROBLEM IN LARGE\nEPC PROJECTS WE SOLVE",
+    "lead": "In complex projects, areas and systems move forward with different information. Loss begins when deviations, claims, and bottlenecks only appear after compromising schedule, cost, and margin.",
+    "tabSem": "Without Infrastructure",
+    "tabCom": "With Infrastructure",
+    "tableHeaders": { "problems": "Problems", "appears": "How it shows up", "impact": "Impact" },
+    "tables": {
+      "sem": [
+        { "problem": "Fragmented data", "appears": "Areas and systems operate on different datasets.", "impact": "Incomplete or delayed decisions." },
+        { "problem": "Late decisions", "appears": "Deviations show up after they've already become cost.", "impact": "Reaction instead of anticipation." },
+        { "problem": "Rework", "appears": "Teams reconcile data and evidence manually.", "impact": "Higher indirect cost and lower productivity." },
+        { "problem": "Claims and measurements", "appears": "Evidence is scattered and hard to defend.", "impact": "Lower financial predictability." },
+        { "problem": "Unseen unproductivity", "appears": "Critical fronts are noticed too late.", "impact": "Schedule delay and pressure." },
+        { "problem": "Low predictability", "appears": "Schedule, cost, and outcome are interpreted late.", "impact": "Less governable margin and decisions." }
+      ],
+      "com": [
+        { "problem": "Connected data", "appears": "Areas and systems operate on a shared base.", "impact": "Complete decisions, on time." },
+        { "problem": "Earlier decisions", "appears": "Deviations are signaled before they become cost.", "impact": "Anticipation instead of reaction." },
+        { "problem": "Flow without rework", "appears": "Reconciliations become automated and auditable.", "impact": "Productivity preserved." },
+        { "problem": "Traceable measurements", "appears": "Evidence organized and easy to prove.", "impact": "Financial predictability." },
+        { "problem": "Visible productivity", "appears": "Bottlenecks visible before impact.", "impact": "Schedule protected." },
+        { "problem": "Predictability", "appears": "Schedule, cost, and outcome in real time.", "impact": "More governable margin." }
+      ]
+    }
+  },
+  "section04": {
+    "pillarsLabel": "[ Pillars ]",
+    "pillarsLead": "Integrates, learns, and governs decisions from real execution.",
+    "pillars": {
+      "items": [
+        { "title": "Integration", "description": "Unifies systems, critical areas, and operational data." },
+        { "title": "Intelligence", "description": "Interprets productivity, deviations, patterns, and history." },
+        { "title": "Decision", "description": "Projects impacts and recommends traceable actions." }
+      ]
+    },
+    "heading": "HOW INTELLIGENCE LEARNS\nFROM REAL EXECUTION",
+    "lead": "The infrastructure turns every captured datapoint, identified deviation, and validated decision into continuous learning—making projections more accurate in each operational cycle.",
+    "illustrationLabel": "ILLUSTRATION",
+    "caption": "HOW NEXORUM TURNS\nOPERATIONS INTO DECISIONS",
+    "cards": [
+      { "title": "Detect deviations", "description": "Notifies risks before they turn into loss." },
+      { "title": "Alert risks", "description": "Notifies risks before they become losses." },
+      { "title": "Recommend actions", "description": "Suggests paths by responsible area." },
+      { "title": "Simulate scenarios", "description": "Predictive comparison of schedule, cost, and outcome." },
+      { "title": "Govern decisions", "description": "Notifies risks before they turn into loss." }
+    ],
+    "mobile": {
+      "transformHeading": "How Nexorum turns operations into decisions",
+      "transformLead": "Data is born in execution, structured with traceability, and feeds a living base of operational intelligence.",
+      "howItWorksTitle": "How it works",
+      "whatItDoesTitle": "What it does",
+      "steps": [
+        "Captures real operational data",
+        "Integrates critical systems",
+        "Learns from deviations and history.",
+        "Identifies patterns, deviations, and risks",
+        "Simulates schedule, cost, and margin impacts",
+        "Recommends paths and governs decisions"
+      ]
+    }
+  },
+  "section05": {
+    "heading": "Not just another system.\nA decision layer.",
+    "lead": "The infrastructure does not replace current systems or operate as an isolated tool. It creates a decision intelligence layer over ERP, BI, PMO, contracts, and execution to interpret signals, anticipate impacts, and govern critical decisions.",
+    "tableHeaders": { "not": "What it isn't", "why": "Why it isn't", "does": "What Nexus does" },
+    "rows": [
+      { "not": "Not an ERP", "why": "ERP records transactions", "does": "Connects operations and decisions" },
+      { "not": "Not a digital PMO", "why": "PMO tracks plans", "does": "Interprets real execution" },
+      { "not": "Not consulting", "why": "Consulting depends on people", "does": "Anticipates critical impacts" },
+      { "not": "Not a dashboard", "why": "Dashboards display indicators", "does": "Recommends governable actions" }
+    ],
+    "whyDifferentLabel": "[ Why it’s different ]",
+    "whyDifferent": {
+      "items": [
+        {
+          "title": "Above the systems",
+          "description": "All systems keep running. The infrastructure connects their records into a single decision logic."
+        },
+        {
+          "title": "Assistive, governable AI",
+          "description": "Supports critical decisions without replacing the human decision-maker—preserving criteria, history, and traceability in every recommendation."
+        }
+      ]
+    },
+    "mobile": {
+      "tabNot": "What it isn't",
+      "tabDoes": "What it does",
+      "whyDifferentHint": "Doesn’t replace systems. Elevates what they record."
+    }
+  },
+  "section06": {
+    "heading": "From the United States to global EPC projects",
+    "lead": "The company combines operational experience, decision engineering, and AI infrastructure to support EPC projects in complex, regulated, outcome-driven markets.",
+    "aboutHeading": "ABOUT US. MEET\nOUR STORY.",
+    "aboutLead": "Nexorum combines experience in complex operations, an international perspective, and applied technology to turn scattered data into traceable, anticipated, governed decisions.",
+    "pillarsLabel": "[ Pillars ]",
+    "pillarsLead": "Built from X hours observing real operations.",
+    "institutionalTitle": "Nexorum institutional image in an executive context",
+    "institutionalLead": "Nexus Origins acts as a decision control tower: reads critical signals, anticipates deviations, and guides"
+  },
+  "footer": {
+    "brandBlurb": "AI infrastructure for EPC projects, focused on predictive governance of schedule, cost, margin, and outcomes.",
+    "columns": {
+      "location": { "title": "Location", "body": "United States — international EPC project coverage" },
+      "service": { "title": "Service", "body": "Executive diagnostics and technical conversations by appointment." },
+      "contact": { "title": "Contact", "lines": ["Request an executive diagnostic", "Institutional contact on demand"] }
+    },
+    "copyright": "© 2026 Nexorum. All rights reserved.",
+    "backToTop": "Back to top",
+    "disclaimer": "Nexorum AEGIS is a decision intelligence infrastructure for EPC projects. The platform supports analysis, governance, and operational recommendations, but does not replace human validation, does not execute decisions on the client’s behalf, and is not financial, legal, or investment consulting."
+  }
+}

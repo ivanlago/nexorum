@@ -1,0 +1,170 @@
+{
+  "common": {
+    "brand": "nexorum",
+    "siteTitle": "Nexorum",
+    "siteDescription": "Site oficial da Nexorum",
+    "welcome": "Seja bem-vindo!",
+    "seeHowItWorks": "Ver como funciona",
+    "talkToSpecialist": "Falar com especialista"
+  },
+  "hero": {
+    "headline": "ANTECIPE IMPACTOS, PROTEJA\nMARGEM E GOVERNE DECISÕES\nCOM INTELIGÊNCIA ARTIFICIAL.",
+    "description": "A infraestrutura de inteligência decisória conecta execução real, aprende com desvios e recomenda ações antes que impactos em prazo, custo e margem se convertam em perda."
+  },
+  "language": {
+    "options": {
+      "ptBR": "BRA - Português",
+      "enUS": "USA - Inglês"
+    }
+  },
+  "features": {
+    "items": [
+      { "title": "Detecta desvios", "description": "Identifica riscos críticos na operação." },
+      { "title": "Alerta riscos", "description": "Notifica riscos antes que virem perda." },
+      { "title": "Recomenda ações", "description": "Sugere caminhos por área responsável." },
+      { "title": "Simula cenários", "description": "Comparação preditiva de prazo, custo e resultado." },
+      { "title": "Governa decisões", "description": "Registra decisão e validação humana." }
+    ]
+  },
+  "section02": {
+    "heading": "CONSTRUÍDA A PARTIR DE\nOPERAÇÕES REAIS E COMPLEXAS",
+    "lead": "A solução nasce de mais de 10.000 horas de observação em operações complexas: dados de campo, rotinas críticas, decisões sob pressão e referências globais aplicadas à gestão de prazo, custo, margem e resultado.",
+    "cards": [
+      {
+        "subtitle": "Mais de 10 mil horas observando operações complexas.",
+        "title": "Horas de observação",
+        "description": "Rotinas, desvios e decisões críticas mapeadas com profissionais seniores."
+      },
+      {
+        "subtitle": "Dados reais tratados para revelar padrões de execução.",
+        "title": "Dados reais de execução",
+        "description": "Bases reais organizadas para formar inteligência decisória integrada."
+      },
+      {
+        "subtitle": "Onde a operação perde prazo, margem e previsibilidade.",
+        "title": "Pontos de perda",
+        "description": "Atrasos, retrabalho e desconexões entre áreas identificadas na operação."
+      },
+      {
+        "subtitle": "Refinada com quem decide em ambientes críticos.",
+        "title": "Validada por especialistas",
+        "description": "Refinada com quem vive planejamento, contratos e execução."
+      }
+    ],
+    "systemsHeading": "SISTEMAS EXISTENTES. DECISÕES CONECTADAS.",
+    "systemsLead": "A infraestrutura integra ERP, contratos, BI, cronogramas e dados de execução sem substituir os sistemas já usados pela operação, para transformar informação dispersa em decisão acionável.",
+    "apisLead": "Conecta dados da operação aos principais modelos de IA."
+  },
+  "section03": {
+    "linkLabel": "Ver como a Nexorum resolve",
+    "heading": "O PROBLEMA CENTRAL DOS GRANDES\nEPCS QUE NÓS RESOLVEMOS",
+    "lead": "Em projetos complexos, áreas e sistemas avançam com informações diferentes. A perda nasce quando desvios, glosas e gargalos só aparecem depois de comprometer prazo, custo e margem.",
+    "tabSem": "Sem Infraestrutura",
+    "tabCom": "Com Infraestrutura",
+    "tableHeaders": { "problems": "Problemas", "appears": "Como aparece", "impact": "Impacto" },
+    "tables": {
+      "sem": [
+        { "problem": "Dados fragmentados", "appears": "Áreas e sistemas operam com bases diferentes.", "impact": "Decisões incompletas ou atrasadas." },
+        { "problem": "Decisão tardia", "appears": "Desvios aparecem depois que já viraram custo.", "impact": "Reação em vez de antecipação." },
+        { "problem": "Retrabalho", "appears": "Times conciliam dados e evidências manualmente.", "impact": "Mais custo indireto e menor produtividade." },
+        { "problem": "Glosas e medições", "appears": "Evidências ficam dispersas e difíceis de defender.", "impact": "Menor previsibilidade financeira." },
+        { "problem": "Improdutividade", "appears": "Frentes críticas são percebidas tarde demais.", "impact": "Atraso e pressão no cronograma." },
+        { "problem": "Baixa previsibilidade", "appears": "Prazo, custo e resultado são interpretados tarde.", "impact": "Margem e decisões menos governáveis." }
+      ],
+      "com": [
+        { "problem": "Dados conectados", "appears": "Áreas e sistemas passam a operar com uma base comum.", "impact": "Decisões completas e no tempo certo." },
+        { "problem": "Decisão antecipada", "appears": "Desvios são sinalizados antes de virar custo.", "impact": "Antecipação em vez de reação." },
+        { "problem": "Fluxo sem retrabalho", "appears": "Conciliações são automatizadas e auditáveis.", "impact": "Produtividade preservada." },
+        { "problem": "Medições rastreáveis", "appears": "Evidências organizadas e fáceis de comprovar.", "impact": "Previsibilidade financeira." },
+        { "problem": "Produtividade visível", "appears": "Gargalos visíveis antes do impacto.", "impact": "Cronograma protegido." },
+        { "problem": "Previsibilidade", "appears": "Prazo, custo e resultado em tempo real.", "impact": "Margem mais governável." }
+      ]
+    }
+  },
+  "section04": {
+    "pillarsLabel": "[ Pilares ]",
+    "pillarsLead": "Integra, aprende e governa decisões a partir da execução real.",
+    "pillars": {
+      "items": [
+        { "title": "Integração", "description": "Unifica sistemas, áreas críticas e bases operacionais." },
+        { "title": "Inteligência", "description": "Interpreta produtividade, desvios, padrões e histórico." },
+        { "title": "Decisão", "description": "Projeta impactos e recomenda ações rastreáveis." }
+      ]
+    },
+    "heading": "COMO A INTELIGÊNCIA APRENDE\nCOM A EXECUÇÃO REAL",
+    "lead": "A infraestrutura transforma cada dado capturado, desvio identificado e decisão validada em aprendizado contínuo, tornando as projeções mais precisas a cada ciclo da operação.",
+    "illustrationLabel": "ILUSTRAÇÃO",
+    "caption": "COMO A NEXORUM TRANSFORMA\nOPERAÇÃO EM DECISÃO",
+    "cards": [
+      { "title": "Detecta desvios", "description": "Notifica riscos antes que se convertam em perda." },
+      { "title": "Alerta riscos", "description": "Notifica riscos antes que virem perda." },
+      { "title": "Recomenda ações", "description": "Sugere caminhos por área responsável." },
+      { "title": "Simula cenários", "description": "Comparação preditiva de prazo, custo e resultado." },
+      { "title": "Governa decisões", "description": "Notifica riscos antes que se convertam em perda." }
+    ],
+    "mobile": {
+      "transformHeading": "Como a Nexorum transforma operação em decisão",
+      "transformLead": "O dado nasce na execução, é estruturado com rastreabilidade e alimenta uma base viva de inteligência operacional.",
+      "howItWorksTitle": "Como funciona",
+      "whatItDoesTitle": "O que faz",
+      "steps": [
+        "Captura dados reais da operação",
+        "Integra sistemas críticos",
+        "Aprende com desvios e histórico.",
+        "Identifica padrões, desvios e riscos",
+        "Simula impactos em prazo, custo e margem",
+        "Recomenda caminhos e governa decisões"
+      ]
+    }
+  },
+  "section05": {
+    "heading": "Não é mais um sistema.\nÉ uma camada decisória.",
+    "lead": "A infraestrutura não substitui os sistemas atuais nem atua como ferramenta isolada. Ela cria uma camada de inteligência decisória sobre ERP, BI, PMO, contratos e execução para interpretar sinais, antecipar impactos e governar decisões críticas.",
+    "tableHeaders": { "not": "O que não é", "why": "Por que não é", "does": "O que a Nexus faz" },
+    "rows": [
+      { "not": "Não é ERP", "why": "ERP registra transações", "does": "Conecta operação e decisão" },
+      { "not": "Não é PMO digital", "why": "PMO acompanha planos", "does": "Interpreta a execução real" },
+      { "not": "Não é consultoria", "why": "Consultoria depende de pessoas", "does": "Antecipação impactos críticos" },
+      { "not": "Não é dashboard", "why": "Dashboard exibe indicadores", "does": "Recomenda ações governáveis" }
+    ],
+    "whyDifferentLabel": "[ Por que é diferente ]",
+    "whyDifferent": {
+      "items": [
+        {
+          "title": "Acima dos sistemas",
+          "description": "Todos os sistemas continuam operando. A infraestrutura conecta seus registros em uma lógica decisória única."
+        },
+        {
+          "title": "IA assistiva e governável",
+          "description": "Apoia decisões críticas sem substituir o decisor humano, preservando critérios, histórico e rastreabilidade em cada recomendação."
+        }
+      ]
+    },
+    "mobile": {
+      "tabNot": "O que não é",
+      "tabDoes": "O que faz",
+      "whyDifferentHint": "Não substitui sistemas. Eleva o que eles registram."
+    }
+  },
+  "section06": {
+    "heading": "Dos Estados Unidos para grandes projetos EPC globais",
+    "lead": "A empresa combina experiência operacional, engenharia de decisão e infraestrutura de IA para apoiar projetos EPC em mercados complexos, regulados e orientados por resultado.",
+    "aboutHeading": "SOBRE NÓS. CONHEÇA\nNOSSA HISTÓRIA.",
+    "aboutLead": "A Nexorum combina experiência em operações complexas, visão internacional e tecnologia aplicada para transformar dados dispersos em decisões rastreáveis, antecipadas e governadas.",
+    "pillarsLabel": "[ Pilares ]",
+    "pillarsLead": "Construída a partir de X horas observando operações reais.",
+    "institutionalTitle": "Imagem institucional da Nexorum em contexto executivo",
+    "institutionalLead": "A Nexus Origins atua como uma torre de controle decisória: lê sinais críticos, antecipa desvios e orienta"
+  },
+  "footer": {
+    "brandBlurb": "Infraestrutura de IA para projetos EPC, com foco em governança preditiva de prazos, custos, margem e resultados.",
+    "columns": {
+      "location": { "title": "Localização", "body": "Estados Unidos - atuação internacional em projetos EPC" },
+      "service": { "title": "Atendimento", "body": "Diagnósticos executivos e conversas técnicas sob agendamento." },
+      "contact": { "title": "Contato", "lines": ["Solicitar diagnóstico executivo", "Contato institucional sob demanda"] }
+    },
+    "copyright": "© 2026 Nexorum. Todos os direitos reservados.",
+    "backToTop": "Voltar ao topo",
+    "disclaimer": "A Nexorum AEGIS é uma infraestrutura de inteligência decisória para projetos EPC. A plataforma apoia análise, governança e recomendação operacional, mas não substitui validação humana, não executa decisões em nome do cliente e não atua como consultoria financeira, jurídica ou de investimento."
+  }
+}

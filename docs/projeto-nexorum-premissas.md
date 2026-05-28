@@ -20,3 +20,8 @@ Este documento é a fonte de verdade das premissas de implementação do site da
 - Toda decisão de UI deve seguir o Figma como prioridade.
 - Novos componentes devem priorizar composição com shadcn/ui antes de implementação customizada.
 - Qualquer exceção às premissas acima deve ser registrada neste documento com data e justificativa.
+
+## Exceções registradas
+
+### 2026-05-27
+- Landing (Draft V1): componentes foram implementados apenas com Tailwind (sem shadcn/ui) porque o ambiente atual não possui toolchain `node/npm` disponível para instalar e manter as dependências do shadcn/ui de forma confiável.

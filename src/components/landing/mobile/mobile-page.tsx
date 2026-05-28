@@ -1,0 +1,30 @@
+import { MobileFixedCta } from "@/components/landing/mobile/sections/cta-fixed";
+import { MobileSection01Carousel } from "@/components/landing/mobile/sections/section-01-carousel";
+import { MobileSection01Hero } from "@/components/landing/mobile/sections/section-01-hero";
+import { MobileSection01Image } from "@/components/landing/mobile/sections/section-01-image";
+import { MobileSection02Operacoes } from "@/components/landing/mobile/sections/section-02-operacoes";
+import { MobileSection03Problema } from "@/components/landing/mobile/sections/section-03-problema";
+import { MobileSection04ComoAprende } from "@/components/landing/mobile/sections/section-04-como-aprende";
+import { MobileSection05CamadaDecisoria } from "@/components/landing/mobile/sections/section-05-camada-decisoria";
+import { MobileSection06Institucional } from "@/components/landing/mobile/sections/section-06-institucional";
+import { MobileSection07Footer } from "@/components/landing/mobile/sections/section-07-footer";
+import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import type { SupportedLocale } from "@/i18n/locales";
+
+export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
+  return (
+    <div className="relative mx-auto w-full max-w-[375px]">
+      <MobileSection01Hero dict={dict} locale={locale} />
+      <MobileSection01Image />
+      <MobileSection01Carousel dict={dict} />
+      <MobileSection02Operacoes dict={dict} />
+      <MobileSection03Problema dict={dict} />
+      <MobileSection04ComoAprende dict={dict} />
+      <MobileSection05CamadaDecisoria dict={dict} />
+      <MobileSection06Institucional dict={dict} />
+      <MobileSection07Footer dict={dict} locale={locale} />
+      <div className="h-24" />
+      <MobileFixedCta dict={dict} />
+    </div>
+  );
+}
