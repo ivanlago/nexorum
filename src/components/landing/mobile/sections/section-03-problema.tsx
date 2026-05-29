@@ -2,6 +2,7 @@
 
 import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const imgCaret = "https://www.figma.com/api/mcp/asset/a86cfda8-89fd-4823-9ebb-38085f2c4488";
 const imgDivider = "https://www.figma.com/api/mcp/asset/a5fcbc2c-ca3d-4933-9ed7-49484d1fd6ed";
@@ -21,7 +22,8 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   const rows = useMemo(() => (mode === "sem" ? semInfra : comInfra), [mode, semInfra, comInfra]);
 
   return (
-    <section className="px-6 pb-24 pt-20">
+    <section className="relative overflow-hidden px-6 pb-24 pt-20">
+      <LandingSectionBackground />
       <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
         [ 02 ]
       </div>

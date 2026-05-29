@@ -1,6 +1,7 @@
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { LanguageSelector } from "@/components/landing/language-selector";
 import { HeroMenu } from "@/components/landing/hero-menu";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
@@ -21,6 +22,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 
   return (
     <section className="relative w-full overflow-hidden pt-0">
+      <LandingSectionBackground />
       <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_-40%,rgba(255,255,255,0.16),rgba(255,255,255,0)_60%)]" />
       <div className="relative mx-auto w-full max-w-[1440px]">
         <div className="h-[1000px] w-full">

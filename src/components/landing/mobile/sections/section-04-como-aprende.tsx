@@ -1,4 +1,5 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const items = [
   { n: "1", icon: "https://www.figma.com/api/mcp/asset/a8108f3e-216e-4ae7-97d0-755798816a5d" },
@@ -21,7 +22,8 @@ export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }
   const copy = dict.section04 as any;
 
   return (
-    <section className="px-6 pb-24 pt-12">
+    <section className="relative overflow-hidden px-6 pb-24 pt-12">
+      <LandingSectionBackground />
       <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
         [ 03 ]
       </div>

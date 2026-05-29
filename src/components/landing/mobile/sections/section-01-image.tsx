@@ -1,6 +1,6 @@
 export function MobileSection01Image() {
   return (
-    <section className="relative mt-6">
+    <section className="relative mt-6 overflow-hidden">
       <div className="relative h-[369px] w-full overflow-hidden">
         <img
           alt=""

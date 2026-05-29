@@ -105,7 +105,10 @@
     "mobile": {
       "transformHeading": "How Nexorum turns operations into decisions",
       "transformLead": "Data is born in execution, structured with traceability, and feeds a living base of operational intelligence.",
+      "transformLead2": "This way, management stops reacting late and starts anticipating impacts—governing schedule, cost, and margin with traceable decisions.",
       "howItWorksTitle": "How it works",
+      "stepsHeaderLeft": "Steps",
+      "stepsHeaderRight": "Purpose",
       "whatItDoesTitle": "What it does",
       "steps": [
         "Captures real operational data",

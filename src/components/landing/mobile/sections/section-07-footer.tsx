@@ -1,4 +1,5 @@
 import { LanguageSelector } from "@/components/landing/language-selector";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
@@ -16,7 +17,8 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
   const copy = dict.footer as any;
 
   return (
-    <footer className="px-6 pb-12 pt-20">
+    <footer className="relative overflow-hidden px-6 pb-12 pt-20">
+      <LandingSectionBackground />
       <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
 
       <div className="mt-12 flex items-center gap-2">

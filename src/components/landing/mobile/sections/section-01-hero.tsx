@@ -1,5 +1,6 @@
 import { LanguageSelector } from "@/components/landing/language-selector";
 import { HeroMenu } from "@/components/landing/hero-menu";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
@@ -11,7 +12,8 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
   const headline = dict.hero.headline.replaceAll("\n", " ");
 
   return (
-    <section className="relative px-6 pt-0">
+    <section className="relative overflow-hidden px-6 pt-0">
+      <LandingSectionBackground />
       <div className="pt-6">
         <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
         <div className="flex items-center justify-between py-6">

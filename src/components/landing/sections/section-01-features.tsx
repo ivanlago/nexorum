@@ -1,4 +1,5 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const imgBgVector1 = "https://www.figma.com/api/mcp/asset/20c53c2a-664b-4a61-897c-e9234223a6de";
 const imgBgVector2 = "https://www.figma.com/api/mcp/asset/6d9601fe-e979-4187-935e-4cb1914e5472";
@@ -26,6 +27,7 @@ export function LandingSection01Features({ dict }: { dict: LandingDictionary }) 
 
   return (
     <section className="relative z-20 -mt-[116px] w-full overflow-hidden pb-6 pt-0">
+      <LandingSectionBackground />
       <div className="pointer-events-none absolute inset-0 opacity-70">
         <img alt="" className="absolute inset-0 size-full object-cover" src={imgBgVector1} />
         <img alt="" className="absolute inset-0 size-full object-cover mix-blend-lighten" src={imgBgVector2} />

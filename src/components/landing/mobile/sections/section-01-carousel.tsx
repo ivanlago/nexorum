@@ -1,4 +1,5 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const imgDivider = "https://www.figma.com/api/mcp/asset/4bb21cb0-3d1f-4d49-87c4-5311bcb87e87";
 
@@ -24,7 +25,8 @@ export function MobileSection01Carousel({ dict }: { dict: LandingDictionary }) {
   const features = dict.features;
 
   return (
-    <section className="mt-8">
+    <section className="relative mt-8 overflow-hidden">
+      <LandingSectionBackground />
       <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
       <div className="mt-6 overflow-x-auto px-6">
         <div className="flex w-max gap-8 pb-6">

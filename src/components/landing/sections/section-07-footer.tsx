@@ -1,4 +1,5 @@
 import { LanguageSelector } from "@/components/landing/language-selector";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
@@ -14,7 +15,8 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
   const copy = dict.footer as any;
 
   return (
-    <footer id="footer" className="relative w-full pb-16 pt-24">
+    <footer id="footer" className="relative w-full overflow-hidden pb-16 pt-24">
+      <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
 

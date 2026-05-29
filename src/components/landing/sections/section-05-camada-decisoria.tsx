@@ -1,5 +1,6 @@
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDictionary }) {
@@ -7,7 +8,8 @@ export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDiction
   const rows = (copy?.rows ?? []) as Array<{ not: string; why: string; does: string }>;
 
   return (
-    <section id="camada-decisoria" className="relative w-full py-28">
+    <section id="camada-decisoria" className="relative w-full overflow-hidden py-28">
+      <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="px-6 lg:px-0">
           <div className="mx-auto w-full max-w-[1216px]">

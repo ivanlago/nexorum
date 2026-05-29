@@ -1,4 +1,5 @@
 import { LogoCarousel } from "@/components/landing/logo-carousel";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const imgCaret = "https://www.figma.com/api/mcp/asset/891db62e-8032-4c26-afa2-0a054efd5811";
@@ -36,7 +37,8 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
   const copy = dict.section02 as any;
 
   return (
-    <section className="px-6 pb-20 pt-24">
+    <section className="relative overflow-hidden px-6 pb-20 pt-24">
+      <LandingSectionBackground />
       <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
         [ 01 ]
       </div>
@@ -106,7 +108,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
         <img alt="" className="mt-5 h-px w-full opacity-60" src={imgDivider} />
-        <div className="mt-4 px-6 opacity-80">
+        <div className="mt-4 overflow-hidden px-6 opacity-80">
           <LogoCarousel logos={logoRow} durationSeconds={18} itemClassName="h-8" />
         </div>
         <img alt="" className="mt-4 h-px w-full opacity-60" src={imgDivider} />

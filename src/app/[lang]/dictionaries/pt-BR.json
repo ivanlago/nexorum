@@ -105,7 +105,10 @@
     "mobile": {
       "transformHeading": "Como a Nexorum transforma operação em decisão",
       "transformLead": "O dado nasce na execução, é estruturado com rastreabilidade e alimenta uma base viva de inteligência operacional.",
+      "transformLead2": "Assim a gestão deixa de reagir ao atraso e passa a antecipar impactos, governando prazo, custo e margem com decisões rastreáveis.",
       "howItWorksTitle": "Como funciona",
+      "stepsHeaderLeft": "Etapas",
+      "stepsHeaderRight": "Função",
       "whatItDoesTitle": "O que faz",
       "steps": [
         "Captura dados reais da operação",

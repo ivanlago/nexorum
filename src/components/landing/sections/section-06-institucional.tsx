@@ -1,5 +1,6 @@
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const imgUsMap = "https://www.figma.com/api/mcp/asset/4b138702-4a1c-482c-a24d-28c6020dba1e";
@@ -9,7 +10,8 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
   const copy = dict.section06 as any;
 
   return (
-    <section id="institucional" className="relative w-full py-28">
+    <section id="institucional" className="relative w-full overflow-hidden py-28">
+      <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="mx-auto w-full max-w-[1216px] px-6 text-right lg:px-0">
           <h2 className="[font-family:var(--font-orbitron)] text-[24px] font-semibold uppercase leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">

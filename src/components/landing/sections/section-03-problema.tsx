@@ -3,6 +3,8 @@
 import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
+import { TextMarquee } from "@/components/landing/text-marquee";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 type Row = {
   problem: string;
@@ -76,10 +78,12 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
   const comInfra = (copy?.tables?.com ?? []) as Row[];
 
   const rows = useMemo(() => ({ sem: semInfra, com: comInfra }), [semInfra, comInfra]);
+  const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
   const tableGridCols = "grid-cols-[343px_593px_391px]";
   const hoverRowBg =
-    "hover:bg-[linear-gradient(90deg,rgba(255,255,255,0)_40.865%,rgba(255,255,255,0.5)_100%),linear-gradient(90deg,#0B72B8_0%,#0B72B8_100%)]";
+    "after:content-[''] after:absolute after:inset-0 after:z-0 after:pointer-events-none after:bg-[linear-gradient(90deg,rgba(255,255,255,0)_40.865%,rgba(255,255,255,0.5)_100%),linear-gradient(90deg,#0B72B8_0%,#0B72B8_100%)] after:opacity-0 after:transition-opacity after:duration-600 after:ease-in-out after:delay-320 hover:after:delay-120 hover:after:opacity-100";
+  const hoverRowText = "transition-colors duration-600 ease-in-out delay-320 hover:delay-120";
   const appearsIcons: Array<"db" | "blocks" | "briefcase" | "doc" | "calendar" | "bars"> = [
     "db",
     "blocks",
@@ -89,28 +93,44 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
     "bars",
   ];
 
+  const benefits = [
+    "Prazo recuperável",
+    "Margem protegida",
+    "Evidência rastreável",
+    "Decisão antecipada",
+    "Dados integrados",
+    "Ação por responsável",
+    "Governança auditável",
+  ] as const;
+
   return (
-    <section id="problema" className="relative w-full py-28">
+    <section id="problema" className="relative w-full overflow-hidden py-28">
+      <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
-        <div className="mx-auto flex w-full max-w-[1216px] items-end justify-between px-6 lg:px-0">
-          <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-            {copy.linkLabel} <span className="opacity-70">›</span>
-          </a>
-          <div className="w-full max-w-[696px] text-right">
-            <h2 className="[font-family:var(--font-orbitron)] text-[24px] font-semibold uppercase leading-[1.6] tracking-[0.01em] text-[color:var(--primitive-colors-gray-200)]">
-              {copy.heading?.split?.("\n")?.map?.((line: string, idx: number, arr: string[]) => (
-                <span key={idx}>
-                  {idx === 0 ? <SectionIndex value="02" className="mr-3 align-baseline" /> : null}
+        <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
+          <div className="ml-[520px]">
+            <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] font-semibold leading-[0] text-[24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)] tracking-[0.24px] uppercase whitespace-pre-wrap">
+              {headingLines.map((line, idx) => (
+                <p
+                  key={idx}
+                  className={idx === 0 ? "mb-0 flex items-baseline justify-start gap-3 leading-[1.6]" : "mb-0 leading-[1.6]"}
+                >
+                  {idx === 0 ? <SectionIndex value="02" className="shrink-0" /> : null}
                   {line}
-                  {idx < arr.length - 1 ? <br /> : null}
-                </span>
+                </p>
               ))}
             </h2>
-            <p className="mt-10 text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-              <span className="inline-block indent-12">
-                {copy.lead}
-              </span>
-            </p>
+          </div>
+
+          <div className="flex items-end justify-between">
+            <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
+              {copy.linkLabel} <span className="opacity-70">›</span>
+            </a>
+            <div className="ml-auto max-w-[696px] text-left">
+              <p className="mx-auto mt-10 max-w-[592px] text-left text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {copy.lead}
+              </p>
+            </div>
           </div>
         </div>
 
@@ -136,30 +156,60 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                   <div
                     key={row.problem}
                     className={[
-                      "group relative w-full transition-colors",
+                      "group relative isolate w-full",
                       hoverRowBg,
                     ].join(" ")}
                   >
-                    <div className={["grid items-center py-7 px-[110px]", tableGridCols].join(" ")}>
+                    <div className={["relative z-10 grid items-center py-7 px-[110px]", tableGridCols].join(" ")}>
                       <div className="flex items-center gap-4">
-                        <span className="inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)] group-hover:border-white/50 group-hover:text-white/90">
+                        <span
+                          className={[
+                            "inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)]",
+                            hoverRowText,
+                            "group-hover:border-white/50 group-hover:text-white/90",
+                          ].join(" ")}
+                        >
                           ×
                         </span>
-                        <div className="[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)] group-hover:text-white">
+                        <div
+                          className={[
+                            "[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                            hoverRowText,
+                            "group-hover:text-white",
+                          ].join(" ")}
+                        >
                           {row.problem}
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)] group-hover:text-white">
-                        <span className="text-[color:var(--primitive-colors-primary-400)] group-hover:text-white">
+                      <div
+                        className={[
+                          "flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          hoverRowText,
+                          "group-hover:text-white",
+                        ].join(" ")}
+                      >
+                        <span
+                          className={[
+                            "text-[color:var(--primitive-colors-primary-400)]",
+                            hoverRowText,
+                            "group-hover:text-white",
+                          ].join(" ")}
+                        >
                           <TableIcon name={appearsIcons[idx] ?? "db"} />
                         </span>
                         <span className="w-[504px]">{row.appears}</span>
                       </div>
-                      <div className="text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)] group-hover:text-white">
+                      <div
+                        className={[
+                          "text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          hoverRowText,
+                          "group-hover:text-white",
+                        ].join(" ")}
+                      >
                         {row.impact}
                       </div>
                     </div>
-                    <div className="h-px w-full bg-[rgba(118,131,143,0.14)]" />
+                    <div className="relative z-10 h-px w-full bg-[rgba(118,131,143,0.14)]" />
                   </div>
                 ))}
 
@@ -169,35 +219,86 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                   <div
                     key={`${row.problem}-com`}
                     className={[
-                      "group relative w-full transition-colors",
+                      "group relative isolate w-full",
                       hoverRowBg,
                     ].join(" ")}
                   >
-                    <div className={["grid items-center py-7 px-[110px]", tableGridCols].join(" ")}>
+                    <div className={["relative z-10 grid items-center py-7 px-[110px]", tableGridCols].join(" ")}>
                       <div className="flex items-center gap-4">
-                        <span className="inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)] group-hover:border-white/50 group-hover:text-white/90">
+                        <span
+                          className={[
+                            "inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)]",
+                            hoverRowText,
+                            "group-hover:border-white/50 group-hover:text-white/90",
+                          ].join(" ")}
+                        >
                           ✓
                         </span>
-                        <div className="[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)] group-hover:text-white">
+                        <div
+                          className={[
+                            "[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                            hoverRowText,
+                            "group-hover:text-white",
+                          ].join(" ")}
+                        >
                           {row.problem}
                         </div>
                       </div>
-                      <div className="flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)] group-hover:text-white">
-                        <span className="text-[color:var(--primitive-colors-primary-400)] group-hover:text-white">
+                      <div
+                        className={[
+                          "flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          hoverRowText,
+                          "group-hover:text-white",
+                        ].join(" ")}
+                      >
+                        <span
+                          className={[
+                            "text-[color:var(--primitive-colors-primary-400)]",
+                            hoverRowText,
+                            "group-hover:text-white",
+                          ].join(" ")}
+                        >
                           <TableIcon name={appearsIcons[idx] ?? "db"} />
                         </span>
                         <span className="w-[504px]">{row.appears}</span>
                       </div>
-                      <div className="text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)] group-hover:text-white">
+                      <div
+                        className={[
+                          "text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          hoverRowText,
+                          "group-hover:text-white",
+                        ].join(" ")}
+                      >
                         {row.impact}
                       </div>
                     </div>
-                    <div className="h-px w-full bg-[rgba(118,131,143,0.14)]" />
+                    <div className="relative z-10 h-px w-full bg-[rgba(118,131,143,0.14)]" />
                   </div>
                 ))}
               </div>
             </div>
           </div>
+        </div>
+
+        <div className="mx-auto mt-12 h-[111px] w-full max-w-[1440px] overflow-hidden bg-gradient-to-r from-[rgba(8,16,24,0)] via-[#081018] via-[52.885%] to-[rgba(8,16,24,0)] px-6 lg:px-0">
+          <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+          <div className="flex h-[109px] w-full items-center">
+            <TextMarquee durationSeconds={26} contentClassName="gap-16 whitespace-nowrap">
+              {benefits.map((label, idx) => (
+                <div key={label} className="flex items-center gap-16">
+                  <div className="[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+                    {label}
+                  </div>
+                  {idx < benefits.length - 1 ? (
+                    <div className="[font-family:var(--font-orbitron)] text-[28px] font-black leading-[1.4] text-[color:var(--primitive-colors-primary-500)]">
+                      /
+                    </div>
+                  ) : null}
+                </div>
+              ))}
+            </TextMarquee>
+          </div>
+          <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
         </div>
       </div>
     </section>

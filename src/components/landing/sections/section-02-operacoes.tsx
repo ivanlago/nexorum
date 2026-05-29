@@ -1,6 +1,7 @@
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { LogoCarousel } from "@/components/landing/logo-carousel";
 import { SectionIndex } from "@/components/landing/sections/section-index";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const cards = [
@@ -36,7 +37,8 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
   return (
-    <section id="operacoes" className="relative w-full py-28">
+    <section id="operacoes" className="relative w-full overflow-hidden py-28">
+      <LandingSectionBackground />
       <div className="relative mx-auto w-full max-w-[1440px]">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
           <div className="ml-[520px]">
@@ -123,7 +125,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
           </div>
         </div>
 
-        <div className="mt-20 h-[145px] w-full border-y border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
+        <div className="mt-20 h-[145px] w-full overflow-hidden border-y border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
           <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-6 lg:px-0">
             <div className="flex h-full w-[430px] shrink-0 items-center justify-center gap-6 border-[0.5px] border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10">
               <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">

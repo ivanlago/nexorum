@@ -1,4 +1,5 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const imgMap = "https://www.figma.com/api/mcp/asset/13b9d590-2e00-44b0-b0c6-776a838452a9";
 const imgPillarsTexture = "https://www.figma.com/api/mcp/asset/ffdcbdf4-d216-41ba-b416-d90144b76878";
@@ -9,7 +10,8 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
   const copy = dict.section06 as any;
 
   return (
-    <section className="px-6 pb-24 pt-10">
+    <section className="relative overflow-hidden px-6 pb-24 pt-10">
+      <LandingSectionBackground />
       <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
         [ 05 ]
       </div>
