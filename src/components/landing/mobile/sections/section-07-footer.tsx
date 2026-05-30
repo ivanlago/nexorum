@@ -17,7 +17,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
   const copy = dict.footer as any;
 
   return (
-    <footer className="relative overflow-hidden px-6 pb-12 pt-20">
+    <footer className="relative overflow-hidden px-6 pb-12 pt-0">
       <LandingSectionBackground />
       <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
 
@@ -35,13 +35,11 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
         <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
       </div>
 
-      <img
-        alt=""
-        className="mt-10 w-full h-auto object-contain"
-        src="/marca-dagua.png"
-      />
+      <div className="mt-[10px] mb-[50px]">
+        <img alt="" className="block h-auto w-full object-contain" src="/marca-dagua.png" />
+      </div>
 
-      <div className="mt-10 space-y-10">
+      <div className="space-y-10">
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.location?.title}</div>
           <div className="mt-4 text-[14px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
