@@ -120,7 +120,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
               />
             </div>
 
-            <div className="mt-10 [font-family:var(--font-orbitron)] text-[18px] font-semibold uppercase leading-[1.6] tracking-[0.1em] text-[color:var(--primitive-colors-gray-300)] indent-[48px]">
+            <div className="[font-family:var(--font-orbitron)] mt-10 bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase align-middle indent-[48px]">
               {copy.caption?.split?.("\n")?.map?.((line: string, idx: number, arr: string[]) => (
                 <span key={idx}>
                   {line}

@@ -12,10 +12,10 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
   return (
     <section className="relative overflow-hidden px-6 pb-24 pt-10">
       <LandingSectionBackground />
-      <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
-        [ 05 ]
-      </div>
-      <h2 className="mt-3 [font-family:var(--font-orbitron)] text-[18px] font-semibold uppercase leading-[1.6] text-[rgba(195,210,218,0.95)]">
+      <h2 className="mt-3 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
+        <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
+          [ 05 ]
+        </span>
         {copy.heading}
       </h2>
       <p className="mt-8 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
@@ -30,7 +30,7 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
       </div>
 
       <div className="mt-16">
-        <h3 className="[font-family:var(--font-orbitron)] text-[16px] font-semibold uppercase leading-[1.6] text-[rgba(195,210,218,0.95)]">
+        <h3 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[16px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
           {copy.aboutHeading?.replaceAll?.("\n", " ")}
         </h3>
         <p className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300,#76838f)]">

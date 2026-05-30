@@ -35,6 +35,12 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
         <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
       </div>
 
+      <img
+        alt=""
+        className="mt-10 w-full h-auto object-contain"
+        src="/marca-dagua.png"
+      />
+
       <div className="mt-10 space-y-10">
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.location?.title}</div>

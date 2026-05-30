@@ -39,10 +39,10 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
   return (
     <section className="relative overflow-hidden px-6 pb-20 pt-24">
       <LandingSectionBackground />
-      <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
-        [ 01 ]
-      </div>
-      <h2 className="mt-3 [font-family:var(--font-orbitron)] text-[18px] font-semibold uppercase leading-[1.6] text-[rgba(195,210,218,0.95)]">
+      <h2 className="mt-3 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
+        <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
+          [ 01 ]
+        </span>
         {copy.heading?.replaceAll?.("\n", " ")}
       </h2>
       <p className="mt-8 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
@@ -54,34 +54,46 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
         {dict.common.seeHowItWorks} <img alt="" className="size-4 opacity-80" src={imgCaret} />
       </a>
 
-      <div className="mt-14 space-y-8">
-        {cards.map((c, idx) => (
-          <div
-            key={c.tag}
-            className="overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]"
-          >
-            <div className="relative">
-              <img alt="" className="h-[240px] w-full object-cover opacity-70 mix-blend-lighten" src={c.image} />
-              <div className="absolute inset-0 bg-[#05090d]/20" />
-              <div className="absolute inset-x-6 top-6 flex items-center justify-between gap-6">
-                <div className="[font-family:var(--font-orbitron)] text-[10px] font-bold text-[color:var(--primitive-colors-primary-400)]">
-                  {c.tag}
+      <div
+        className={[
+          "mt-14 -mx-6 overflow-x-auto px-6",
+          "snap-x snap-mandatory",
+          "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        ].join(" ")}
+      >
+        <div className="flex gap-6">
+          {cards.map((c, idx) => (
+            <div
+              key={c.tag}
+              className={[
+                "snap-start shrink-0",
+                "w-[calc(100vw-48px)] max-w-[330px]",
+                "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
+              ].join(" ")}
+            >
+              <div className="relative">
+                <img alt="" className="h-[240px] w-full object-cover opacity-70 mix-blend-lighten" src={c.image} />
+                <div className="absolute inset-0 bg-[#05090d]/20" />
+                <div className="absolute inset-x-6 top-6 flex items-start gap-4">
+                  <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
+                    {c.tag}
+                  </div>
+                  <div className="flex-1 text-left text-[10px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                    {copy.cards?.[idx]?.subtitle}
+                  </div>
                 </div>
-                <div className="text-right text-[10px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                  {copy.cards?.[idx]?.subtitle}
+              </div>
+              <div className="px-6 pb-8 pt-6">
+                <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
+                  {copy.cards?.[idx]?.title}
+                </div>
+                <div className="mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                  {copy.cards?.[idx]?.description}
                 </div>
               </div>
             </div>
-            <div className="px-6 pb-8 pt-6">
-              <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
-                {copy.cards?.[idx]?.title}
-              </div>
-              <div className="mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                {copy.cards?.[idx]?.description}
-              </div>
-            </div>
-          </div>
-        ))}
+          ))}
+        </div>
       </div>
 
       <div className="mt-16">
