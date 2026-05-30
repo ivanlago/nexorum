@@ -71,18 +71,26 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
                 "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
               ].join(" ")}
             >
-              <div className="relative">
-                <img alt="" className="h-[240px] w-full object-cover opacity-70 mix-blend-lighten" src={c.image} />
-                <div className="absolute inset-0 bg-[#05090d]/20" />
-                <div className="absolute inset-x-6 top-6 flex items-start gap-4">
-                  <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
+              <div className="flex h-[96px] items-center px-6">
+                <div className="flex w-full items-center gap-6">
+                  <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
                     {c.tag}
                   </div>
-                  <div className="flex-1 text-left text-[10px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                  <div className="text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                     {copy.cards?.[idx]?.subtitle}
                   </div>
                 </div>
               </div>
+
+              <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+
+              <div className="relative flex h-[240px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
+                <img alt="" className="h-[208px] w-[208px] object-cover opacity-70 mix-blend-lighten" src={c.image} />
+                <div className="absolute inset-0 bg-[#05090d]/20" />
+                <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
+              </div>
+
+              <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
               <div className="px-6 pb-8 pt-6">
                 <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
                   {copy.cards?.[idx]?.title}
