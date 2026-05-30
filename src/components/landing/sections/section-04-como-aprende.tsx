@@ -1,6 +1,7 @@
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { LandingBenefitsMarquee } from "@/components/landing/landing-benefits-marquee";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const leftPillars = [
@@ -43,14 +44,23 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
   const copy = dict.section04 as any;
   const steps = (copy?.mobile?.steps ?? []) as string[];
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
+  const benefits = [
+    "Prazo recuperável",
+    "Margem protegida",
+    "Evidência rastreável",
+    "Decisão antecipada",
+    "Dados integrados",
+    "Ação por responsável",
+    "Governança auditável",
+  ] as const;
 
   return (
-    <section id="como-aprende" className="relative w-full overflow-hidden py-20">
+    <section id="como-aprende" className="relative w-full overflow-hidden pb-0 pt-20">
       <LandingSectionBackground />
 
       <div className="relative mx-auto w-full max-w-[1440px]">
         <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[768px] lg:grid-cols-[240px_1fr_340px] lg:items-start lg:px-0">
-          <div className="relative flex flex-col lg:h-[542px] lg:self-start">
+          <div className="relative flex flex-col lg:h-[616px] lg:self-start">
             <div className="absolute left-0 top-[-85px] h-[168px] w-[237px] opacity-80">
               <img
                 alt=""
@@ -59,7 +69,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
               />
             </div>
 
-            <div className="flex min-h-0 flex-1 flex-col border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-6 py-8 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
+            <div className="flex min-h-0 flex-1 flex-col overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-6 py-8 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
               <div className="flex flex-col items-end gap-6">
                 <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">
                   {copy.pillarsLabel}
@@ -69,13 +79,13 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
                 </p>
               </div>
 
-              <div className="mt-8 divide-y divide-[rgba(26,42,56,0.9)]">
+              <div className="mt-8 flex flex-1 flex-col divide-y divide-[rgba(26,42,56,0.9)] lg:mt-10">
                 {leftPillars.map((p, idx) => (
-                  <div key={idx} className="py-5">
-                    <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
+                  <div key={idx} className="flex flex-col justify-center py-5 lg:flex-1 lg:py-6">
+                    <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.2] text-[color:var(--primitive-colors-gray-200)]">
                       {copy.pillars?.items?.[idx]?.title}
                     </div>
-                    <div className="mt-2 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                    <div className="mt-3 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
                       {copy.pillars?.items?.[idx]?.description}
                     </div>
                   </div>
@@ -162,7 +172,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
             {rightCards.map((c, idx) => (
               <div
                 key={idx}
-                className="flex min-h-[92px] items-start gap-5 border border-[rgba(26,42,56,0.85)] bg-[rgba(8,15,22,0.55)] px-6 py-5 shadow-[0px_10px_60px_rgba(0,0,0,0.35)]"
+                className="flex min-h-[104px] items-start gap-5 border border-[rgba(26,42,56,0.85)] bg-[rgba(8,15,22,0.55)] px-6 py-5 shadow-[0px_10px_60px_rgba(0,0,0,0.35)]"
               >
                 <div className="mt-0.5 inline-flex size-12 items-center justify-center border border-[rgba(87,171,255,0.25)] bg-[rgba(9,16,24,0.65)]">
                   <img alt="" className="size-6" src={c.icon} />
@@ -180,6 +190,8 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
           </div>
         </div>
       </div>
+
+      <LandingBenefitsMarquee className="mt-20" labels={benefits} />
     </section>
   );
 }

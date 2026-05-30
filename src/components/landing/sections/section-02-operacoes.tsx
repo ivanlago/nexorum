@@ -108,11 +108,11 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
           </div>
 
           <div className="mt-24 flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
-            <div>
-              <div className="[font-family:var(--font-orbitron)] text-[16px] uppercase tracking-[0.1em] text-[color:var(--primitive-colors-gray-200)]">
+            <div className="w-full max-w-[720px]">
+              <div className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase align-middle">
                 {copy.systemsHeading}
               </div>
-              <p className="mt-6 max-w-[720px] text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+              <p className="mt-6 max-w-[592px] pl-[104px] indent-12 text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                 {copy.systemsLead}
               </p>
             </div>

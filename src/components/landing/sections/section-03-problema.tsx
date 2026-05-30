@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
-import { TextMarquee } from "@/components/landing/text-marquee";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { LandingBenefitsMarquee } from "@/components/landing/landing-benefits-marquee";
 
 type Row = {
   problem: string;
@@ -75,9 +75,8 @@ function TableIcon({ name, className = "" }: { name: "db" | "blocks" | "briefcas
 export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section03 as any;
   const semInfra = (copy?.tables?.sem ?? []) as Row[];
-  const comInfra = (copy?.tables?.com ?? []) as Row[];
 
-  const rows = useMemo(() => ({ sem: semInfra, com: comInfra }), [semInfra, comInfra]);
+  const rows = useMemo(() => semInfra, [semInfra]);
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
   const tableGridCols = "grid-cols-[343px_593px_391px]";
@@ -104,7 +103,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
   ] as const;
 
   return (
-    <section id="problema" className="relative w-full overflow-hidden py-28">
+    <section id="problema" className="relative w-full overflow-hidden pb-0 pt-6">
       <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
@@ -152,11 +151,14 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                 </div>
                 <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
 
-                {rows.sem.map((row, idx) => (
+                {rows.map((row, idx) => (
                   <div
                     key={row.problem}
                     className={[
                       "group relative isolate w-full",
+                      // In "Camada decisória", the zebra contrast comes from the row highlight background
+                      // over the table container background, not from two competing row backgrounds.
+                      idx % 2 === 0 ? "bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]" : "",
                       hoverRowBg,
                     ].join(" ")}
                   >
@@ -212,94 +214,12 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                     <div className="relative z-10 h-px w-full bg-[rgba(118,131,143,0.14)]" />
                   </div>
                 ))}
-
-                <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-
-                {rows.com.map((row, idx) => (
-                  <div
-                    key={`${row.problem}-com`}
-                    className={[
-                      "group relative isolate w-full",
-                      hoverRowBg,
-                    ].join(" ")}
-                  >
-                    <div className={["relative z-10 grid items-center py-7 px-[110px]", tableGridCols].join(" ")}>
-                      <div className="flex items-center gap-4">
-                        <span
-                          className={[
-                            "inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)]",
-                            hoverRowText,
-                            "group-hover:border-white/50 group-hover:text-white/90",
-                          ].join(" ")}
-                        >
-                          ✓
-                        </span>
-                        <div
-                          className={[
-                            "[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                            hoverRowText,
-                            "group-hover:text-white",
-                          ].join(" ")}
-                        >
-                          {row.problem}
-                        </div>
-                      </div>
-                      <div
-                        className={[
-                          "flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                          hoverRowText,
-                          "group-hover:text-white",
-                        ].join(" ")}
-                      >
-                        <span
-                          className={[
-                            "text-[color:var(--primitive-colors-primary-400)]",
-                            hoverRowText,
-                            "group-hover:text-white",
-                          ].join(" ")}
-                        >
-                          <TableIcon name={appearsIcons[idx] ?? "db"} />
-                        </span>
-                        <span className="w-[504px]">{row.appears}</span>
-                      </div>
-                      <div
-                        className={[
-                          "text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                          hoverRowText,
-                          "group-hover:text-white",
-                        ].join(" ")}
-                      >
-                        {row.impact}
-                      </div>
-                    </div>
-                    <div className="relative z-10 h-px w-full bg-[rgba(118,131,143,0.14)]" />
-                  </div>
-                ))}
               </div>
             </div>
           </div>
         </div>
 
-        <div className="mx-auto mt-12 h-[111px] w-full max-w-[1440px] overflow-hidden bg-gradient-to-r from-[rgba(8,16,24,0)] via-[#081018] via-[52.885%] to-[rgba(8,16,24,0)] px-6 lg:px-0">
-          <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-          <div className="flex h-[109px] w-full items-center">
-            <TextMarquee durationSeconds={26} contentClassName="gap-16 whitespace-nowrap">
-              {benefits.map((label, idx) => (
-                <div key={label} className="flex items-center gap-16">
-                  <div className="[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
-                    {label}
-                  </div>
-                  {idx < benefits.length - 1 ? (
-                    <div className="[font-family:var(--font-orbitron)] text-[28px] font-black leading-[1.4] text-[color:var(--primitive-colors-primary-500)]">
-                      /
-                    </div>
-                  ) : null}
-                </div>
-              ))}
-            </TextMarquee>
-          </div>
-          <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-        </div>
+        <LandingBenefitsMarquee className="mt-20" labels={benefits} />
       </div>
     </section>
   );
