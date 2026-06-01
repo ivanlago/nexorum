@@ -108,17 +108,17 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
               </span>
               {headingLines[1] ? <span className="block break-words">{headingLines[1]}</span> : null}
             </h2>
-            <p className="mt-8 max-w-[560px] text-[13px] font-light leading-[1.9] text-[color:var(--primitive-colors-gray-200)]">
-              {copy.lead}
-            </p>
+	            <p className="mt-8 max-w-[560px] text-[13px] font-light leading-[1.9] text-[color:var(--primitive-colors-gray-200)]">
+	              <span className="inline-block indent-[39px]">{copy.lead}</span>
+	            </p>
 
-            <div className="mt-12 flex items-center justify-center">
-              <img
-                alt=""
-                className="pointer-events-none w-[420px] max-w-full select-none"
-                src="/aprende-video.svg"
-              />
-            </div>
+	            <div className="mt-12 flex items-center justify-center">
+	              <img
+	                alt=""
+	                className="pointer-events-none w-[420px] max-w-full select-none"
+	                src="/aprende-video.svg"
+	              />
+	            </div>
 
             <div className="[font-family:var(--font-orbitron)] mt-10 bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase align-middle indent-[48px]">
               {copy.caption?.split?.("\n")?.map?.((line: string, idx: number, arr: string[]) => (
