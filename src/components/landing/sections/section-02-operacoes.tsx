@@ -2,6 +2,8 @@ import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { LogoCarousel } from "@/components/landing/logo-carousel";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { HowItWorksLink } from "@/components/ui/how-it-works-link";
+import { OperationsCard } from "@/components/landing/sections/operations-card";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const cards = [
@@ -55,9 +57,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
               </h2>
           </div>
           <div className="flex items-end justify-between">
-            <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-              {dict.common.seeHowItWorks} <span className="opacity-70">›</span>
-            </a>
+            <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
             <div className="ml-auto max-w-[696px] text-left">              
               <p className="mx-auto mt-10 max-w-[592px] text-left text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                 &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {copy.lead}
@@ -67,43 +67,15 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
 
           <div className="mt-20 grid grid-cols-1 gap-6 md:grid-cols-2 lg:grid-cols-4 lg:pb-[103px]">
             {cards.map((c, idx) => (
-              <div
+              <OperationsCard
                 key={c.tag}
-                className={[
-                  "relative h-[500px] w-full overflow-hidden border-[0.5px] border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] shadow-[0px_24px_120px_rgba(0,0,0,0.5)]",
-                  idx % 2 === 1 ? "lg:translate-y-[103px]" : "",
-                ].join(" ")}
-              >
-                <div className="flex h-[96px] items-center px-8">
-                  <div className="flex w-full items-center gap-6">
-                    <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)] whitespace-nowrap">
-                      {c.tag}
-                    </div>
-                    <div className="w-[158px] text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                      {copy.cards?.[idx]?.subtitle}
-                    </div>
-                  </div>
-                </div>
-
-                <div className="mt-4 h-px w-full bg-[rgba(118,131,143,0.25)]" />
-
-                <div className="relative flex h-[255px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
-                  <img alt="" className="h-[208px] w-[208px] object-cover opacity-70 mix-blend-lighten" src={c.image} />
-                  <div className="absolute inset-0 bg-[#05090d]/20" />
-                  <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
-                </div>
-
-                <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-
-                <div className="px-8 pb-10 pt-10">
-                  <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
-                    {copy.cards?.[idx]?.title}
-                  </div>
-                  <div className="mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                    {copy.cards?.[idx]?.description}
-                  </div>
-                </div>
-              </div>
+                className={idx % 2 === 1 ? "lg:translate-y-[103px]" : undefined}
+                tag={c.tag}
+                subtitle={copy.cards?.[idx]?.subtitle}
+                title={copy.cards?.[idx]?.title}
+                description={copy.cards?.[idx]?.description}
+                videoSrc={`/card${idx + 1}-video.mp4`}
+              />
             ))}
           </div>
 
@@ -116,11 +88,9 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
                 {copy.systemsLead}
               </p>
             </div>
-            <div className="flex items-center gap-8">
+            <div className="flex items-center gap-10">
               <CtaPrimary label={dict.common.talkToSpecialist} />
-              <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-                {dict.common.seeHowItWorks} <span className="opacity-70">›</span>
-              </a>
+              <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
             </div>
           </div>
         </div>

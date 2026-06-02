@@ -1,8 +1,8 @@
 import { LogoCarousel } from "@/components/landing/logo-carousel";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
-const imgCaret = "https://www.figma.com/api/mcp/asset/891db62e-8032-4c26-afa2-0a054efd5811";
 const imgDivider = "https://www.figma.com/api/mcp/asset/f4bf4418-d9f2-4524-ba78-ed7b5af4794f";
 
 const cards = [
@@ -50,9 +50,9 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
           {copy.lead}
         </span>
       </p>
-      <a className="mt-10 inline-flex items-center gap-2 px-[37px] text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-        {dict.common.seeHowItWorks} <img alt="" className="size-4 opacity-80" src={imgCaret} />
-      </a>
+      <HowItWorksLink className="mt-10 px-[37px]" href="#">
+        {dict.common.seeHowItWorks}
+      </HowItWorksLink>
 
       <div
         className={[
@@ -111,9 +111,9 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
         <p className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
           {copy.systemsLead}
         </p>
-        <a className="mt-8 inline-flex items-center gap-2 px-[37px] text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-          {dict.common.seeHowItWorks} <img alt="" className="size-4 opacity-80" src={imgCaret} />
-        </a>
+        <HowItWorksLink className="mt-8 px-[37px]" href="#">
+          {dict.common.seeHowItWorks}
+        </HowItWorksLink>
       </div>
 
       <div className="mt-16 bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] pb-6 pt-0">

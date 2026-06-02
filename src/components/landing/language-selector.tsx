@@ -21,12 +21,12 @@ function stripLocalePrefix(pathname: string) {
 }
 
 export function LanguageSelector({
-  align = "left",
+  align,
   variant = "header",
   locale,
   labels,
 }: {
-  align?: "left" | "right";
+  align?: "left" | "center" | "right";
   variant?: "header" | "footer";
   locale: SupportedLocale;
   labels: { ptBR: string; enUS: string };
@@ -38,6 +38,7 @@ export function LanguageSelector({
   const rootRef = useRef<HTMLDivElement | null>(null);
 
   const currentLabel = getLocaleLabel(locale);
+  const menuAlign = align ?? (variant === "header" ? "center" : "left");
 
   const options = useMemo(
     () => [
@@ -112,8 +113,8 @@ export function LanguageSelector({
         <div
           role="menu"
           className={[
-            "absolute top-full z-50 mt-3 w-[190px] bg-[#081018] p-4 shadow-[0px_24px_120px_rgba(0,0,0,0.55)]",
-            align === "right" ? "right-0" : "left-0",
+            "absolute top-full z-50 mt-3 w-[158px] bg-[#081018] p-4 shadow-[0px_24px_120px_rgba(0,0,0,0.55)]",
+            menuAlign === "right" ? "right-0" : menuAlign === "center" ? "left-1/2 -translate-x-1/2" : "left-0",
           ].join(" ")}
         >
           <div className="flex flex-col gap-4">

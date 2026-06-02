@@ -3,8 +3,8 @@
 import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 
-const imgCaret = "https://www.figma.com/api/mcp/asset/566d19e4-485e-4caf-a6e3-e72036ed300b";
 const imgDivider = "https://www.figma.com/api/mcp/asset/1c6b07cc-8f6e-4f36-9ab8-afacfd3ead0f";
 
 type Row = { not: string; why: string; does: string };
@@ -32,9 +32,9 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
           {copy.lead}
         </span>
       </p>
-      <a className="mt-10 inline-flex items-center gap-2 px-[37px] text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-        {dict.common.seeHowItWorks} <img alt="" className="size-4 opacity-80" src={imgCaret} />
-      </a>
+      <HowItWorksLink className="mt-10 px-[37px]" href="#">
+        {dict.common.seeHowItWorks}
+      </HowItWorksLink>
 
       <div className="mt-14 -mx-6 border-b border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
         <div className="flex items-center px-6">

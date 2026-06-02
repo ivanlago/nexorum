@@ -1,6 +1,7 @@
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const imgUsMap = "https://www.figma.com/api/mcp/asset/4b138702-4a1c-482c-a24d-28c6020dba1e";
@@ -44,9 +45,7 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
 
           <div className="absolute left-6 top-[428px] flex w-[235px] flex-col gap-14 lg:left-[112px]">
             <CtaPrimary label={dict.common.talkToSpecialist} />
-            <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
-              {dict.common.seeHowItWorks} <span className="opacity-70">›</span>
-            </a>
+            <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
           </div>
         </div>
 
