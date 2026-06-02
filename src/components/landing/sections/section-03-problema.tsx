@@ -103,7 +103,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
   ] as const;
 
   return (
-    <section id="problema" className="relative w-full overflow-hidden pb-0 pt-6">
+    <section id="problema" className="relative w-full overflow-hidden pb-0 pt-5">
       <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
@@ -133,7 +133,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
 
-        <div className="mx-auto mt-20 w-full max-w-[1440px] px-6 lg:px-0">
+        <div className="mx-auto mt-[88px] w-full max-w-[1440px] px-6 lg:px-0">
           <div className="w-full border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
             <div className="overflow-x-auto">
               <div className="min-w-[1437px]">
@@ -218,7 +218,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
 
-        <LandingBenefitsMarquee className="mt-20" labels={benefits} />
+        <LandingBenefitsMarquee className="mt-[128px]" labels={benefits} />
       </div>
     </section>
   );

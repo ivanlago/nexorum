@@ -16,24 +16,26 @@ export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDiction
       <div className="mx-auto w-full max-w-[1440px]">
         <div className="relative w-full px-6 lg:px-0">
           <div className="mx-auto w-full max-w-[1440px]">
-            <div className="lg:absolute lg:left-[112px] lg:top-0 lg:w-[696px]">
-              <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] font-semibold leading-[0] text-[24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)] tracking-[0.24px] uppercase whitespace-pre-wrap">
-                {titleLines.map((line, idx) => (
-                  <p
-                    key={idx}
-                    className={idx === 0 ? "mb-0 flex items-baseline justify-start gap-3 leading-[1.6]" : "mb-0 leading-[1.6]"}
-                  >
-                    {idx === 0 ? <SectionIndex value="04" className="shrink-0" /> : null}
-                    {line}
-                  </p>
-                ))}
-              </h2>
-              <p className="mt-[49px] w-[592px] text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)] indent-[48px]">
-                {copy.lead}
-              </p>
+            <div className="lg:absolute lg:left-[112px] lg:top-0 lg:h-[158px] lg:w-[696px]">
+              <div className="relative h-[55px] w-[696px]">
+                <div className="absolute left-0 top-[7px] [font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
+                  <SectionIndex value="04" />
+                </div>
+                <h2 className="absolute left-0 top-1/2 w-[696px] -translate-y-1/2 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] text-[24px] font-semibold uppercase leading-[0] tracking-[0.24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)]">
+                  {titleLines.map((line, idx) => (
+                    <p key={idx} className="mb-0 leading-[1.6]">
+                      {idx === 0 ? <span className="inline-block w-[56px]" /> : null}
+                      {line}
+                    </p>
+                  ))}
+                </h2>
+              </div>
+              <div className="mt-[49px] ml-auto flex h-[54px] w-[592px] flex-col justify-center text-[14px] font-light leading-[0] text-[color:var(--primitive-colors-gray-200)]">
+                <p className="indent-[48px] leading-[1.6]">{copy.lead}</p>
+              </div>
             </div>
 
-            <div className="mt-12 lg:absolute lg:right-[112px] lg:top-[126px] lg:mt-0 lg:h-[595px] lg:w-[312px]">
+            <div className="mt-12 lg:absolute lg:right-[112px] lg:top-[108px] lg:mt-0 lg:h-[595px] lg:w-[312px]">
               <div className="relative flex h-full flex-col justify-between border-[0.5px] border-[rgba(26,42,56,1)] bg-gradient-to-b from-[rgba(8,15,22,0.28)] to-[rgba(8,15,22,0.72)] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
                 <div className="flex flex-col items-end justify-center gap-6">
                   <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)] whitespace-nowrap">
@@ -61,7 +63,7 @@ export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDiction
                 </div>
             </div>
 
-            <div className="mt-[128px] lg:mt-0 lg:pt-[276px]">
+            <div className="mt-[88px] lg:mt-0 lg:pt-[246px]">
               <div className="w-full lg:w-[1328px]">
                 <div className={divider} />
 

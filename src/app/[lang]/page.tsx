@@ -1,4 +1,5 @@
 import { notFound } from "next/navigation";
+import { LandingBenefitsMarquee } from "@/components/landing/landing-benefits-marquee";
 import { LandingMobilePage } from "@/components/landing/mobile/mobile-page";
 import { LandingSection01Features } from "@/components/landing/sections/section-01-features";
 import { LandingSection01Hero } from "@/components/landing/sections/section-01-hero";
@@ -10,6 +11,16 @@ import { LandingSection06Institucional } from "@/components/landing/sections/sec
 import { LandingSection07Footer } from "@/components/landing/sections/section-07-footer";
 import { defaultLocale, isSupportedLocale, type SupportedLocale } from "@/i18n/locales";
 import { getDictionary, hasLocale } from "./dictionaries";
+
+const benefits = [
+  "Prazo recuperável",
+  "Margem protegida",
+  "Evidência rastreável",
+  "Decisão antecipada",
+  "Dados integrados",
+  "Ação por responsável",
+  "Governança auditável",
+] as const;
 
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
@@ -29,6 +40,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <LandingSection02Operacoes dict={dict} />
         <LandingSection03Problema dict={dict} />
         <LandingSection04ComoAprende dict={dict} />
+        <LandingBenefitsMarquee className="mt-[52px]" labels={benefits} />
         <LandingSection05CamadaDecisoria dict={dict} />
         <LandingSection06Institucional dict={dict} />
         <LandingSection07Footer dict={dict} locale={locale} />

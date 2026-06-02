@@ -77,7 +77,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
             ))}
           </div>
 
-          <div className="mt-24">
+          <div className="mt-[120px]">
             <div className="w-full max-w-[720px]">
               <div className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase align-middle">
                 {copy.systemsHeading}
@@ -97,7 +97,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
           </div>
         </div>
 
-        <div className="mt-20 h-[145px] w-full overflow-hidden border-y border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
+        <div className="mt-[88px] h-[145px] w-full overflow-hidden border-y border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
           <div className="mx-auto flex h-full w-full max-w-[1440px] items-center px-6 lg:px-0">
             <div className="flex h-full w-[430px] shrink-0 items-center justify-center gap-6 border-[0.5px] border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10">
               <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">

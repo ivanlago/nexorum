@@ -10,15 +10,17 @@ const socialIcons = [
   { alt: "YouTube", src: "https://www.figma.com/api/mcp/asset/8b6c4bd8-bf72-4975-8881-c2790949824b" },
   { alt: "LinkedIn", src: "https://www.figma.com/api/mcp/asset/7e35ee1f-9196-45c6-b0cf-79ea77feba43" },
 ];
+const imgFooterTopDivider = "https://www.figma.com/api/mcp/asset/70ec18e5-f333-40f0-bf8e-0233b0407f14";
+const imgFooterMiddleDivider = "https://www.figma.com/api/mcp/asset/6fcb7a99-e67e-431d-a8ae-801ccd3f150d";
 
 export function LandingSection07Footer({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const copy = dict.footer as any;
 
   return (
-    <footer id="footer" className="relative w-full overflow-hidden pb-16 pt-10">
+    <footer id="footer" className="relative w-full overflow-hidden pb-16 pt-0">
       <LandingSectionBackground />
       <div className="mx-auto w-full max-w-[1440px]">
-        <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+        <img alt="" className="block h-px w-full" src={imgFooterTopDivider} />
 
 	        <div className="mx-auto mt-16 grid w-full max-w-[1216px] grid-cols-1 gap-12 px-6 lg:grid-cols-[244px_1fr] lg:gap-9 lg:px-0">
 	          <div className="flex flex-col items-end gap-20">
@@ -69,9 +71,9 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
 		          </div>
 		        </div>
 
-        <div className="mx-auto mt-16 w-full max-w-[1216px] px-6 lg:px-0">
-          <div className="h-px w-full bg-[rgba(118,131,143,0.18)]" />
-          <div className="mt-10 flex flex-col items-start justify-between gap-8 lg:flex-row lg:items-center">
+        <img alt="" className="mt-[64px] block h-px w-full" src={imgFooterMiddleDivider} />
+        <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
+          <div className="mt-[64px] flex flex-col items-start gap-8 lg:grid lg:grid-cols-[244px_1fr] lg:items-center">
             <div className="flex items-center gap-4">
               {socialIcons.map((s) => (
                 <div
@@ -87,21 +89,29 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
                 </Suspense>
               </div>
             </div>
-            <div className="text-[10px] text-[color:var(--primitive-colors-gray-300)]">
-              {copy.copyright}
+            <div className="w-full lg:mx-auto lg:grid lg:w-[745px] lg:grid-cols-3 lg:gap-14 lg:items-center">
+              <div className="whitespace-nowrap text-[10px] text-[color:var(--primitive-colors-gray-300)]">
+                {copy.copyright}
+              </div>
+              <a
+                className="mt-8 inline-flex items-center gap-[11px] text-[12px] font-normal leading-[18px] text-[color:var(--primitive-colors-gray-200)] lg:col-start-3 lg:mt-0"
+                href="#"
+              >
+                <span className="flex size-8 items-center justify-center">
+                  <img alt="" className="block size-8" src="/seta-cima.svg" />
+                </span>
+                <span>{copy.backToTop}</span>
+              </a>
             </div>
-            <a className="text-[12px] text-[color:var(--primitive-colors-gray-300)]" href="#">
-              {copy.backToTop}
-            </a>
           </div>
         </div>
 
-        <div className="mx-auto mt-16 w-full">
+        <div className="mx-auto mt-[63px] w-full">
           <div className="h-px w-full bg-[rgba(118,131,143,0.18)]" />
-          <p className="mx-auto mt-10 w-full max-w-[1216px] px-6 text-[10px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-300)] lg:px-0">
+          <p className="mx-auto mt-8 w-full max-w-[1216px] px-6 text-[10px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-300)] lg:px-0">
             {copy.disclaimer}
           </p>
-          <div className="mx-auto mt-10 h-px w-full bg-[rgba(118,131,143,0.18)]" />
+          <div className="mx-auto mt-8 h-px w-full bg-[rgba(118,131,143,0.18)]" />
         </div>
       </div>
     </footer>
