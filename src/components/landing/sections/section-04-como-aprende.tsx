@@ -107,12 +107,15 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
 	              <div className="relative h-[406.215px] w-[404px] max-w-full">
 	                <video
 	                  className="pointer-events-none absolute left-1/2 top-1/2 w-[404px] max-w-none -translate-x-1/2 -translate-y-1/2 select-none mix-blend-screen"
-	                  src="/aprende-video.mp4"
 	                  muted
 	                  autoPlay
 	                  loop
 	                  playsInline
-	                />
+	                >
+	                  <source src="/aprende-video.webm" type="video/webm" />
+	                  <source src="/aprende-video-h264.mp4" type="video/mp4" />
+	                  Seu navegador nao suporta a reproducao de videos.
+	                </video>
 	              </div>
 	            </div>
 

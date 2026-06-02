@@ -28,12 +28,15 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 	          <div className="pointer-events-none absolute left-1/2 top-[216px] z-0 h-[821px] w-[1440px] -translate-x-1/2 overflow-hidden">
 	            <video
 	              className="absolute left-1/2 top-1/2 h-full w-full -translate-x-1/2 -translate-y-1/2 object-cover opacity-70 mix-blend-plus-lighter"
-	              src="/hero-video.mp4"
 	              muted
 	              autoPlay
 	              loop
 	              playsInline
-	            />
+	            >
+	              <source src="/hero-video.webm" type="video/webm" />
+	              <source src="/hero-video-h264.mp4" type="video/mp4" />
+	              Seu navegador nao suporta a reproducao de videos.
+	            </video>
 	            <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-20 mix-blend-color" />
 	            <div className="absolute left-0 top-0 h-full w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] to-[#05090d]" />
 	            <div className="absolute right-0 top-0 h-full w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] to-[#05090d] rotate-180" />
