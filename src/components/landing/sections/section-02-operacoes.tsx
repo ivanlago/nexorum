@@ -26,12 +26,12 @@ const cards = [
 ];
 
 const logoRow = [
-  { alt: "deepseek", src: "/deepseek.png" },
-  { alt: "grok", src: "/Grok.png" },
-  { alt: "gemini", src: "/Gemini.png" },
-  { alt: "openai", src: "/openai.png" },
-  { alt: "metaai", src: "/metaai.png" },
-  { alt: "anthropic", src: "/anthropic.png" },
+  { alt: "deepseek", src: "/deepseek.png", width: 156.32, height: 33.265 },
+  { alt: "grok", src: "/Grok.png", width: 118.688, height: 48.928 },
+  { alt: "gemini", src: "/Gemini.png", width: 137.35, height: 41.909 },
+  { alt: "openai", src: "/openai.png", width: 115.057, height: 31.169 },
+  { alt: "metaai", src: "/metaai.png", width: 135.573, height: 32.929 },
+  { alt: "anthropic", src: "/anthropic.png", width: 145.087, height: 30.89 },
 ];
 
 export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary }) {
@@ -43,8 +43,10 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
       <LandingSectionBackground />
       <div className="relative mx-auto w-full max-w-[1440px]">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
-          <div className="ml-[520px]">
-              <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] font-semibold leading-[0] text-[24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)] tracking-[0.24px] uppercase whitespace-pre-wrap">
+          <div className="flex items-end justify-between">
+            <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+            <div className="flex w-full max-w-[696px] flex-col items-end gap-10">
+              <h2 className="[font-family:var(--font-orbitron)] w-full bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] font-semibold leading-[0] text-[24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)] tracking-[0.24px] uppercase whitespace-pre-wrap">
                 {headingLines.map((line, idx) => (
                   <p
                     key={idx}
@@ -55,12 +57,8 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
                   </p>
                 ))}
               </h2>
-          </div>
-          <div className="flex items-end justify-between">
-            <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
-            <div className="ml-auto max-w-[696px] text-left">              
-              <p className="mx-auto mt-10 max-w-[592px] text-left text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; {copy.lead}
+              <p className="w-[592px] text-left text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)] indent-[48px]">
+                {copy.lead}
               </p>
             </div>
           </div>
@@ -79,18 +77,22 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
             ))}
           </div>
 
-          <div className="mt-24 flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+          <div className="mt-24">
             <div className="w-full max-w-[720px]">
               <div className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase align-middle">
                 {copy.systemsHeading}
               </div>
-              <p className="mt-6 max-w-[592px] pl-[104px] indent-12 text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+            </div>
+
+            <div className="mt-6 flex flex-col items-start justify-between gap-10 lg:flex-row lg:items-center">
+              <p className="max-w-[592px] pl-[104px] indent-12 text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                 {copy.systemsLead}
               </p>
-            </div>
-            <div className="flex items-center gap-10">
-              <CtaPrimary label={dict.common.talkToSpecialist} />
-              <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+
+              <div className="flex items-center gap-10">
+                <CtaPrimary label={dict.common.talkToSpecialist} />
+                <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+              </div>
             </div>
           </div>
         </div>
@@ -105,8 +107,12 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
                 {copy.apisLead}
               </div>
             </div>
-            <div className="ml-[70px] h-[49px] flex-1 opacity-100">
-              <LogoCarousel logos={logoRow} itemClassName="max-h-[49px] h-auto" />
+            <div className="relative ml-[70px] h-[49px] flex-1 overflow-hidden opacity-100 after:pointer-events-none after:absolute after:inset-y-0 after:right-[-1px] after:z-10 after:w-24 after:bg-gradient-to-l after:from-[#080f16] after:via-[#080f16] after:to-[rgba(8,15,22,0)]">
+              <LogoCarousel
+                className="w-[calc(100%+96px)] pr-24"
+                logos={logoRow}
+                itemClassName="h-auto w-auto"
+              />
             </div>
           </div>
         </div>

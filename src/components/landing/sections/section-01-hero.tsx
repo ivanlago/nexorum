@@ -23,7 +23,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
   return (
     <section className="relative w-full overflow-hidden pt-0">
 	      <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_-40%,rgba(255,255,255,0.16),rgba(255,255,255,0)_60%)]" />
-	      <div className="relative mx-auto w-full max-w-[1440px]">
+	      <div className="relative mx-auto w-full max-w-[1440px] overflow-hidden">
 	        <div className="h-[1000px] w-full">
 	          <div className="pointer-events-none absolute left-1/2 top-[216px] z-0 h-[821px] w-[1440px] -translate-x-1/2 overflow-hidden">
 	            <video
@@ -38,7 +38,8 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 	            <div className="absolute left-0 top-0 h-full w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] to-[#05090d]" />
 	            <div className="absolute right-0 top-0 h-full w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] to-[#05090d] rotate-180" />
 	            <div className="absolute left-1/2 top-0 h-[154px] w-[1441px] -translate-x-1/2 bg-gradient-to-b from-[#05090d] to-[rgba(5,9,13,0)]" />
-	            <div className="absolute bottom-[-47px] left-1/2 h-[154px] w-[1441px] -translate-x-1/2 bg-gradient-to-b from-[rgba(5,9,13,0)] to-[#05090d]" />
+	            <div className="absolute inset-x-0 bottom-0 h-[228px] bg-gradient-to-b from-[rgba(5,9,13,0)] via-[rgba(5,9,13,0.42)] via-[58%] to-[#05090d]" />
+	            <div className="absolute inset-x-0 bottom-0 h-[104px] bg-[linear-gradient(180deg,rgba(5,9,13,0)_0%,rgba(5,9,13,0.72)_72%,#05090d_100%)] blur-[22px]" />
 	          </div>
 
           <div className="absolute left-0 top-0 h-[1000px] w-full">
@@ -62,7 +63,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
             </div>
           </div>
 
-          <div className="absolute left-1/2 top-0 z-10 flex w-screen -translate-x-1/2 flex-col items-center">
+          <div className="absolute inset-x-0 top-0 z-10 flex w-full flex-col items-center">
             <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
             <div className="relative mt-[39px] w-full max-w-[1216px] px-6 lg:px-0">
               <a className="absolute left-0 top-0 flex items-center gap-2" href={`/${locale}`}>

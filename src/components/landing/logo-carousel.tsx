@@ -3,6 +3,8 @@ import type { CSSProperties } from "react";
 type LogoItem = {
   alt: string;
   src: string;
+  width?: number;
+  height?: number;
 };
 
 type LogoCarouselProps = {
@@ -28,12 +30,24 @@ export function LogoCarousel({ logos, durationSeconds = 22, className = "", item
       <div className="flex w-max animate-logo-marquee items-center gap-10 will-change-transform group-hover:[animation-play-state:paused] motion-reduce:animate-none" style={style}>
         <div className="flex items-center gap-10 pr-10">
           {logos.map((l) => (
-            <img key={l.alt} alt={l.alt} className={[itemClassName, "w-auto object-contain"].join(" ")} src={l.src} />
+            <img
+              key={l.alt}
+              alt={l.alt}
+              className={[itemClassName, "shrink-0 object-contain"].join(" ")}
+              src={l.src}
+              style={l.width || l.height ? { width: l.width, height: l.height } : undefined}
+            />
           ))}
         </div>
         <div aria-hidden className="flex items-center gap-10 pr-10">
           {logos.map((l) => (
-            <img key={`${l.alt}-dup`} alt="" className={[itemClassName, "w-auto object-contain"].join(" ")} src={l.src} />
+            <img
+              key={`${l.alt}-dup`}
+              alt=""
+              className={[itemClassName, "shrink-0 object-contain"].join(" ")}
+              src={l.src}
+              style={l.width || l.height ? { width: l.width, height: l.height } : undefined}
+            />
           ))}
         </div>
       </div>

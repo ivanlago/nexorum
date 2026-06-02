@@ -79,7 +79,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
   const rows = useMemo(() => semInfra, [semInfra]);
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
-  const tableGridCols = "grid-cols-[343px_593px_391px]";
+  const tableGridCols = "grid-cols-[110px_347px_589px_281px_110px]";
   const hoverRowBg =
     "after:content-[''] after:absolute after:inset-0 after:z-0 after:pointer-events-none after:bg-[linear-gradient(90deg,rgba(255,255,255,0)_40.865%,rgba(255,255,255,0.5)_100%),linear-gradient(90deg,#0B72B8_0%,#0B72B8_100%)] after:opacity-0 after:transition-opacity after:duration-600 after:ease-in-out after:delay-320 hover:after:delay-120 hover:after:opacity-100";
   const hoverRowText = "transition-colors duration-600 ease-in-out delay-320 hover:delay-120";
@@ -139,15 +139,14 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
               <div className="min-w-[1437px]">
                 <div
                   className={[
-                    "grid items-center py-6",
+                    "grid h-[42px] items-center bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]",
                     tableGridCols,
                     "[font-family:var(--font-orbitron)] text-[12px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                    "px-[110px]",
                   ].join(" ")}
                 >
-                  <div>{copy.tableHeaders?.problems}</div>
-                  <div>{copy.tableHeaders?.appears}</div>
-                  <div>{copy.tableHeaders?.impact}</div>
+                  <div className="col-start-2">{copy.tableHeaders?.problems}</div>
+                  <div className="col-start-3">{copy.tableHeaders?.appears}</div>
+                  <div className="col-start-4">{copy.tableHeaders?.impact}</div>
                 </div>
                 <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
 
@@ -158,12 +157,12 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                       "group relative isolate w-full",
                       // In "Camada decisória", the zebra contrast comes from the row highlight background
                       // over the table container background, not from two competing row backgrounds.
-                      idx % 2 === 0 ? "bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]" : "",
+                      idx % 2 === 1 ? "bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]" : "",
                       hoverRowBg,
                     ].join(" ")}
                   >
-                    <div className={["relative z-10 grid items-center py-7 px-[110px]", tableGridCols].join(" ")}>
-                      <div className="flex items-center gap-4">
+                    <div className={["relative z-10 grid h-[97px] items-center", tableGridCols].join(" ")}>
+                      <div className="col-start-2 flex items-center gap-4">
                         <span
                           className={[
                             "inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)]",
@@ -185,7 +184,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                       </div>
                       <div
                         className={[
-                          "flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          "col-start-3 flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
                           hoverRowText,
                           "group-hover:text-white",
                         ].join(" ")}
@@ -203,7 +202,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                       </div>
                       <div
                         className={[
-                          "text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          "col-start-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
                           hoverRowText,
                           "group-hover:text-white",
                         ].join(" ")}
