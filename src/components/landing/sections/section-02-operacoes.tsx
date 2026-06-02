@@ -9,15 +9,19 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 const cards = [
   {
     tag: "[ 01 ]",
+    image: "/operacoes-image1.png",
   },
   {
     tag: "[ 02 ]",
+    image: "/operacoes-image2.png",
   },
   {
     tag: "[ 03 ]",
+    image: "/operacoes-image3.png",
   },
   {
     tag: "[ 04 ]",
+    image: "/operacoes-image4.png",
   },
 ];
 
@@ -65,6 +69,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
                 key={c.tag}
                 className={idx % 2 === 1 ? "lg:translate-y-[103px]" : undefined}
                 tag={c.tag}
+                subtitle={copy.cards?.[idx]?.subtitle}
                 title={copy.cards?.[idx]?.title}
                 description={copy.cards?.[idx]?.description}
                 videoWebmSrc={`/card${idx + 1}-video.webm`}
