@@ -26,7 +26,7 @@ export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; l
   return (
     <div className="relative mx-auto w-full max-w-[375px]">
       <MobileSection01Hero dict={dict} locale={locale} />
-      <MobileSection01Image />
+      <MobileSection01Image dict={dict} />
       <MobileSection01Carousel dict={dict} />
       <MobileSection02Operacoes dict={dict} />
       <MobileSection03Problema dict={dict} />

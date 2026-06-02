@@ -5,7 +5,8 @@
     "siteDescription": "Nexorum official website",
     "welcome": "Welcome!",
     "seeHowItWorks": "See how it works",
-    "talkToSpecialist": "Talk to a specialist"
+    "talkToSpecialist": "Talk to a specialist",
+    "videoUnsupported": "Your browser does not support video playback."
   },
   "hero": {
     "headline": "ANTICIPATE IMPACTS, PROTECT\nMARGIN AND GOVERN DECISIONS\nWITH ARTIFICIAL INTELLIGENCE.",

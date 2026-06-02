@@ -6,6 +6,7 @@ export type LandingDictionary = {
     welcome: string;
     seeHowItWorks: string;
     talkToSpecialist: string;
+    videoUnsupported: string;
   };
   hero: {
     headline: string;

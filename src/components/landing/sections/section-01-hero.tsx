@@ -35,7 +35,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 	            >
 	              <source src="/hero-video.webm" type="video/webm" />
 	              <source src="/hero-video-h264.mp4" type="video/mp4" />
-	              Seu navegador nao suporta a reproducao de videos.
+	              {dict.common.videoUnsupported}
 	            </video>
 	            <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-20 mix-blend-color" />
 	            <div className="absolute left-0 top-0 h-full w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] to-[#05090d]" />

@@ -114,7 +114,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
 	                >
 	                  <source src="/aprende-video.webm" type="video/webm" />
 	                  <source src="/aprende-video-h264.mp4" type="video/mp4" />
-	                  Seu navegador nao suporta a reproducao de videos.
+	                  {dict.common.videoUnsupported}
 	                </video>
 	              </div>
 	            </div>
