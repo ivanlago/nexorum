@@ -48,7 +48,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
     <section id="como-aprende" className="relative mt-[52px] w-full overflow-hidden pb-0 pt-[72px]">
       <LandingSectionBackground />
 
-      <div className="relative mx-auto w-full max-w-[1440px]">
+      <div className="relative w-full">
         <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_1fr_340px] lg:items-start lg:px-0">
           <div className="relative flex flex-col lg:h-[612px] lg:w-[240px] lg:self-start">
             <div className="absolute left-0 top-[-85px] h-[168px] w-[237px] opacity-80">

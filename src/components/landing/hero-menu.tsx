@@ -60,7 +60,7 @@ export function HeroMenu({
             onClick={() => setOpen(false)}
           />
           <div className="absolute inset-0">
-            <div className="relative mx-auto h-full w-full max-w-[1440px] px-6 lg:px-0">
+            <div className="relative h-full w-full px-6 lg:px-0">
               <aside
                 id={titleId}
                 role="dialog"

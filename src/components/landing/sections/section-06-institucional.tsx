@@ -15,7 +15,7 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
   return (
     <section id="institucional" className="relative w-full overflow-hidden pb-32 pt-0">
       <LandingSectionBackground />
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="w-full">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
           <div className="ml-[520px] h-[149px] w-[696px]">
             <div className="relative h-[55px] w-[696px]">

@@ -23,7 +23,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
   return (
     <section className="relative w-full overflow-hidden pt-0">
 	      <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_-40%,rgba(255,255,255,0.16),rgba(255,255,255,0)_60%)]" />
-	      <div className="relative mx-auto w-full max-w-[1440px] overflow-hidden">
+	      <div className="relative w-full overflow-hidden">
 	        <div className="h-[1000px] w-full">
 	          <div className="pointer-events-none absolute left-1/2 top-[216px] z-0 h-[821px] w-[1440px] -translate-x-1/2 overflow-hidden">
 	            <video

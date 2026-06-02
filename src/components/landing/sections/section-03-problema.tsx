@@ -105,7 +105,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
   return (
     <section id="problema" className="relative w-full overflow-hidden pb-0 pt-5">
       <LandingSectionBackground />
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="w-full">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
           <div className="ml-[520px]">
             <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] font-semibold leading-[0] text-[24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)] tracking-[0.24px] uppercase whitespace-pre-wrap">
@@ -133,7 +133,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
 
-        <div className="mx-auto mt-[88px] w-full max-w-[1440px] px-6 lg:px-0">
+        <div className="mx-auto mt-[88px] w-full px-6 lg:px-0">
           <div className="w-full border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
             <div className="overflow-x-auto">
               <div className="min-w-[1437px]">

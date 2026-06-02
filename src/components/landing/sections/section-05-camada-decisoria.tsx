@@ -13,9 +13,9 @@ export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDiction
   return (
     <section id="camada-decisoria" className="relative w-full overflow-hidden py-28">
       <LandingSectionBackground />
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="w-full">
         <div className="relative w-full px-6 lg:px-0">
-          <div className="mx-auto w-full max-w-[1440px]">
+          <div className="relative mx-auto w-full max-w-[1440px]">
             <div className="lg:absolute lg:left-[112px] lg:top-0 lg:h-[158px] lg:w-[696px]">
               <div className="relative h-[55px] w-[696px]">
                 <div className="absolute left-0 top-[7px] [font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">

@@ -27,7 +27,7 @@ export function LandingSection01Features({ dict }: { dict: LandingDictionary }) 
 
   return (
     <section className="relative z-20 -mt-[116px] w-full overflow-hidden pb-0 pt-0">
-      <div className="relative mx-auto w-full max-w-[1440px] px-6 lg:px-0">
+      <div className="relative w-full px-6 lg:px-0">
         <div className="relative w-full overflow-hidden">
           <div className="pointer-events-none absolute inset-0 opacity-70">
             <img alt="" className="absolute inset-0 size-full object-cover" src={imgBgVector1} />

@@ -19,7 +19,7 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
   return (
     <footer id="footer" className="relative w-full overflow-hidden pb-16 pt-0">
       <LandingSectionBackground />
-      <div className="mx-auto w-full max-w-[1440px]">
+      <div className="w-full">
         <img alt="" className="block h-px w-full" src={imgFooterTopDivider} />
 
 	        <div className="mx-auto mt-16 grid w-full max-w-[1216px] grid-cols-1 gap-12 px-6 lg:grid-cols-[244px_1fr] lg:gap-9 lg:px-0">

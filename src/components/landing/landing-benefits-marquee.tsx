@@ -9,7 +9,7 @@ export function LandingBenefitsMarquee({ labels, className = "" }: Props) {
   return (
     <div
       className={[
-        "mx-auto h-[111px] w-full max-w-[1440px] overflow-hidden bg-gradient-to-r from-[rgba(8,16,24,0)] via-[#081018] via-[52.885%] to-[rgba(8,16,24,0)] px-6 lg:px-0",
+        "h-[111px] w-full overflow-hidden bg-gradient-to-r from-[rgba(8,16,24,0)] via-[#081018] via-[52.885%] to-[rgba(8,16,24,0)] px-6 lg:px-0",
         className,
       ].join(" ")}
     >
@@ -34,4 +34,3 @@ export function LandingBenefitsMarquee({ labels, className = "" }: Props) {
     </div>
   );
 }
-

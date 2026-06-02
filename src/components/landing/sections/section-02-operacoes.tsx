@@ -41,7 +41,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
   return (
     <section id="operacoes" className="relative w-full overflow-hidden py-28">
       <LandingSectionBackground />
-      <div className="relative mx-auto w-full max-w-[1440px]">
+      <div className="relative w-full">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
           <div className="flex items-end justify-between">
             <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
