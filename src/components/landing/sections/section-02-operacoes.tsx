@@ -72,7 +72,8 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
                 subtitle={copy.cards?.[idx]?.subtitle}
                 title={copy.cards?.[idx]?.title}
                 description={copy.cards?.[idx]?.description}
-                videoSrc={`/card${idx + 1}-video.mp4`}
+                videoWebmSrc={`/card${idx + 1}-video.webm`}
+                videoMp4Src={`/card${idx + 1}-video-h264.mp4`}
               />
             ))}
           </div>

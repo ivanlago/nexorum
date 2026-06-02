@@ -3,7 +3,8 @@ type Props = {
   subtitle: string;
   title: string;
   description: string;
-  videoSrc: string;
+  videoWebmSrc: string;
+  videoMp4Src: string;
   className?: string;
 };
 
@@ -19,7 +20,7 @@ const imgCardTexture01 = "https://www.figma.com/api/mcp/asset/7be2047f-b412-4ac4
 const imgCardTexture02 = "https://www.figma.com/api/mcp/asset/0b60c6d8-aeec-46ba-854b-a62fabcd6838";
 const imgCardMask = "https://www.figma.com/api/mcp/asset/5132c607-91dc-4dc9-9f2b-7606f9a5e587";
 
-export function OperationsCard({ tag, subtitle, title, description, videoSrc, className }: Props) {
+export function OperationsCard({ tag, subtitle, title, description, videoWebmSrc, videoMp4Src, className }: Props) {
   return (
     <div className={["relative mx-auto w-full max-w-[280px]", className].filter(Boolean).join(" ")}>
       <div className="pointer-events-none absolute left-0 top-[-85px] z-20 h-[168px] w-[280px] opacity-50">
@@ -95,12 +96,15 @@ export function OperationsCard({ tag, subtitle, title, description, videoSrc, cl
           >
             <video
               className="absolute inset-0 h-full w-full object-cover"
-              src={videoSrc}
               muted
               autoPlay
               loop
               playsInline
-            />
+            >
+              <source src={videoWebmSrc} type="video/webm" />
+              <source src={videoMp4Src} type="video/mp4" />
+              Seu navegador nao suporta a reproducao de videos.
+            </video>
           </div>
         </div>
 
