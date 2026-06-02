@@ -68,9 +68,15 @@ export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDiction
                 <div className={divider} />
 
                 <div className="relative mt-3 h-[7px] w-full [font-family:var(--font-orbitron)] text-[12px] font-semibold leading-none text-[color:var(--primitive-colors-gray-200)] whitespace-nowrap">
-                  <div className="absolute left-[112px] top-[calc(50%+2px)] -translate-y-1/2">{tableHeader?.not}</div>
-                  <div className="absolute left-[359px] top-[calc(50%+2px)] -translate-y-1/2">{tableHeader?.why}</div>
-                  <div className="absolute left-[705px] top-[calc(50%+2px)] -translate-y-1/2">{tableHeader?.does}</div>
+                  <div className="absolute left-[112px] top-[calc(50%+3px)] flex h-[12px] items-center -translate-y-1/2">
+                    {tableHeader?.not}
+                  </div>
+                  <div className="absolute left-[359px] top-[calc(50%+3px)] flex h-[12px] items-center -translate-y-1/2">
+                    {tableHeader?.why}
+                  </div>
+                  <div className="absolute left-[705px] top-[calc(50%+3px)] flex h-[12px] items-center -translate-y-1/2">
+                    {tableHeader?.does}
+                  </div>
                 </div>
 
                 <div className="mt-6 flex w-full flex-col">
