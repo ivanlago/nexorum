@@ -1,0 +1,442 @@
+<!doctype html>
+<html lang="pt-BR">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Nexorum video background removal demo</title>
+    <style>
+      :root {
+        color-scheme: dark;
+        background: #05090d;
+        color: #c3d2da;
+        font-family: Inter, Arial, sans-serif;
+      }
+
+      body {
+        margin: 0;
+        min-height: 100vh;
+        background:
+          radial-gradient(circle at 50% 0%, rgba(108, 181, 255, 0.08), transparent 32rem),
+          #05090d;
+      }
+
+      main {
+        width: min(1120px, calc(100vw - 48px));
+        margin: 0 auto;
+        padding: 48px 0 80px;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: 20px;
+        line-height: 1.35;
+        font-weight: 650;
+        text-transform: uppercase;
+        letter-spacing: 0;
+      }
+
+      p {
+        max-width: 760px;
+        margin: 0 0 28px;
+        color: #8fa2b1;
+        font-size: 14px;
+        line-height: 1.6;
+      }
+
+      .controls {
+        display: grid;
+        grid-template-columns: repeat(3, minmax(160px, 1fr));
+        gap: 16px;
+        margin-bottom: 32px;
+        padding: 16px;
+        border: 1px solid rgba(118, 131, 143, 0.25);
+        background: rgba(8, 15, 22, 0.72);
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        color: #a7b8c6;
+        font-size: 12px;
+      }
+
+      input {
+        width: 100%;
+      }
+
+      .grid {
+        display: grid;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 24px;
+      }
+
+      .card {
+        min-height: 420px;
+        border: 1px solid rgba(26, 42, 56, 0.9);
+        background: linear-gradient(180deg, rgba(8, 15, 22, 0.55), #080f16);
+        overflow: hidden;
+      }
+
+      .cardHeader,
+      .cardFooter {
+        padding: 20px;
+      }
+
+      .cardHeader {
+        min-height: 58px;
+        border-bottom: 1px solid rgba(118, 131, 143, 0.25);
+        color: #6cb5ff;
+        font-size: 12px;
+        font-weight: 700;
+      }
+
+      .stage {
+        position: relative;
+        display: grid;
+        place-items: center;
+        height: 240px;
+        overflow: hidden;
+        isolation: isolate;
+        background: rgba(5, 9, 13, 0.45);
+      }
+
+      .stage::before {
+        content: "";
+        position: absolute;
+        inset: 0;
+        background-image:
+          linear-gradient(rgba(118, 131, 143, 0.08) 1px, transparent 1px),
+          linear-gradient(90deg, rgba(118, 131, 143, 0.08) 1px, transparent 1px);
+        background-size: 24px 24px;
+        opacity: 0.42;
+      }
+
+      video {
+        display: none;
+      }
+
+      canvas {
+        position: relative;
+        z-index: 1;
+        width: 172px;
+        height: 306px;
+        mix-blend-mode: lighten;
+        filter: contrast(1.06) saturate(1.08);
+      }
+
+      .cardFooter {
+        border-top: 1px solid rgba(118, 131, 143, 0.25);
+      }
+
+      .cardFooter strong {
+        display: block;
+        margin-bottom: 10px;
+        color: #c3d2da;
+        font-size: 14px;
+      }
+
+      .cardFooter span {
+        color: #8fa2b1;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      .handoff {
+        margin-top: 40px;
+        padding: 24px;
+        border: 1px solid rgba(118, 131, 143, 0.25);
+        background: rgba(8, 15, 22, 0.82);
+      }
+
+      .handoff h2 {
+        margin: 0 0 16px;
+        color: #c3d2da;
+        font-size: 16px;
+        line-height: 1.4;
+        text-transform: uppercase;
+      }
+
+      .handoff ol {
+        margin: 0 0 20px;
+        padding-left: 20px;
+        color: #a7b8c6;
+        font-size: 13px;
+        line-height: 1.7;
+      }
+
+      .handoff code,
+      .handoff pre {
+        font-family: Consolas, "Courier New", monospace;
+      }
+
+      .handoff pre {
+        overflow-x: auto;
+        margin: 0;
+        padding: 16px;
+        border: 1px solid rgba(118, 131, 143, 0.18);
+        background: #05090d;
+        color: #c3d2da;
+        font-size: 12px;
+        line-height: 1.55;
+      }
+
+      @media (max-width: 900px) {
+        .grid {
+          grid-template-columns: repeat(2, 1fr);
+        }
+      }
+
+      @media (max-width: 560px) {
+        .controls,
+        .grid {
+          grid-template-columns: 1fr;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <h1>Demonstração: remover a marcação do fundo do vídeo</h1>
+      <p>
+        Esta versão não usa apenas blend mode. Ela processa o vídeo em canvas e transforma pixels de fundo
+        em transparência, preservando os objetos centrais. Ajuste os controles até o fundo desaparecer sem
+        destruir o objeto.
+      </p>
+
+      <div class="controls">
+        <label>
+          Corte do fundo: <output id="thresholdOut">92</output>
+          <input id="threshold" type="range" min="40" max="170" value="92" />
+        </label>
+        <label>
+          Suavidade: <output id="softnessOut">46</output>
+          <input id="softness" type="range" min="8" max="90" value="46" />
+        </label>
+        <label>
+          Realce do objeto: <output id="boostOut">1.28</output>
+          <input id="boost" type="range" min="80" max="180" value="128" />
+        </label>
+      </div>
+
+      <section class="grid">
+        <article class="card">
+          <div class="cardHeader">[ 01 ]</div>
+          <div class="stage">
+            <video src="card1-video.webm" muted autoplay loop playsinline></video>
+            <canvas width="344" height="612"></canvas>
+          </div>
+          <div class="cardFooter">
+            <strong>Horas de observação</strong>
+            <span>Fundo removido por luma key, com blend lighten no canvas.</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cardHeader">[ 02 ]</div>
+          <div class="stage">
+            <video src="card2-video.webm" muted autoplay loop playsinline></video>
+            <canvas width="344" height="612"></canvas>
+          </div>
+          <div class="cardFooter">
+            <strong>Dados reais de execução</strong>
+            <span>O preenchimento do vídeo deixa de marcar a área.</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cardHeader">[ 03 ]</div>
+          <div class="stage">
+            <video src="card3-video.webm" muted autoplay loop playsinline></video>
+            <canvas width="344" height="612"></canvas>
+          </div>
+          <div class="cardFooter">
+            <strong>Pontos de perda</strong>
+            <span>Objetos centrais continuam visíveis sobre o fundo do card.</span>
+          </div>
+        </article>
+
+        <article class="card">
+          <div class="cardHeader">[ 04 ]</div>
+          <div class="stage">
+            <video src="card4-video.webm" muted autoplay loop playsinline></video>
+            <canvas width="344" height="612"></canvas>
+          </div>
+          <div class="cardFooter">
+            <strong>Validada por especialistas</strong>
+            <span>Esta abordagem substitui o elemento de vídeo visível por canvas.</span>
+          </div>
+        </article>
+      </section>
+
+      <section class="handoff">
+        <h2>Orientacao para aplicar no site real</h2>
+        <ol>
+          <li>Aplicar somente nos quatro videos da secao [01]: <code>/card1-video.webm</code>, <code>/card2-video.webm</code>, <code>/card3-video.webm</code> e <code>/card4-video.webm</code>.</li>
+          <li>Manter o <code>video</code> original escondido e desenhar cada frame em um <code>canvas</code>.</li>
+          <li>Preservar a proporcao vertical dos arquivos: eles sao <code>720x1280</code>. Nesta demo, o canvas esta em <code>172x306</code>.</li>
+          <li>Usar luma key no canvas para transformar o fundo gravado do video em transparencia.</li>
+          <li>Aplicar <code>mix-blend-mode: lighten</code> no canvas, nao apenas no wrapper.</li>
+          <li>Remover ou reduzir o halo/blur atras do video, porque ele volta a marcar o fundo.</li>
+        </ol>
+
+        <pre><code>/* CSS principal */
+.cardVideoStage {
+  overflow: hidden;
+  isolation: isolate;
+}
+
+.cardVideoCanvas {
+  width: 172px;
+  height: 306px;
+  mix-blend-mode: lighten;
+}
+
+/* Valores usados nesta demo */
+const threshold = 92;
+const softness = 46;
+const boost = 1.28;
+
+/* Desenhar sem deformar */
+const videoRatio = video.videoWidth / video.videoHeight;
+const canvasRatio = canvas.width / canvas.height;
+let drawWidth = canvas.width;
+let drawHeight = canvas.height;
+let drawX = 0;
+let drawY = 0;
+
+if (videoRatio > canvasRatio) {
+  drawHeight = canvas.height;
+  drawWidth = drawHeight * videoRatio;
+  drawX = (canvas.width - drawWidth) / 2;
+} else {
+  drawWidth = canvas.width;
+  drawHeight = drawWidth / videoRatio;
+  drawY = (canvas.height - drawHeight) / 2;
+}
+
+ctx.drawImage(video, drawX, drawY, drawWidth, drawHeight);
+
+/* Remover fundo por luminancia */
+const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+const data = frame.data;
+
+for (let i = 0; i < data.length; i += 4) {
+  const r = data[i];
+  const g = data[i + 1];
+  const b = data[i + 2];
+  const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+  const alpha = Math.min(1, Math.max(0, (luma - threshold) / softness));
+
+  data[i] = Math.min(255, r * boost);
+  data[i + 1] = Math.min(255, g * boost);
+  data[i + 2] = Math.min(255, b * boost);
+  data[i + 3] = Math.round(255 * alpha);
+}
+
+ctx.putImageData(frame, 0, 0);</code></pre>
+      </section>
+    </main>
+
+    <script>
+      const thresholdInput = document.querySelector("#threshold");
+      const softnessInput = document.querySelector("#softness");
+      const boostInput = document.querySelector("#boost");
+      const thresholdOut = document.querySelector("#thresholdOut");
+      const softnessOut = document.querySelector("#softnessOut");
+      const boostOut = document.querySelector("#boostOut");
+      const pairs = [...document.querySelectorAll(".stage")].map((stage) => ({
+        video: stage.querySelector("video"),
+        canvas: stage.querySelector("canvas"),
+      }));
+
+      function clamp(value, min, max) {
+        return Math.min(max, Math.max(min, value));
+      }
+
+      function draw() {
+        const threshold = Number(thresholdInput.value);
+        const softness = Number(softnessInput.value);
+        const boost = Number(boostInput.value) / 100;
+
+        thresholdOut.value = threshold;
+        softnessOut.value = softness;
+        boostOut.value = boost.toFixed(2);
+
+        for (const { video, canvas } of pairs) {
+          if (video.readyState < 2) continue;
+
+          const ctx = canvas.getContext("2d");
+          ctx.clearRect(0, 0, canvas.width, canvas.height);
+          const videoRatio = video.videoWidth / video.videoHeight;
+          const canvasRatio = canvas.width / canvas.height;
+          let drawWidth = canvas.width;
+          let drawHeight = canvas.height;
+          let drawX = 0;
+          let drawY = 0;
+
+          if (videoRatio > canvasRatio) {
+            drawHeight = canvas.height;
+            drawWidth = drawHeight * videoRatio;
+            drawX = (canvas.width - drawWidth) / 2;
+          } else {
+            drawWidth = canvas.width;
+            drawHeight = drawWidth / videoRatio;
+            drawY = (canvas.height - drawHeight) / 2;
+          }
+
+          ctx.drawImage(video, drawX, drawY, drawWidth, drawHeight);
+
+          const frame = ctx.getImageData(0, 0, canvas.width, canvas.height);
+          const data = frame.data;
+
+          for (let i = 0; i < data.length; i += 4) {
+            const r = data[i];
+            const g = data[i + 1];
+            const b = data[i + 2];
+            const luma = 0.299 * r + 0.587 * g + 0.114 * b;
+            const alpha = clamp((luma - threshold) / softness, 0, 1);
+
+            data[i] = clamp(r * boost, 0, 255);
+            data[i + 1] = clamp(g * boost, 0, 255);
+            data[i + 2] = clamp(b * boost, 0, 255);
+            data[i + 3] = Math.round(255 * alpha);
+          }
+
+          const sharpened = new Uint8ClampedArray(data);
+          const amount = 0.18;
+          const width = canvas.width;
+          const height = canvas.height;
+
+          for (let y = 1; y < height - 1; y += 1) {
+            for (let x = 1; x < width - 1; x += 1) {
+              const i = (y * width + x) * 4;
+              const left = i - 4;
+              const right = i + 4;
+              const top = i - width * 4;
+              const bottom = i + width * 4;
+
+              for (let channel = 0; channel < 3; channel += 1) {
+                const value =
+                  data[i + channel] * (1 + amount * 4) -
+                  amount *
+                    (data[left + channel] +
+                      data[right + channel] +
+                      data[top + channel] +
+                      data[bottom + channel]);
+
+                sharpened[i + channel] = clamp(value, 0, 255);
+              }
+            }
+          }
+
+          frame.data.set(sharpened);
+          ctx.putImageData(frame, 0, 0);
+        }
+
+        requestAnimationFrame(draw);
+      }
+
+      Promise.all(pairs.map(({ video }) => video.play().catch(() => null))).finally(draw);
+    </script>
+  </body>
+</html>
