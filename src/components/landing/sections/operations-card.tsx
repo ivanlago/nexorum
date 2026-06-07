@@ -62,8 +62,8 @@ export function OperationsCard({
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 h-px w-[280px]">
-            <div className="absolute inset-[-0.25px_0]">
+          <div className="absolute bottom-0 left-0 h-[0.5px] w-[280px]">
+            <div className="absolute inset-0">
               <img alt="" className="block size-full max-w-none" src={imgCardDivider} />
             </div>
           </div>
@@ -102,8 +102,8 @@ export function OperationsCard({
           </div>
         </div>
 
-        <div className="absolute left-0 top-[358px] z-10 h-px w-[280px]">
-          <div className="absolute inset-[-0.25px_0]">
+        <div className="absolute left-0 top-[358px] z-10 h-[0.5px] w-[280px]">
+          <div className="absolute inset-0">
             <img alt="" className="block size-full max-w-none" src={imgCardDivider} />
           </div>
         </div>
