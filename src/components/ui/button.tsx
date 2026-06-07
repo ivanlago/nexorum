@@ -86,10 +86,10 @@ export function Button({
       </span>
 
       {highlights === null ? null : highlights ?? (
-        <>
-          <span className="absolute left-[69.5px] top-0 h-px w-[119px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)] transition-opacity duration-300 group-hover:opacity-100" />
-          <span className="absolute left-[4.5px] top-[45px] h-px w-[98px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)] transition-opacity duration-300 group-hover:opacity-100" />
-        </>
+        <span className="pointer-events-none absolute inset-1 z-20 overflow-hidden">
+          <span className="absolute left-[65.5px] top-px h-px w-[119px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.52)] to-[rgba(255,255,255,0)] transition-opacity duration-300 group-hover:opacity-100" />
+          <span className="absolute bottom-0 left-[0.5px] h-px w-[98px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)] transition-opacity duration-300 group-hover:opacity-100" />
+        </span>
       )}
     </button>
   );
