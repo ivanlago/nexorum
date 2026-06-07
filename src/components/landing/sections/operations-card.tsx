@@ -44,7 +44,6 @@ export function OperationsCard({
           "border-[0.5px] border-[color:var(--primitive-colors-gray-600)]",
           "bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]",
           "px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]",
-          "flex flex-col items-center justify-center gap-10",
         ].join(" ")}
       >
         <div className="pointer-events-none absolute left-0 top-[-85px] z-0 h-[168px] w-[280px]">
@@ -53,8 +52,8 @@ export function OperationsCard({
           </div>
         </div>
 
-        <div className="relative z-10 flex w-full flex-col items-center gap-10">
-          <div className="flex w-full items-center gap-6">
+        <div className="absolute left-0 top-10 z-10 h-[63px] w-full">
+          <div className="flex w-full items-center gap-6 px-8">
             <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)] whitespace-nowrap">
               {tag}
             </div>
@@ -63,14 +62,14 @@ export function OperationsCard({
             </div>
           </div>
 
-          <div className="relative h-px w-[280px] shrink-0">
+          <div className="absolute bottom-0 left-0 h-px w-[280px]">
             <div className="absolute inset-[-0.25px_0]">
               <img alt="" className="block size-full max-w-none" src={imgCardDivider} />
             </div>
           </div>
         </div>
 
-        <div className="relative z-10 size-[175px]">
+        <div className="absolute left-1/2 top-[143px] z-10 h-[171px] w-[175px] -translate-x-1/2">
           <div className="pointer-events-none absolute left-[-53.5px] top-[-136px] h-[97px] w-[280px] opacity-30">
             <img
               alt=""
@@ -103,17 +102,17 @@ export function OperationsCard({
           </div>
         </div>
 
-        <div className="relative z-10 h-px w-[280px] shrink-0">
+        <div className="absolute left-0 top-[358px] z-10 h-px w-[280px]">
           <div className="absolute inset-[-0.25px_0]">
             <img alt="" className="block size-full max-w-none" src={imgCardDivider} />
           </div>
         </div>
 
-        <div className="relative z-10 flex w-full flex-col items-start gap-6">
-          <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-            {title}
+        <div className="absolute left-8 right-8 top-[398px] z-10 h-[62px]">
+          <div className="flex h-[10px] w-full items-center overflow-hidden [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[0] text-[color:var(--primitive-colors-gray-200)]">
+            <span className="block leading-[1.4]">{title}</span>
           </div>
-          <div className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+          <div className="mt-6 h-[24px] overflow-hidden text-[12px] font-light leading-3 text-[color:var(--primitive-colors-gray-200)]">
             {description}
           </div>
         </div>

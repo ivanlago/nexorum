@@ -12,11 +12,7 @@ type Props = Omit<ComponentPropsWithoutRef<"button">, "children"> & {
 };
 
 function DefaultChevronRight() {
-  return (
-    <svg aria-hidden="true" className="size-4" viewBox="0 0 16 16">
-      <path d="M6 3.5 10.5 8 6 12.5l-1-1L8.5 8 5 4.5l1-1Z" fill="currentColor" />
-    </svg>
-  );
+  return <img alt="" aria-hidden="true" className="size-4 max-w-none" src="/button-image.svg" />;
 }
 
 export function Button({
