@@ -34,7 +34,7 @@ export function Button({
   return (
     <button
       className={[
-        "group relative h-[46px] w-[235px]",
+        "group relative h-[46px] min-h-[46px] max-h-[46px] w-[235px] min-w-[235px] max-w-[235px] flex-none appearance-none border-0 bg-transparent p-0 align-top",
         className,
       ]
         .filter(Boolean)
@@ -44,7 +44,7 @@ export function Button({
     >
       <span
         className={[
-          "absolute left-[-4px] top-[-4px] flex gap-1 p-1 transition-colors duration-300",
+          "absolute inset-0 box-border flex h-[46px] w-[235px] gap-1 p-1 transition-colors duration-300",
           "border-[0.5px] border-[color:var(--primitive-colors-primary-800)]",
           borderClassName,
           containerClassName,
@@ -54,8 +54,8 @@ export function Button({
       >
         <span
           className={[
-            "relative flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#00619b] to-[#5092d3]",
-            "px-[18px] py-[18px]",
+            "relative flex h-[38px] w-[177px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#00619b] to-[#5092d3]",
+            "px-[18px] py-0",
             "shadow-[0px_4px_60px_rgba(38,90,127,0.6)] transition-all duration-300",
             "group-hover:from-[#005487] group-hover:to-[#3f81bd] group-hover:shadow-[0px_5px_44px_rgba(27,63,88,0.58)]",
             leftClassName,
@@ -69,8 +69,8 @@ export function Button({
 
         <span
           className={[
-            "relative flex items-center justify-center overflow-hidden bg-gradient-to-r from-[#5092d3] to-[#00619b]",
-            "px-[15px] py-[15px]",
+            "relative flex h-[38px] w-[46px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#5092d3] to-[#00619b]",
+            "p-[15px]",
             "shadow-[0px_4px_60px_rgba(38,90,127,0.6)] transition-all duration-300",
             "group-hover:from-[#3f81bd] group-hover:to-[#005487] group-hover:shadow-[0px_5px_44px_rgba(27,63,88,0.58)]",
             rightClassName,

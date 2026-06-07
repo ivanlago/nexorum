@@ -42,7 +42,12 @@ export function HeroMenu({
     <>
       <button
         type="button"
-        className={["inline-flex items-center justify-center", buttonClassName].filter(Boolean).join(" ")}
+        className={[
+          "inline-flex cursor-pointer items-center justify-center transition-colors duration-200 hover:bg-[#081018]",
+          buttonClassName,
+        ]
+          .filter(Boolean)
+          .join(" ")}
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={titleId}
@@ -69,7 +74,11 @@ export function HeroMenu({
                 className="absolute right-0 top-0 h-full w-[360px] max-w-full border-l border-[rgba(26,42,56,0.85)] bg-[#081018] p-8 shadow-[0px_24px_120px_rgba(0,0,0,0.55)]"
               >
                 <div className="flex items-center justify-between">
-                  <a href={`/${locale}`} className="flex items-center gap-2" aria-label="Home">
+                  <a
+                    href={`/${locale}`}
+                    className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
+                    aria-label="Home"
+                  >
                     <img alt="Nexorum" className="h-5 w-auto" src="/nexorum.png" />
                   </a>
                   <button

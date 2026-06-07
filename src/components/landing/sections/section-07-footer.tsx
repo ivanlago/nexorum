@@ -26,7 +26,11 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
 	          <div className="flex flex-col items-end gap-20">
 	            <div className="w-full">
 	              <div className="flex items-start gap-2">
-	                <a href={`/${locale}`} aria-label="Home">
+	                <a
+                    href={`/${locale}`}
+                    aria-label="Home"
+                    className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
+                  >
 	                  <img alt="Nexorum" className="h-[20px] w-auto" src="/nexorum.png" />
 	                </a>
 	              </div>

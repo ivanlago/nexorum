@@ -67,7 +67,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
             {cards.map((c, idx) => (
               <OperationsCard
                 key={c.tag}
-                className={idx % 2 === 1 ? "lg:translate-y-[103px]" : undefined}
+                className={idx % 2 === 1 ? "lg:translate-y-[112px]" : undefined}
                 tag={c.tag}
                 subtitle={copy.cards?.[idx]?.subtitle}
                 title={copy.cards?.[idx]?.title}

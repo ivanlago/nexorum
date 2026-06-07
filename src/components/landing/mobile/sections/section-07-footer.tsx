@@ -22,7 +22,11 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
 
       <div className="mt-12 flex items-center gap-2">
-        <a href={`/${locale}`} aria-label="Home">
+        <a
+          href={`/${locale}`}
+          aria-label="Home"
+          className="-m-4 inline-flex items-center p-4 transition-colors duration-200 hover:bg-[#081018]"
+        >
           <img alt="Nexorum" className="h-[20.8px] w-auto" src="/nexorum.png" />
         </a>
       </div>

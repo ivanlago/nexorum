@@ -58,7 +58,7 @@ export function OperationsCard({
             <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)] whitespace-nowrap">
               {tag}
             </div>
-            <div className="w-[158px] text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+            <div className="h-[32px] w-[158px] overflow-hidden text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
               {subtitle}
             </div>
           </div>

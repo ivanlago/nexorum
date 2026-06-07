@@ -15,9 +15,13 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
       <div className="pt-6">
         <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
         <div className="flex items-center justify-between py-6">
-          <div className="flex items-center gap-2">
+          <a
+            className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
+            href={`/${locale}`}
+            aria-label="Home"
+          >
             <img alt="Nexorum" className="h-[16.7px] w-auto" src="/nexorum.png" />
-          </div>
+          </a>
           <div className="flex items-center gap-4">
             <Suspense fallback={<div className="h-6 w-10" aria-hidden />}>
               <LanguageSelector align="right" locale={locale} labels={dict.language.options} />

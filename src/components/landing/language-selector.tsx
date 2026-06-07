@@ -91,7 +91,7 @@ export function LanguageSelector({
       <button
         type="button"
         className={[
-          "flex items-center gap-2 text-[color:var(--primitive-colors-gray-200)]",
+          "flex cursor-pointer items-center gap-2 text-[color:var(--primitive-colors-gray-200)]",
           variant === "footer" ? "text-[14px]" : "",
         ].join(" ")}
         onClick={() => setOpen((v) => !v)}
@@ -113,28 +113,28 @@ export function LanguageSelector({
         <div
           role="menu"
           className={[
-            "absolute top-full z-50 mt-3 w-[158px] bg-[#081018] p-4 shadow-[0px_24px_120px_rgba(0,0,0,0.55)]",
+            "absolute top-full z-50 mt-3 w-[172px] overflow-hidden bg-[#05090d] shadow-[0px_24px_120px_rgba(0,0,0,0.55)]",
             menuAlign === "right" ? "right-0" : menuAlign === "center" ? "left-1/2 -translate-x-1/2" : "left-0",
           ].join(" ")}
         >
-          <div className="flex flex-col gap-4">
+          <div className="flex flex-col">
             {options.map((opt) => (
-            <button
-              key={opt.locale}
-              type="button"
-              role="menuitem"
-              className={[
-                "flex w-full items-center gap-2 text-left text-[12px] leading-[1.6] text-[color:var(--primitive-colors-gray-200)]",
-                opt.fontClass,
-                opt.locale === locale ? "opacity-100" : "opacity-90 hover:opacity-100",
-              ].join(" ")}
-              onClick={() => switchLocale(opt.locale)}
-            >
-              <span className="relative h-[17px] w-[24px] overflow-hidden">
-                <img alt="" className="absolute inset-0 h-full w-full object-cover" src={opt.flagSrc} />
-              </span>
-              <span>{opt.label}</span>
-            </button>
+              <button
+                key={opt.locale}
+                type="button"
+                role="menuitem"
+                className={[
+                  "flex w-full items-center gap-2 px-4 py-4 text-left text-[12px] leading-[1.6] text-[color:var(--primitive-colors-gray-200)] transition-colors duration-200",
+                  opt.fontClass,
+                  opt.locale === locale ? "bg-[#081018]" : "bg-transparent hover:bg-[#081018]",
+                ].join(" ")}
+                onClick={() => switchLocale(opt.locale)}
+              >
+                <span className="relative h-[17px] w-[24px] overflow-hidden">
+                  <img alt="" className="absolute inset-0 h-full w-full object-cover" src={opt.flagSrc} />
+                </span>
+                <span>{opt.label}</span>
+              </button>
             ))}
           </div>
         </div>
