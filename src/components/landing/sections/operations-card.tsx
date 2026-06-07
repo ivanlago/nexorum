@@ -34,7 +34,7 @@ export function OperationsCard({
     <div className={["relative mx-auto w-full max-w-[280px]", className].filter(Boolean).join(" ")}>
       <div className="pointer-events-none absolute left-0 top-[-85px] z-20 h-[168px] w-[280px] opacity-50">
         <div className="absolute inset-0 overflow-hidden">
-          <img alt="" className="absolute left-[-8.57%] top-0 h-full w-[140%] max-w-none" src={imgCardDustTop} />
+          <img alt="" className="absolute right-[-8.57%] top-0 h-full w-[140%] max-w-none" src={imgCardDustTop} />
         </div>
       </div>
 
@@ -48,7 +48,7 @@ export function OperationsCard({
       >
         <div className="pointer-events-none absolute left-0 top-[-85px] z-0 h-[168px] w-[280px]">
           <div className="absolute inset-0 overflow-hidden">
-            <img alt="" className="absolute left-[-8.57%] top-0 h-full w-[140%] max-w-none" src={imgCardTop} />
+            <img alt="" className="absolute right-[-8.57%] top-0 h-full w-[140%] max-w-none" src={imgCardTop} />
           </div>
         </div>
 
