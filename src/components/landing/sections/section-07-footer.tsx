@@ -5,10 +5,10 @@ import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
 const socialIcons = [
-  { alt: "Instagram", src: "https://www.figma.com/api/mcp/asset/ac06e4f0-e754-4946-a6fc-af8a28f11695" },
-  { alt: "Facebook", src: "https://www.figma.com/api/mcp/asset/89b57bb0-64e6-47cb-b9dc-2ff94babadc8" },
-  { alt: "YouTube", src: "https://www.figma.com/api/mcp/asset/8b6c4bd8-bf72-4975-8881-c2790949824b" },
-  { alt: "LinkedIn", src: "https://www.figma.com/api/mcp/asset/7e35ee1f-9196-45c6-b0cf-79ea77feba43" },
+  { alt: "Instagram", src: "/instagram.svg" },
+  { alt: "Facebook", src: "/facebook.svg" },
+  { alt: "YouTube", src: "/youtube.svg" },
+  { alt: "LinkedIn", src: "/linkedin.svg" },
 ];
 const imgFooterTopDivider = "https://www.figma.com/api/mcp/asset/70ec18e5-f333-40f0-bf8e-0233b0407f14";
 const imgFooterMiddleDivider = "https://www.figma.com/api/mcp/asset/6fcb7a99-e67e-431d-a8ae-801ccd3f150d";

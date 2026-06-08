@@ -7,10 +7,10 @@ import { Suspense } from "react";
 const imgDivider = "https://www.figma.com/api/mcp/asset/cde66716-d2c7-4e82-8e4c-c9ce50556c9c";
 
 const socialIcons = [
-  { alt: "Instagram", src: "https://www.figma.com/api/mcp/asset/eeeea343-9539-45fd-ac2d-475672c85917" },
-  { alt: "Facebook", src: "https://www.figma.com/api/mcp/asset/0d0632b3-5f7f-473b-9fc8-7d25b24a88cb" },
-  { alt: "YouTube", src: "https://www.figma.com/api/mcp/asset/b8feab6a-9d74-451d-882b-f03c43e590d0" },
-  { alt: "LinkedIn", src: "https://www.figma.com/api/mcp/asset/6544fb70-4d5b-4f7b-aec8-efe19b9ffdb1" },
+  { alt: "Instagram", src: "/instagram.svg" },
+  { alt: "Facebook", src: "/facebook.svg" },
+  { alt: "YouTube", src: "/youtube.svg" },
+  { alt: "LinkedIn", src: "/linkedin.svg" },
 ];
 
 export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
