@@ -14,6 +14,7 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
   const copy = dict.section05 as any;
   const rows = (copy?.rows ?? []) as Row[];
   const tableHeader = copy.tableHeaders ?? {};
+  const mobileHeading = String(copy.heading ?? "").replaceAll("\n", " ");
 
   const [tab, setTab] = useState<"nao" | "faz">("nao");
 
@@ -22,12 +23,12 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
   return (
     <section className="relative overflow-hidden px-6 pb-24 pt-10">
       <LandingSectionBackground />
-      <h2 className="mt-3 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
-        <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
-          [ 04 ]
-        </span>
-        {copy.heading?.replaceAll?.("\n", " ")}
-      </h2>
+      <div className="mt-3">
+        <div className="text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">[ 04 ]</div>
+        <h2 className="mt-[9px] w-[237px] [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.18px] indent-[37px]">
+          {mobileHeading}
+        </h2>
+      </div>
       <p className="mt-8 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
         <span className="inline-block indent-[39px]">
           {copy.lead}

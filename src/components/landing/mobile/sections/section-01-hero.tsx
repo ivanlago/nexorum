@@ -9,7 +9,10 @@ const imgMenu = "/menu.png";
 const imgWelcome = "/header-bemvindo.png";
 
 export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
-  const headline = dict.hero.headline.replaceAll("\n", " ");
+  const headlineLines = [
+    "Antecipe impactos, proteja margem e",
+    "governe decisões com inteligência artificial",
+  ];
 
   return (
     <section className="relative overflow-hidden px-6 pt-0">
@@ -45,8 +48,9 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
       </div>
 
       <div className="mt-8 flex flex-col gap-10">
-        <h1 className="[font-family:var(--font-orbitron)] text-[20px] font-semibold uppercase leading-[1.4] tracking-[0.01em] text-[color:var(--primitive-colors-gray-200)]">
-          {headline}
+        <h1 className="[font-family:var(--font-orbitron)] text-[20px] font-semibold uppercase leading-[1.4] tracking-[0.2px] text-[color:var(--primitive-colors-gray-200)]">
+          <span className="block indent-[37px]">{headlineLines[0]}</span>
+          <span className="block">{headlineLines[1]}</span>
         </h1>
         <p className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
           <span className="inline-block indent-[38px]">
