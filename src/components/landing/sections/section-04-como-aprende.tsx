@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useEffectEvent, useRef } from "react";
 import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
@@ -40,12 +43,81 @@ const transformIcons = [
 ];
 
 export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
+  const sectionRef = useRef<HTMLElement | null>(null);
+  const centerColumnRef = useRef<HTMLDivElement | null>(null);
   const copy = dict.section04 as any;
   const steps = (copy?.mobile?.steps ?? []) as string[];
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
+  const handleLockedScroll = useEffectEvent((deltaY: number) => {
+    const section = sectionRef.current;
+    const centerColumn = centerColumnRef.current;
+
+    if (!section || !centerColumn || deltaY === 0) {
+      return false;
+    }
+
+    if (!window.matchMedia("(min-width: 1024px)").matches) {
+      return false;
+    }
+
+    const rect = section.getBoundingClientRect();
+    const viewportHeight = window.innerHeight;
+    const canScrollDown = centerColumn.scrollTop + centerColumn.clientHeight < centerColumn.scrollHeight - 1;
+    const canScrollUp = centerColumn.scrollTop > 1;
+    const sectionOwnsViewport = rect.top <= 0 && rect.bottom >= viewportHeight;
+
+    if (!sectionOwnsViewport) {
+      return false;
+    }
+
+    if (deltaY > 0 && canScrollDown) {
+      centerColumn.scrollTop += deltaY;
+      return true;
+    }
+
+    if (deltaY < 0 && canScrollUp) {
+      centerColumn.scrollTop += deltaY;
+      return true;
+    }
+
+    return false;
+  });
+
+  useEffect(() => {
+    const onWheel = (event: WheelEvent) => {
+      if (handleLockedScroll(event.deltaY)) {
+        event.preventDefault();
+      }
+    };
+
+    const onKeyDown = (event: KeyboardEvent) => {
+      const deltaByKey: Record<string, number> = {
+        ArrowDown: 80,
+        ArrowUp: -80,
+        PageDown: window.innerHeight * 0.9,
+        PageUp: -window.innerHeight * 0.9,
+        " ": event.shiftKey ? -window.innerHeight * 0.9 : window.innerHeight * 0.9,
+      };
+
+      const deltaY = deltaByKey[event.key];
+
+      if (deltaY && handleLockedScroll(deltaY)) {
+        event.preventDefault();
+      }
+    };
+
+    window.addEventListener("wheel", onWheel, { passive: false });
+    window.addEventListener("keydown", onKeyDown);
+
+    return () => {
+      window.removeEventListener("wheel", onWheel);
+      window.removeEventListener("keydown", onKeyDown);
+    };
+  }, [handleLockedScroll]);
+
   return (
-    <section id="como-aprende" className="relative mt-[52px] w-full overflow-hidden pb-0 pt-[72px]">
+    <section ref={sectionRef} id="como-aprende" className="relative mt-[52px] w-full overflow-hidden pb-0 pt-[72px]">
       <LandingSectionBackground />
 
       <div className="relative w-full">
@@ -90,7 +162,10 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
             </div>
           </div>
 
-          <div className="min-w-0 h-full lg:w-[520px] lg:justify-self-center overflow-y-auto overflow-x-hidden overscroll-auto pr-2 lg:-mt-[72px] lg:h-[calc(100%+72px)] lg:pt-[72px] [scrollbar-width:none] [touch-action:pan-y] [&::-webkit-scrollbar]:hidden">
+          <div
+            ref={centerColumnRef}
+            className="min-w-0 h-full overflow-y-auto overflow-x-hidden overscroll-auto pr-2 lg:w-[520px] lg:justify-self-center lg:-mt-[72px] lg:h-[calc(100%+72px)] lg:overscroll-contain lg:pt-[72px] [scrollbar-width:none] [touch-action:pan-y] [&::-webkit-scrollbar]:hidden"
+          >
             <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] text-[24px] font-semibold uppercase leading-[0] tracking-[0.24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)]">
               <span className="flex min-w-0 items-baseline gap-3 leading-[1.6]">
                 <span className="text-[24px] leading-[1.39] tracking-[0.01em] text-[color:var(--primitive-colors-primary-400)]">
