@@ -49,7 +49,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
       <LandingSectionBackground />
 
       <div className="relative w-full">
-        <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_1fr_340px] lg:items-start lg:px-0">
+        <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_1fr_312px] lg:items-start lg:px-0">
           <div className="relative flex flex-col lg:h-[611px] lg:w-[240px] lg:self-start">
             <div className="absolute left-0 top-[-85px] h-[168px] w-[237px] opacity-80">
               <img
@@ -169,11 +169,11 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
             </div>
           </div>
 
-          <div className="flex w-full flex-col gap-6 lg:h-[542px] lg:w-[340px] lg:self-start">
+          <div className="flex w-full flex-col gap-6 lg:h-[616px] lg:w-[312px] lg:self-start">
             {rightCards.map((c, idx) => (
               <div
                 key={idx}
-                className="relative flex min-h-[104px] items-start gap-6 overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] p-6"
+                className="relative flex h-[104px] min-h-[104px] items-start gap-6 overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] p-6"
               >
                 <div className="pointer-events-none absolute bottom-[-26px] right-[-31px] h-[105px] w-[310px] opacity-30">
                   <img
