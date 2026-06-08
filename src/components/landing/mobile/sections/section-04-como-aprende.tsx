@@ -2,21 +2,22 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const items = [
-  { n: "1", icon: "https://www.figma.com/api/mcp/asset/a8108f3e-216e-4ae7-97d0-755798816a5d" },
-  { n: "2", icon: "https://www.figma.com/api/mcp/asset/d1c79dab-e4a2-41d1-9e5f-b21e7800cecb" },
-  { n: "3", icon: "https://www.figma.com/api/mcp/asset/0a7942ce-2dc2-4b5f-b0b7-d7cd95674458" },
-  { n: "4", icon: "https://www.figma.com/api/mcp/asset/c8187612-2df1-42f6-ba51-999efff6cfed" },
-  { n: "5", icon: "https://www.figma.com/api/mcp/asset/7a630ad5-f3cf-42ed-ab63-134547c5bea5" },
-  { n: "6", icon: "https://www.figma.com/api/mcp/asset/421c21c5-970f-4273-a56b-d2b638a27cb5" },
+  { n: "1", icon: "/funcao-imagem-1.svg" },
+  { n: "2", icon: "/funcao-imagem-2.svg" },
+  { n: "3", icon: "/funcao-imagem-3.svg" },
+  { n: "4", icon: "/funcao-imagem-4.svg" },
+  { n: "5", icon: "/funcao-imagem-5.svg" },
+  { n: "6", icon: "/funcao-imagem-6.svg" },
 ];
 
 const whatCards = [
-  { icon: "https://www.figma.com/api/mcp/asset/d259a3bb-9f83-4b8d-80a2-fcf9b806573a" },
-  { icon: "https://www.figma.com/api/mcp/asset/dcdcf943-9bb9-4cec-a773-813bfa8b39cc" },
-  { icon: "https://www.figma.com/api/mcp/asset/461b736a-bfca-422c-b367-d30cf0c3c181" },
-  { icon: "https://www.figma.com/api/mcp/asset/bc320338-083e-47ad-9930-c5a6d545c30a" },
-  { icon: "https://www.figma.com/api/mcp/asset/421c21c5-970f-4273-a56b-d2b638a27cb5" }
+  { icon: "/aprende-imagem-1.svg" },
+  { icon: "/aprende-imagem-2.svg" },
+  { icon: "/aprende-imagem-3.svg" },
+  { icon: "/aprende-imagem-4.svg" },
+  { icon: "/aprende-imagem-5.svg" }
 ];
+const sideTexture = "https://www.figma.com/api/mcp/asset/0f5652ee-b81d-42f6-a4fb-7bb931aa124d";
 
 export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section04 as any;
@@ -38,8 +39,36 @@ export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }
 
       <div className="mt-14 flex items-center justify-center">
         <div className="relative h-[323px] w-[330px] overflow-hidden">
-          <div className="absolute inset-0 bg-[radial-gradient(circle_at_50%_40%,rgba(108,181,255,0.18),transparent_65%)]" />
-          <div className="absolute inset-0 flex items-center justify-center [font-family:var(--font-orbitron)] text-[12px] tracking-[0.14em] text-[color:var(--primitive-colors-gray-300)]">
+          <div className="absolute left-1/2 top-1/2 h-[260px] w-[260px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-[rgba(108,181,255,0.14)] blur-[42px]" />
+          <div className="pointer-events-none absolute left-[-26px] top-[12px] h-[97px] w-[237px] opacity-35">
+            <img
+              alt=""
+              className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
+              src={sideTexture}
+            />
+          </div>
+          <video
+            className="absolute left-1/2 top-1/2 z-10 h-[290px] w-[290px] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain opacity-75 mix-blend-lighten"
+            muted
+            autoPlay
+            loop
+            playsInline
+          >
+            <source src="/aprende-video.webm" type="video/webm" />
+            <source src="/aprende-video-h264.mp4" type="video/mp4" />
+            {dict.common.videoUnsupported}
+          </video>
+          <div className="absolute left-1/2 top-1/2 z-20 h-[238px] w-[238px] -translate-x-1/2 -translate-y-1/2 bg-[#6cb5ff] opacity-[0.14] mix-blend-color" />
+          <div className="pointer-events-none absolute bottom-[22px] right-[-58px] h-[97px] w-[237px] opacity-30">
+            <img
+              alt=""
+              className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
+              src={sideTexture}
+            />
+          </div>
+          <div className="absolute inset-x-0 bottom-0 h-16 bg-gradient-to-t from-[#05090d] to-transparent" />
+          <div className="absolute inset-x-0 top-0 h-10 bg-gradient-to-b from-[#05090d] to-transparent" />
+          <div className="absolute bottom-3 left-1/2 z-30 -translate-x-1/2 [font-family:var(--font-orbitron)] text-[10px] tracking-[0.14em] text-[color:var(--primitive-colors-gray-300)]">
             {copy.illustrationLabel}
           </div>
         </div>

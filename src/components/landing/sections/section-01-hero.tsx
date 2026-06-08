@@ -28,8 +28,8 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
     <section className="relative w-full overflow-hidden pt-0">
 	      <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_-40%,rgba(255,255,255,0.16),rgba(255,255,255,0)_60%)]" />
 	      <div className="relative w-full overflow-hidden">
-	        <div className="h-[1000px] w-full">
-          <div className="pointer-events-none absolute inset-y-[216px] left-1/2 z-0 w-[calc(100vw+24px)] -translate-x-1/2">
+	        <div className="h-[max(1000px,100vh)] w-full">
+          <div className="pointer-events-none absolute inset-y-0 left-1/2 z-0 w-[calc(100vw+24px)] -translate-x-1/2">
             <div className="absolute inset-y-0 left-[-12px] w-[240px]">
               <div className="absolute inset-y-0 left-0 w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] via-[rgba(5,9,13,0.84)] via-[72%] to-[#05090d]" />
               <div className="absolute inset-y-0 left-0 w-[228px] bg-[linear-gradient(90deg,#05090d_0%,rgba(5,9,13,0.92)_34%,rgba(5,9,13,0.42)_74%,rgba(5,9,13,0)_100%)]" />
@@ -43,7 +43,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
             </div>
           </div>
 
-	          <div className="pointer-events-none absolute left-1/2 top-[216px] z-0 h-[821px] w-[1440px] -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(180deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%),linear-gradient(90deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%)] [mask-composite:intersect] [-webkit-mask-image:linear-gradient(180deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%),linear-gradient(90deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%)] [-webkit-mask-composite:source-in]">
+	          <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-screen min-h-[821px] w-[1440px] -translate-x-1/2 overflow-hidden [mask-image:linear-gradient(180deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%),linear-gradient(90deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%)] [mask-composite:intersect] [-webkit-mask-image:linear-gradient(180deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%),linear-gradient(90deg,transparent_0%,black_24px,black_calc(100%-24px),transparent_100%)] [-webkit-mask-composite:source-in]">
 	            <video
 	              className="absolute left-1/2 top-1/2 h-[calc(100%+4px)] w-[calc(100%+4px)] -translate-x-1/2 -translate-y-1/2 object-cover opacity-70 mix-blend-plus-lighter"
 	              muted
@@ -61,7 +61,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 	            <div className="absolute -left-px -right-px bottom-0 h-[104px] bg-[linear-gradient(180deg,rgba(5,9,13,0)_0%,rgba(5,9,13,0.72)_72%,#05090d_100%)] blur-[22px]" />
 	          </div>
 
-          <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-[1000px] w-[1441px] -translate-x-1/2 overflow-visible opacity-70">
+          <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-[max(1000px,100vh)] w-[1441px] -translate-x-1/2 overflow-visible opacity-70">
             <div className="absolute left-[-138px] top-0 h-[910px] w-[1208px] overflow-hidden opacity-[0.15] mix-blend-screen">
               <div className="absolute inset-0">
                 <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowA} />

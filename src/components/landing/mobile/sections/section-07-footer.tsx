@@ -95,7 +95,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
 
       <a className="mt-10 inline-flex items-center gap-3 text-[12px] text-[color:var(--primitive-colors-gray-200)]" href="#">
         <span className="inline-flex size-8 items-center justify-center bg-[color:var(--primitive-colors-gray-600)]">
-          <span className="text-[12px]">↑</span>
+          <img alt="" className="block size-8" src="/seta-cima.svg" />
         </span>
         {copy.backToTop}
       </a>

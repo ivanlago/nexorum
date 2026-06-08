@@ -1,6 +1,8 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const imgDivider = "https://www.figma.com/api/mcp/asset/4bb21cb0-3d1f-4d49-87c4-5311bcb87e87";
+const imgBgVector1 = "https://www.figma.com/api/mcp/asset/d4aa8cc6-b602-4995-bbb4-2b24dccb2473";
+const imgBgVector2 = "https://www.figma.com/api/mcp/asset/684386e2-e653-490a-92ae-32ea07dfa3f6";
 
 const items = [
   {
@@ -25,8 +27,12 @@ export function MobileSection01Carousel({ dict }: { dict: LandingDictionary }) {
 
   return (
     <section className="relative mt-8 overflow-hidden">
+      <div className="pointer-events-none absolute inset-0 opacity-45">
+        <img alt="" className="absolute inset-0 size-full object-cover" src={imgBgVector1} />
+        <img alt="" className="absolute inset-0 size-full object-cover mix-blend-lighten" src={imgBgVector2} />
+      </div>
       <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
-      <div className="mt-6 overflow-x-auto px-6">
+      <div className="relative mt-6 overflow-x-auto px-6">
         <div className="flex w-max gap-8 pb-6">
           {items.map((item, idx) => (
             <div key={item.icon} className="w-[168px]">

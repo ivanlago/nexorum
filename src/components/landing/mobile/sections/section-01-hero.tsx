@@ -6,6 +6,7 @@ import { Suspense } from "react";
 
 const imgDivider = "https://www.figma.com/api/mcp/asset/7af0d948-cb2c-4bc8-b1cb-df9bef6b3474";
 const imgMenu = "/menu.png";
+const imgWelcome = "/header-bemvindo.png";
 
 export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const headline = dict.hero.headline.replaceAll("\n", " ");
@@ -33,6 +34,12 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
               imgClassName="size-6"
             />
           </div>
+        </div>
+        <div className="mb-5 flex items-center gap-2">
+          <img alt="" className="h-5 w-auto object-contain" src={imgWelcome} />
+          <span className="text-[12px] font-medium leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+            {dict.common.welcome}
+          </span>
         </div>
         <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
       </div>

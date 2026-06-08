@@ -1,7 +1,7 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
-const imgMap = "https://www.figma.com/api/mcp/asset/13b9d590-2e00-44b0-b0c6-776a838452a9";
+const imgMap = "/mapa.png";
 const imgPillarsTexture = "https://www.figma.com/api/mcp/asset/ffdcbdf4-d216-41ba-b416-d90144b76878";
 const imgTexture = "https://www.figma.com/api/mcp/asset/c0c84018-5baf-4c9b-9013-9c74354ead76";
 const imgDivider = "https://www.figma.com/api/mcp/asset/23d2bdc2-1217-4366-9242-868d1d2034f5";
