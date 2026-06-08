@@ -75,6 +75,7 @@ function TableIcon({ name, className = "" }: { name: "db" | "blocks" | "briefcas
 export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section03 as any;
   const semInfra = (copy?.tables?.sem ?? []) as Row[];
+  const comInfra = (copy?.tables?.com ?? []) as Row[];
 
   const rows = useMemo(() => semInfra, [semInfra]);
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
@@ -133,86 +134,119 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
 
-        <div className="mx-auto mt-[88px] w-full px-6 lg:px-0">
-          <div className="w-full border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
+        <div className="relative left-1/2 mt-[88px] w-screen -translate-x-1/2">
+          <div className="w-full border-y border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
             <div className="overflow-x-auto">
-              <div className="min-w-[1437px]">
-                <div
-                  className={[
-                    "grid h-[42px] items-center bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]",
-                    tableGridCols,
-                    "[font-family:var(--font-orbitron)] text-[12px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                  ].join(" ")}
-                >
-                  <div className="col-start-2">{copy.tableHeaders?.problems}</div>
-                  <div className="col-start-3">{copy.tableHeaders?.appears}</div>
-                  <div className="col-start-4">{copy.tableHeaders?.impact}</div>
-                </div>
-                <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-
-                {rows.map((row, idx) => (
+              <div className="relative min-w-[1437px]">
+                <div className="relative w-full">
                   <div
-                    key={row.problem}
                     className={[
-                      "group relative isolate w-full",
-                      // In "Camada decisória", the zebra contrast comes from the row highlight background
-                      // over the table container background, not from two competing row backgrounds.
-                      idx % 2 === 1 ? "bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]" : "",
-                      hoverRowBg,
+                      "h-[42px] w-full bg-gradient-to-b from-[rgba(0,0,0,0.42)] to-[rgba(0,0,0,0.18)]",
+                      "[font-family:var(--font-orbitron)] text-[12px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
                     ].join(" ")}
                   >
-                    <div className={["relative z-10 grid h-[97px] items-center", tableGridCols].join(" ")}>
-                      <div className="col-start-2 flex items-center gap-4">
-                        <span
-                          className={[
-                            "inline-flex size-6 items-center justify-center rounded-full border border-[rgba(118,131,143,0.45)] text-[14px] text-[rgba(167,184,198,0.7)]",
-                            hoverRowText,
-                            "group-hover:border-white/50 group-hover:text-white/90",
-                          ].join(" ")}
-                        >
-                          ×
-                        </span>
+                    <div className={["mx-auto grid h-full min-w-[1437px] max-w-[1437px] items-center", tableGridCols].join(" ")}>
+                      <div className="col-start-2">{copy.tableHeaders?.problems}</div>
+                      <div className="col-start-3">{copy.tableHeaders?.appears}</div>
+                      <div className="col-start-4">{copy.tableHeaders?.impact}</div>
+                    </div>
+                  </div>
+                  <div className="absolute left-0 right-0 top-[42px] h-px bg-[rgba(118,131,143,0.25)]" />
+
+                  {rows.map((row, idx) => (
+                    <div
+                      key={row.problem}
+                      className={[
+                        "group relative isolate w-full",
+                        idx % 2 === 0
+                          ? "bg-gradient-to-b from-[rgba(8,15,22,0.18)] to-[#080f16]"
+                          : "bg-[#05090d]",
+                        hoverRowBg,
+                      ].join(" ")}
+                    >
+                      <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-px bg-[rgba(118,131,143,0.14)]" />
+                      {idx % 2 === 0 ? (
+                        <>
+                          <div className="pointer-events-none absolute left-0 top-0 z-0 h-[97px] w-[196px] overflow-hidden opacity-20">
+                            <div className="absolute left-[-8px] top-[-30px] h-[58px] w-[90px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                            <div className="absolute left-[-4px] top-[14px] h-[87px] w-[202px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.18)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                          </div>
+                          <div className="pointer-events-none absolute right-0 top-0 z-0 h-[97px] w-[196px] overflow-hidden opacity-20">
+                            <div className="absolute right-[-8px] top-[-30px] h-[58px] w-[90px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                            <div className="absolute right-[-4px] top-[14px] h-[87px] w-[202px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.18)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                          </div>
+                        </>
+                      ) : null}
+                      <div className={["relative z-10 mx-auto grid h-[97px] min-w-[1437px] max-w-[1437px] items-center", tableGridCols].join(" ")}>
+                        <div className="col-start-2 flex items-center gap-4">
+                          <div className="relative size-6 shrink-0">
+                            <img
+                              alt=""
+                              aria-hidden="true"
+                              className="absolute inset-0 size-6 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-0"
+                              src="/nagativo-imagem.svg"
+                            />
+                            <img
+                              alt=""
+                              aria-hidden="true"
+                              className="absolute inset-0 size-6 opacity-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-100"
+                              src="/positivo-imagem.svg"
+                            />
+                          </div>
+                          <div
+                            className={[
+                              "relative h-[23px] w-[219px] [font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                            ].join(" ")}
+                          >
+                            <span className="absolute inset-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-0">
+                              {row.problem}
+                            </span>
+                            <span className="absolute inset-0 opacity-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-100 group-hover:text-white">
+                              {comInfra[idx]?.problem ?? row.problem}
+                            </span>
+                          </div>
+                        </div>
                         <div
                           className={[
-                            "[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                            hoverRowText,
-                            "group-hover:text-white",
+                            "col-start-3 flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
                           ].join(" ")}
                         >
-                          {row.problem}
+                          <span
+                            className={[
+                              "text-[color:var(--primitive-colors-primary-400)]",
+                              hoverRowText,
+                              "group-hover:text-white",
+                            ].join(" ")}
+                          >
+                            <TableIcon name={appearsIcons[idx] ?? "db"} />
+                          </span>
+                          <span className="relative h-[23px] w-[504px]">
+                            <span className="absolute inset-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-0">
+                              {row.appears}
+                            </span>
+                            <span className="absolute inset-0 opacity-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-100 group-hover:text-white">
+                              {comInfra[idx]?.appears ?? row.appears}
+                            </span>
+                          </span>
+                        </div>
+                        <div
+                          className={[
+                            "col-start-4 flex h-full items-center text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
+                          ].join(" ")}
+                        >
+                          <span className="relative block h-[34px] w-[186px] whitespace-normal break-words leading-[1.4]">
+                            <span className="absolute inset-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-0">
+                              {row.impact}
+                            </span>
+                            <span className="absolute inset-0 opacity-0 transition-opacity duration-600 ease-in-out delay-320 group-hover:delay-120 group-hover:opacity-100 group-hover:text-white">
+                              {comInfra[idx]?.impact ?? row.impact}
+                            </span>
+                          </span>
                         </div>
                       </div>
-                      <div
-                        className={[
-                          "col-start-3 flex items-center gap-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                          hoverRowText,
-                          "group-hover:text-white",
-                        ].join(" ")}
-                      >
-                        <span
-                          className={[
-                            "text-[color:var(--primitive-colors-primary-400)]",
-                            hoverRowText,
-                            "group-hover:text-white",
-                          ].join(" ")}
-                        >
-                          <TableIcon name={appearsIcons[idx] ?? "db"} />
-                        </span>
-                        <span className="w-[504px]">{row.appears}</span>
-                      </div>
-                      <div
-                        className={[
-                          "col-start-4 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]",
-                          hoverRowText,
-                          "group-hover:text-white",
-                        ].join(" ")}
-                      >
-                        {row.impact}
-                      </div>
                     </div>
-                    <div className="relative z-10 h-px w-full bg-[rgba(118,131,143,0.14)]" />
-                  </div>
-                ))}
+                  ))}
+                </div>
               </div>
             </div>
           </div>

@@ -14,19 +14,19 @@ const leftPillars = [
 
 const rightCards = [
   {
-    icon: "https://www.figma.com/api/mcp/asset/17360d67-5564-41c7-a3dc-d49d8908c2db",
+    icon: "/aprende-imagem-1.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/3a5784c2-0395-4eff-8dc5-a735cb2bfc8b",
+    icon: "/aprende-imagem-2.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/3e0ffc9c-36a4-463f-b48c-407a945faf67",
+    icon: "/aprende-imagem-3.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/e59ce029-9eaa-4c76-a981-89fed413f27b",
+    icon: "/aprende-imagem-4.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/54bf4c1c-3550-43eb-9af9-3e3f5a8e7d7f",
+    icon: "/aprende-imagem-5.svg",
   },
 ];
 
@@ -50,7 +50,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
 
       <div className="relative w-full">
         <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_1fr_340px] lg:items-start lg:px-0">
-          <div className="relative flex flex-col lg:h-[612px] lg:w-[240px] lg:self-start">
+          <div className="relative flex flex-col lg:h-[611px] lg:w-[240px] lg:self-start">
             <div className="absolute left-0 top-[-85px] h-[168px] w-[237px] opacity-80">
               <img
                 alt=""
@@ -59,7 +59,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
               />
             </div>
 
-            <div className="flex h-[542px] min-h-0 flex-col overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
+            <div className="flex h-[541px] min-h-0 flex-col overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
               <div className="flex flex-col items-end gap-6">
                 <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">
                   {copy.pillarsLabel}
@@ -83,7 +83,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
               </div>
             </div>
 
-            <div className="mt-6 w-[240px]">
+            <div className="mt-6 flex w-[240px] justify-end">
               <CtaPrimary label={dict.common.talkToSpecialist} />
             </div>
           </div>
