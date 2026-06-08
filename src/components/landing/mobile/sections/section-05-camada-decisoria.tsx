@@ -1,11 +1,7 @@
-"use client";
-
-import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 
-const imgDivider = "https://www.figma.com/api/mcp/asset/1c6b07cc-8f6e-4f36-9ab8-afacfd3ead0f";
 const imgWhyDifferentTexture = "https://www.figma.com/api/mcp/asset/38242fdd-85b2-4adf-b496-71a90066a7fc";
 
 type Row = { not: string; why: string; does: string };
@@ -15,10 +11,6 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
   const rows = (copy?.rows ?? []) as Row[];
   const tableHeader = copy.tableHeaders ?? {};
   const mobileHeading = String(copy.heading ?? "").replaceAll("\n", " ");
-
-  const [tab, setTab] = useState<"nao" | "faz">("nao");
-
-  const view = useMemo(() => tab, [tab]);
 
   return (
     <section className="relative overflow-hidden px-6 pb-24 pt-10">
@@ -38,65 +30,64 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
         {dict.common.seeHowItWorks}
       </HowItWorksLink>
 
-      <div className="mt-14 -mx-6 border-b border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
-        <div className="flex items-center px-6">
-          <button
-            className={[
-              "w-[163.5px] border-b py-4 text-left text-[12px] leading-[1.5] transition-colors",
-              view === "nao"
-                ? "border-[color:var(--primitive-colors-primary-500)] text-[color:var(--primitive-colors-gray-200)]"
-                : "border-[rgba(26,42,56,0.9)] text-[color:var(--primitive-colors-gray-300)]",
-            ].join(" ")}
-            type="button"
-            onClick={() => setTab("nao")}
-          >
-            <span className="font-medium">{copy.mobile?.tabNot}</span>
-          </button>
-          <button
-            className={[
-              "w-[163.5px] border-b py-4 text-left text-[12px] leading-[1.5] transition-colors",
-              view === "faz"
-                ? "border-[color:var(--primitive-colors-primary-500)] text-[color:var(--primitive-colors-gray-200)]"
-                : "border-[rgba(26,42,56,0.9)] text-[color:var(--primitive-colors-gray-300)]",
-            ].join(" ")}
-            type="button"
-            onClick={() => setTab("faz")}
-          >
-            <span className="font-medium">{copy.mobile?.tabDoes}</span>
-          </button>
-        </div>
-        <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+      <div
+        className={[
+          "mt-14 -mx-6 overflow-x-auto",
+          "[-webkit-overflow-scrolling:touch]",
+          "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
+        ].join(" ")}
+      >
+        <div className="min-w-[973px]">
+          <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+          <div className="grid grid-cols-[250px_330px_369px] px-6 py-4 [font-family:var(--font-orbitron)] text-[10px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+            <div>{tableHeader?.not}</div>
+            <div>{tableHeader?.why}</div>
+            <div>{tableHeader?.does}</div>
+          </div>
 
-        <div
-          className={[
-            "overflow-x-auto",
-            "[-webkit-overflow-scrolling:touch]",
-            "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
-          ].join(" ")}
-        >
-          <div className="min-w-[860px] pb-2">
-            <div className="grid grid-cols-[220px_320px_320px] px-6 py-5 [font-family:var(--font-orbitron)] text-[10px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-              <div>{tableHeader?.not}</div>
-              <div>{tableHeader?.why}</div>
-              <div>{tableHeader?.does}</div>
-            </div>
-            <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+          <div className="flex flex-col">
+            {rows.map((r, idx) => (
+              <div
+                key={r.not}
+                className={[
+                  "relative",
+                  idx % 2 === 0 ? "bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]" : "bg-[#05090d]",
+                ].join(" ")}
+              >
+                <div className="absolute inset-x-0 top-0 h-px bg-[rgba(118,131,143,0.18)]" />
+                <div className="absolute inset-x-0 bottom-0 h-px bg-[rgba(118,131,143,0.18)]" />
 
-            <div className="divide-y divide-[rgba(118,131,143,0.14)]">
-              {rows.map((r) => (
-                <div key={r.not} className="grid grid-cols-[220px_320px_320px] px-6 py-6">
-                  <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-                    {r.not}
+                {idx % 2 === 0 ? (
+                  <>
+                    <div className="pointer-events-none absolute left-0 top-0 h-[82px] w-[196px] overflow-hidden opacity-20">
+                      <div className="absolute left-[-8px] top-[-30px] h-[58px] w-[90px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                      <div className="absolute left-[-4px] top-[14px] h-[68px] w-[202px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.18)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                    </div>
+                    <div className="pointer-events-none absolute right-0 top-0 h-[82px] w-[196px] overflow-hidden opacity-20">
+                      <div className="absolute right-[-8px] top-[-30px] h-[58px] w-[90px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                      <div className="absolute right-[-4px] top-[14px] h-[68px] w-[202px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.18)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                    </div>
+                  </>
+                ) : null}
+
+                <div className="grid grid-cols-[250px_330px_369px] items-center gap-0 px-6 py-6">
+                  <div className="flex items-center gap-2">
+                    <span className="inline-flex size-4 shrink-0 items-center justify-center rounded-full border border-[rgba(167,184,198,0.65)] text-[10px] leading-none text-[rgba(167,184,198,0.85)]">
+                      ×
+                    </span>
+                    <span className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                      {r.not}
+                    </span>
                   </div>
-                  <div className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                  <div className="pr-6 text-[14px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                     {r.why}
                   </div>
-                  <div className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                  <div className="pr-8 text-[14px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                     {r.does}
                   </div>
                 </div>
-              ))}
-            </div>
+              </div>
+            ))}
           </div>
         </div>
       </div>
