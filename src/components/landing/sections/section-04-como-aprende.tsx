@@ -31,12 +31,12 @@ const rightCards = [
 ];
 
 const transformIcons = [
-  "https://www.figma.com/api/mcp/asset/7dd092ae-f2a6-4d0f-865e-54e6ccde759c",
-  "https://www.figma.com/api/mcp/asset/d336fd1f-de3f-400d-a82f-1c825fec6589",
-  "https://www.figma.com/api/mcp/asset/5fe71afc-00a0-4c1f-8d61-170def32218c",
-  "https://www.figma.com/api/mcp/asset/744059a5-0ec4-4b0a-968f-aa54d88bc57a",
-  "https://www.figma.com/api/mcp/asset/f2e2a536-1024-4adb-9432-9b1b285eb5fb",
-  "https://www.figma.com/api/mcp/asset/b1d311f2-5c55-4342-8ed0-1e3c433ca008",
+  "/funcao-imagem-1.svg",
+  "/funcao-imagem-2.svg",
+  "/funcao-imagem-3.svg",
+  "/funcao-imagem-4.svg",
+  "/funcao-imagem-5.svg",
+  "/funcao-imagem-6.svg",
 ];
 
 export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
@@ -49,7 +49,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
       <LandingSectionBackground />
 
       <div className="relative w-full">
-        <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_1fr_312px] lg:items-start lg:px-0">
+        <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_520px_312px] lg:justify-center lg:items-start lg:px-0">
           <div className="relative flex flex-col lg:h-[611px] lg:w-[240px] lg:self-start">
             <div className="pointer-events-none absolute left-0 top-[-85px] z-10 h-[168px] w-[237px] opacity-80">
               <div
@@ -90,7 +90,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
             </div>
           </div>
 
-          <div className="min-w-0 h-full overflow-y-auto overflow-x-hidden overscroll-auto pr-2 lg:-mt-[72px] lg:h-[calc(100%+72px)] lg:pt-[72px] [scrollbar-width:none] [touch-action:pan-y] [&::-webkit-scrollbar]:hidden">
+          <div className="min-w-0 h-full lg:w-[520px] lg:justify-self-center overflow-y-auto overflow-x-hidden overscroll-auto pr-2 lg:-mt-[72px] lg:h-[calc(100%+72px)] lg:pt-[72px] [scrollbar-width:none] [touch-action:pan-y] [&::-webkit-scrollbar]:hidden">
             <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] text-[24px] font-semibold uppercase leading-[0] tracking-[0.24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)]">
               <span className="flex min-w-0 items-baseline gap-3 leading-[1.6]">
                 <span className="text-[24px] leading-[1.39] tracking-[0.01em] text-[color:var(--primitive-colors-primary-400)]">
