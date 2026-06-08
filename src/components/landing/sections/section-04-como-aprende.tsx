@@ -51,15 +51,17 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
       <div className="relative w-full">
         <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_1fr_312px] lg:items-start lg:px-0">
           <div className="relative flex flex-col lg:h-[611px] lg:w-[240px] lg:self-start">
-            <div className="absolute left-0 top-[-85px] h-[168px] w-[237px] opacity-80">
-              <img
-                alt=""
-                className="absolute inset-0 size-full object-cover"
-                src="https://www.figma.com/api/mcp/asset/d3b24f5c-d64d-4e15-8db2-1e3d039aab7d"
+            <div className="pointer-events-none absolute left-0 top-[-85px] z-10 h-[168px] w-[237px] opacity-80">
+              <div
+                className="absolute inset-0 bg-cover bg-center bg-no-repeat"
+                style={{
+                  backgroundImage:
+                    "url(https://www.figma.com/api/mcp/asset/d3b24f5c-d64d-4e15-8db2-1e3d039aab7d)",
+                }}
               />
             </div>
 
-            <div className="flex h-[541px] min-h-0 flex-col overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
+            <div className="relative z-0 flex h-[541px] min-h-0 flex-col overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
               <div className="flex flex-col items-end gap-6">
                 <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">
                   {copy.pillarsLabel}
