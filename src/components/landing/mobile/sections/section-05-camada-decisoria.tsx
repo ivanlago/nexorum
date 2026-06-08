@@ -6,6 +6,7 @@ import { LandingSectionBackground } from "@/components/landing/landing-section-b
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 
 const imgDivider = "https://www.figma.com/api/mcp/asset/1c6b07cc-8f6e-4f36-9ab8-afacfd3ead0f";
+const imgWhyDifferentTexture = "https://www.figma.com/api/mcp/asset/38242fdd-85b2-4adf-b496-71a90066a7fc";
 
 type Row = { not: string; why: string; does: string };
 
@@ -99,16 +100,27 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
         </div>
       </div>
 
-	        <div className="mt-16 overflow-hidden border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10">
-	          <div className="flex flex-col items-end text-right">
-	            <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">
-	              {copy.whyDifferentLabel}
+	        <div className="relative mt-16 overflow-hidden border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10">
+	          <div className="flex flex-col gap-10">
+              <div className="relative flex w-full flex-col items-end gap-6">
+                <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)] whitespace-nowrap">
+	                {copy.whyDifferentLabel}
+	              </div>
+                <div className="relative h-[23px] w-full">
+                  <div className="absolute right-0 top-1/2 w-[133px] -translate-y-1/2 text-right text-[10px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+	                  {copy.mobile?.whyDifferentHint}
+	                </div>
+                  <div className="pointer-events-none absolute left-[44px] top-[-74px] h-[138px] w-[237px] opacity-30">
+                    <img
+                      alt=""
+                      className="absolute left-[-5.14px] top-[7px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
+                      src={imgWhyDifferentTexture}
+                    />
+                  </div>
+                </div>
 	            </div>
-	            <div className="mt-2 w-[133px] text-[10px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-	              {copy.mobile?.whyDifferentHint}
-	            </div>
-	          </div>
-	        <div className="mt-10 h-px w-full bg-[rgba(118,131,143,0.25)]" />
+	          <div className="h-px w-[calc(100%+64px)] -mx-8 bg-[rgba(118,131,143,0.25)]" />
+            </div>
 	          <div className="mt-10 space-y-8">
             <div>
               <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
