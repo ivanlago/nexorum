@@ -130,7 +130,18 @@ export function Button(props: Props) {
   };
 
   if (as === "a") {
-    const { as: _as, ...anchorProps } = props as Extract<Props, { as: "a" }>;
+    const {
+      as: _as,
+      children: _children,
+      className: _className,
+      containerClassName: _containerClassName,
+      leftClassName: _leftClassName,
+      rightClassName: _rightClassName,
+      borderClassName: _borderClassName,
+      right: _right,
+      highlights: _highlights,
+      ...anchorProps
+    } = props as Extract<Props, { as: "a" }>;
     return (
       <a className={sharedClassName} {...anchorProps}>
         <ButtonInner {...innerProps} />
@@ -138,7 +149,19 @@ export function Button(props: Props) {
     );
   }
 
-  const { as: _as, type = "button", ...buttonProps } = props as Extract<Props, { as?: "button" }>;
+  const {
+    as: _as,
+    children: _children,
+    className: _className,
+    containerClassName: _containerClassName,
+    leftClassName: _leftClassName,
+    rightClassName: _rightClassName,
+    borderClassName: _borderClassName,
+    right: _right,
+    highlights: _highlights,
+    type = "button",
+    ...buttonProps
+  } = props as Extract<Props, { as?: "button" }>;
   return (
     <button className={sharedClassName} type={type} {...buttonProps}>
       <ButtonInner {...innerProps} />
