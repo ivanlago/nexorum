@@ -4,8 +4,7 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
-const dividerClassName =
-  "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
+const footerDividerClassName = "-mx-6 h-[0.5px] bg-[rgba(118,131,143,0.25)]";
 
 const socialIcons = [
   { alt: "Instagram", src: "/instagram.svg" },
@@ -18,9 +17,9 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
   const copy = dict.footer as any;
 
   return (
-    <footer className="relative overflow-hidden px-6 pb-12 pt-0">
+    <footer className="relative overflow-hidden px-6 pb-12 pt-[40px]">
       <LandingSectionBackground />
-      <div aria-hidden className={dividerClassName} />
+      <div aria-hidden className={footerDividerClassName} />
 
       <div className="mt-12 flex items-center gap-2">
         <a
@@ -32,34 +31,34 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
         </a>
       </div>
 
-      <p className="mt-6 max-w-[254px] text-[12px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+      <p className="mt-12 max-w-[254px] text-[12px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
         {copy.brandBlurb}
       </p>
 
-      <div className="mt-10">
-        <div aria-hidden className={dividerClassName} />
+      <div className="mt-12">
+        <div aria-hidden className={footerDividerClassName} />
       </div>
 
-      <div className="mt-[10px] mb-[50px]">
+      <div className="mt-12 mb-12">
         <img alt="" className="block h-auto w-full object-contain" src="/marca-dagua.png" />
       </div>
 
       <div className="space-y-10">
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.location?.title}</div>
-          <div className="mt-4 text-[14px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+          <div className="mt-4 max-w-[212px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
             {copy.columns?.location?.body}
           </div>
         </div>
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.service?.title}</div>
-          <div className="mt-4 text-[14px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+          <div className="mt-4 max-w-[212px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
             {copy.columns?.service?.body}
           </div>
         </div>
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.contact?.title}</div>
-          <div className="mt-4 text-[14px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+          <div className="mt-4 max-w-[212px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
             {copy.columns?.contact?.lines?.map?.((line: string, idx: number, arr: string[]) => (
               <span key={idx}>
                 {line}
@@ -71,10 +70,10 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </div>
 
       <div className="mt-12">
-        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
+        <div aria-hidden className={footerDividerClassName} />
       </div>
 
-      <div className="mt-10 flex items-center justify-between">
+      <div className="mt-12 flex items-center justify-between">
         <div className="flex items-center gap-4">
           {socialIcons.map((s) => (
             <div
@@ -91,10 +90,10 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </div>
 
       <div className="mt-12">
-        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
+        <div aria-hidden className={footerDividerClassName} />
       </div>
 
-      <a className="mt-10 inline-flex items-center gap-3 text-[12px] text-[color:var(--primitive-colors-gray-200)]" href="#">
+      <a className="mt-12 inline-flex items-center gap-3 text-[12px] text-[color:var(--primitive-colors-gray-200)]" href="#">
         <span className="inline-flex size-8 items-center justify-center bg-[color:var(--primitive-colors-gray-600)]">
           <img alt="" className="block size-8" src="/seta-cima.svg" />
         </span>
@@ -102,7 +101,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </a>
 
       <div className="mt-12">
-        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
+        <div aria-hidden className={footerDividerClassName} />
       </div>
 
       <div className="mt-12 text-[10px] text-[color:var(--primitive-colors-gray-200)]">
@@ -110,7 +109,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </div>
 
       <div className="mt-12">
-        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
+        <div aria-hidden className={footerDividerClassName} />
       </div>
 
       <p className="mt-12 text-[10px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
@@ -118,7 +117,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </p>
 
       <div className="mt-12">
-        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
+        <div aria-hidden className={footerDividerClassName} />
       </div>
     </footer>
   );
