@@ -9,18 +9,10 @@ export function MobileFixedCta({ dict }: { dict: LandingDictionary }) {
     <div className="fixed inset-x-0 bottom-0 z-50 flex justify-center pb-9">
       <Button
         as="a"
-        className="h-[54px] min-h-[54px] max-h-[54px] w-[331px] min-w-[331px] max-w-[331px]"
-        containerClassName="h-[54px] min-h-[54px] max-h-[54px] w-[331px]"
+        className="w-[331px] min-w-[331px] max-w-[331px]"
+        containerClassName="w-[331px]"
         leftClassName="w-[273px]"
-        borderClassName="border border-[rgba(0,78,155,0.7)]"
         href={specialistHref}
-        right={<img alt="" className="size-4 max-w-none" src="/button-image.svg" />}
-        highlights={
-          <>
-            <span className="absolute left-[154px] top-0 h-px w-[119px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)]" />
-            <span className="absolute left-[5px] top-[45px] h-px w-[98px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)]" />
-          </>
-        }
         rel="noreferrer"
         target="_blank"
       >
