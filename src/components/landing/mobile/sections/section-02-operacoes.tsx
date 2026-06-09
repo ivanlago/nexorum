@@ -117,7 +117,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
         </HowItWorksLink>
       </div>
 
-      <div className="mt-16 bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] pb-6 pt-0">
+      <div className="mt-16 -mx-6 bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] pt-0">
         <div className="border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-7 py-9">
           <div className="flex items-center justify-center gap-6">
             <div className="[font-family:var(--font-orbitron)] text-[12px] font-bold text-[color:var(--primitive-colors-primary-400)]">
@@ -128,11 +128,11 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
             </div>
           </div>
         </div>
-        <div aria-hidden className={["mt-5", dividerClassName].join(" ")} />
-        <div className="mt-4 overflow-hidden px-6 opacity-80">
+        <div aria-hidden className={dividerClassName} />
+        <div className="overflow-hidden px-[25px] py-[18px] opacity-80">
           <LogoCarousel logos={logoRow} durationSeconds={18} itemClassName="h-8" />
         </div>
-        <div aria-hidden className={["mt-4", dividerClassName].join(" ")} />
+        <div aria-hidden className={dividerClassName} />
       </div>
     </section>
   );
