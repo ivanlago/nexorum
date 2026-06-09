@@ -97,9 +97,9 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   const rows = useMemo(() => (mode === "sem" ? semInfra : mobileComInfra), [mode, semInfra]);
 
   return (
-    <section className="relative overflow-hidden px-6 pb-24 pt-[76px]">
+    <section className="relative mt-[68px] overflow-hidden px-6 pb-0 pt-[10px]">
       <LandingSectionBackground />
-      <h2 className="mt-3 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
+      <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
         <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
           [ 02 ]
         </span>

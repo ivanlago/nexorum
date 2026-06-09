@@ -30,9 +30,9 @@ export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; l
       <MobileSection01Carousel dict={dict} />
       <MobileSection02Operacoes dict={dict} />
       <MobileSection03Problema dict={dict} />
-      <LandingBenefitsMarquee className="mb-16 mt-11" labels={benefits} />
+      <LandingBenefitsMarquee className="relative left-1/2 mb-[88px] mt-[88px] w-screen -translate-x-1/2 px-0" labels={benefits} />
       <MobileSection04ComoAprende dict={dict} />
-      <LandingBenefitsMarquee className="mb-16 mt-11" labels={benefits} />
+      <LandingBenefitsMarquee className="relative left-1/2 mb-[88px] mt-[78px] w-screen -translate-x-1/2 px-0" labels={benefits} />
       <MobileSection05CamadaDecisoria dict={dict} />
       <MobileSection06Institucional dict={dict} />
       <MobileSection07Footer dict={dict} locale={locale} />
