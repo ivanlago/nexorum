@@ -23,8 +23,7 @@ function DefaultChevronRight() {
   return <img alt="" aria-hidden="true" className="size-4 max-w-none" src="/button-image.svg" />;
 }
 
-export function Button({
-  as = "button",
+function ButtonInner({
   children,
   className,
   containerClassName,
@@ -33,22 +32,19 @@ export function Button({
   borderClassName,
   right,
   highlights,
-  type = "button",
-  ...props
-}: Props) {
-  const Component = as;
-
+}: Pick<
+  Props,
+  | "children"
+  | "className"
+  | "containerClassName"
+  | "leftClassName"
+  | "rightClassName"
+  | "borderClassName"
+  | "right"
+  | "highlights"
+>) {
   return (
-    <Component
-      className={[
-        "group relative h-[46px] min-h-[46px] max-h-[46px] w-[235px] min-w-[235px] max-w-[235px] flex-none appearance-none border-0 bg-transparent p-0 align-top",
-        className,
-      ]
-        .filter(Boolean)
-        .join(" ")}
-      {...(as === "button" ? { type } : {})}
-      {...props}
-    >
+    <>
       <span
         className={[
           "absolute inset-0 box-border flex h-[46px] w-[235px] gap-1 p-1 transition-colors duration-300",
@@ -98,6 +94,54 @@ export function Button({
           <span className="absolute bottom-0 left-[0.5px] h-px w-[98px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)] transition-opacity duration-300 group-hover:opacity-100" />
         </span>
       )}
-    </Component>
+    </>
+  );
+}
+
+export function Button(props: Props) {
+  const {
+    as = "button",
+    children,
+    className,
+    containerClassName,
+    leftClassName,
+    rightClassName,
+    borderClassName,
+    right,
+    highlights,
+  } = props;
+
+  const sharedClassName = [
+    "group relative h-[46px] min-h-[46px] max-h-[46px] w-[235px] min-w-[235px] max-w-[235px] flex-none appearance-none border-0 bg-transparent p-0 align-top",
+    className,
+  ]
+    .filter(Boolean)
+    .join(" ");
+
+  const innerProps = {
+    children,
+    className,
+    containerClassName,
+    leftClassName,
+    rightClassName,
+    borderClassName,
+    right,
+    highlights,
+  };
+
+  if (as === "a") {
+    const { as: _as, ...anchorProps } = props as Extract<Props, { as: "a" }>;
+    return (
+      <a className={sharedClassName} {...anchorProps}>
+        <ButtonInner {...innerProps} />
+      </a>
+    );
+  }
+
+  const { as: _as, type = "button", ...buttonProps } = props as Extract<Props, { as?: "button" }>;
+  return (
+    <button className={sharedClassName} type={type} {...buttonProps}>
+      <ButtonInner {...innerProps} />
+    </button>
   );
 }
