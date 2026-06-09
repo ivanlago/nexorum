@@ -3,9 +3,10 @@ import { TextMarquee } from "@/components/landing/text-marquee";
 type Props = {
   labels: readonly string[];
   className?: string;
+  marqueeClassName?: string;
 };
 
-export function LandingBenefitsMarquee({ labels, className = "" }: Props) {
+export function LandingBenefitsMarquee({ labels, className = "", marqueeClassName = "" }: Props) {
   return (
     <div
       className={[
@@ -15,7 +16,7 @@ export function LandingBenefitsMarquee({ labels, className = "" }: Props) {
     >
       <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
       <div className="flex h-[109px] w-full items-center">
-        <TextMarquee durationSeconds={26} contentClassName="gap-16 whitespace-nowrap">
+        <TextMarquee className={marqueeClassName} durationSeconds={26} contentClassName="gap-16 whitespace-nowrap">
           {labels.map((label, idx) => (
             <div key={label} className="flex items-center gap-16">
               <div className="[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
