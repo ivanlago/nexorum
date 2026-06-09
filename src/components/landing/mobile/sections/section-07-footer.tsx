@@ -46,25 +46,31 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       <div className="space-y-10">
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.location?.title}</div>
-          <div className="mt-4 max-w-[212px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
-            {copy.columns?.location?.body}
+          <div className="mt-4 max-w-[248px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+            <span className="inline-block indent-[30px]">
+              {copy.columns?.location?.body}
+            </span>
           </div>
         </div>
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.service?.title}</div>
-          <div className="mt-4 max-w-[212px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
-            {copy.columns?.service?.body}
+          <div className="mt-4 max-w-[248px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+            <span className="inline-block indent-[30px]">
+              {copy.columns?.service?.body}
+            </span>
           </div>
         </div>
         <div>
           <div className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]">{copy.columns?.contact?.title}</div>
-          <div className="mt-4 max-w-[212px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
-            {copy.columns?.contact?.lines?.map?.((line: string, idx: number, arr: string[]) => (
-              <span key={idx}>
+          <div className="mt-4 max-w-[248px] text-[12px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+            <span className="inline-block indent-[30px]">
+              {copy.columns?.contact?.lines?.map?.((line: string, idx: number, arr: string[]) => (
+                <span key={idx}>
                 {line}
                 {idx < arr.length - 1 ? <br /> : null}
               </span>
-            ))}
+              ))}
+            </span>
           </div>
         </div>
       </div>
