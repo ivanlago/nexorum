@@ -5,7 +5,6 @@ const specialistHref =
   "https://wa.me/5511932628256?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20o%20produto%20Nexorum%20Aegis";
 
 export function MobileFixedCta({ dict }: { dict: LandingDictionary }) {
-
   return (
     <div className="fixed bottom-6 left-1/2 z-50 w-[326px] -translate-x-1/2">
       <Button
