@@ -76,6 +76,14 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section03 as any;
   const semInfra = (copy?.tables?.sem ?? []) as Row[];
   const comInfra = (copy?.tables?.com ?? []) as Row[];
+  const mobileComInfra: Row[] = [
+    { problem: "Dados conectados", appears: "Áreas e sistemas em uma base comum.", impact: "Decisões completas e no tempo certo." },
+    { problem: "Decisão antecipada", appears: "Desvios sinalizados com antecedência.", impact: "Antecipação em vez de reação." },
+    { problem: "Fluxo sem retrabalho", appears: "Fluxos auditáveis reduzem conciliações.", impact: "Produtividade preservada." },
+    { problem: "Medições rastreáveis", appears: "Evidências organizadas para comprovação.", impact: "Previsibilidade financeira." },
+    { problem: "Produtividade visível", appears: "Gargalos visíveis antes do impacto.", impact: "Cronograma protegido." },
+    { problem: "Previsibilidade", appears: "Prazo, custo e resultado em tempo real.", impact: "Margem mais governável." },
+  ];
   const appearsIcons: Array<"db" | "blocks" | "briefcase" | "doc" | "calendar" | "bars"> = [
     "db",
     "blocks",
@@ -86,10 +94,10 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   ];
 
   const [mode, setMode] = useState<"sem" | "com">("sem");
-  const rows = useMemo(() => (mode === "sem" ? semInfra : comInfra), [mode, semInfra, comInfra]);
+  const rows = useMemo(() => (mode === "sem" ? semInfra : mobileComInfra), [mode, semInfra]);
 
   return (
-    <section className="relative overflow-hidden px-6 pb-24 pt-20">
+    <section className="relative overflow-hidden px-6 pb-24 pt-[76px]">
       <LandingSectionBackground />
       <h2 className="mt-3 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
         <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
@@ -156,8 +164,28 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
 
             <div className="divide-y divide-[rgba(118,131,143,0.14)]">
               {rows.map((row, idx) => (
-                <div key={row.problem} className="grid grid-cols-[220px_360px_260px] px-6 py-6">
-                  <div className="flex items-center gap-3">
+                <div
+                  key={row.problem}
+                  className={[
+                    "relative isolate grid h-[82px] grid-cols-[220px_360px_260px] items-center px-6",
+                    idx % 2 === 0
+                      ? "bg-gradient-to-b from-[rgba(8,15,22,0.18)] to-[#080f16]"
+                      : "bg-[#05090d]",
+                  ].join(" ")}
+                >
+                  {idx % 2 === 0 ? (
+                    <>
+                      <div className="pointer-events-none absolute left-0 top-0 z-0 h-full w-[132px] overflow-hidden opacity-18">
+                        <div className="absolute left-[-12px] top-[-18px] h-[52px] w-[84px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                        <div className="absolute left-[-4px] top-[18px] h-[78px] w-[144px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.16)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                      </div>
+                      <div className="pointer-events-none absolute right-0 top-0 z-0 h-full w-[132px] overflow-hidden opacity-18">
+                        <div className="absolute right-[-12px] top-[-18px] h-[52px] w-[84px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                        <div className="absolute right-[-4px] top-[18px] h-[78px] w-[144px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.16)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                      </div>
+                    </>
+                  ) : null}
+                  <div className="relative z-10 flex items-center gap-3">
                     <span className="inline-flex size-5 items-center justify-center">
                       <img
                         alt=""
@@ -170,14 +198,21 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
                       {row.problem}
                     </div>
                   </div>
-                  <div className="flex items-start gap-3 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                  <div className="relative z-10 flex items-start gap-3 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                     <span className="shrink-0 text-[color:var(--primitive-colors-primary-400)]">
                       <TableIcon name={appearsIcons[idx] ?? "db"} />
                     </span>
                     <span>{row.appears}</span>
                   </div>
-                  <div className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                    {row.impact}
+                  <div className="relative z-10 flex h-full items-center text-[12px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
+                    <span
+                      className={[
+                        "block whitespace-normal break-words leading-[1.4]",
+                        mode === "com" ? "w-[118px]" : "w-[150px]",
+                      ].join(" ")}
+                    >
+                      {row.impact}
+                    </span>
                   </div>
                 </div>
               ))}

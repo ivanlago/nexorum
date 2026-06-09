@@ -24,7 +24,7 @@ export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; l
   ] as const;
 
   return (
-    <div className="relative mx-auto w-full max-w-[375px]">
+    <div className="relative w-full">
       <MobileSection01Hero dict={dict} locale={locale} />
       <MobileSection01Image dict={dict} />
       <MobileSection01Carousel dict={dict} />

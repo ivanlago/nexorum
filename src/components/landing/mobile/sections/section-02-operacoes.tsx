@@ -38,7 +38,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
   const copy = dict.section02 as any;
 
   return (
-    <section className="relative overflow-hidden px-6 pb-20 pt-24">
+    <section className="relative overflow-hidden px-6 pb-0 pt-[88px]">
       <LandingSectionBackground />
       <h2 className="mt-3 [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
         <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
@@ -57,7 +57,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
 
       <div
         className={[
-          "mt-14 -mx-6 overflow-x-auto px-6",
+          "mt-14 overflow-x-auto",
           "snap-x snap-mandatory",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         ].join(" ")}
@@ -67,17 +67,17 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
             <div
               key={c.tag}
               className={[
-                "snap-start shrink-0",
-                "w-[calc(100vw-48px)] max-w-[330px]",
+                "relative snap-start shrink-0",
+                "h-[500px] w-[280px]",
                 "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
               ].join(" ")}
             >
-              <div className="flex h-[96px] items-center px-6">
+              <div className="flex h-[103px] items-end px-8 pb-10">
                 <div className="flex w-full items-center gap-6">
                   <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
                     {c.tag}
                   </div>
-                  <div className="text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                  <div className="w-[158px] text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                     {copy.cards?.[idx]?.subtitle}
                   </div>
                 </div>
@@ -85,18 +85,18 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
 
               <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
 
-              <div className="relative flex h-[240px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
-                <img alt="" className="h-[208px] w-[208px] object-cover opacity-70 mix-blend-lighten" src={c.image} />
+              <div className="relative flex h-[254px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
+                <img alt="" className="h-[175px] w-[175px] object-cover opacity-70 mix-blend-lighten" src={c.image} />
                 <div className="absolute inset-0 bg-[#05090d]/20" />
                 <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
               </div>
 
               <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-              <div className="px-6 pb-8 pt-6">
-                <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
-                  {copy.cards?.[idx]?.title}
+              <div className="absolute left-8 top-[398px] h-[62px] w-[216px]">
+                <div className="flex h-[10px] items-center [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                  <span>{copy.cards?.[idx]?.title}</span>
                 </div>
-                <div className="mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                <div className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
                   {copy.cards?.[idx]?.description}
                 </div>
               </div>
@@ -105,20 +105,20 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
         </div>
       </div>
 
-      <div className="mt-16">
+      <div className="mt-20">
         <div className="[font-family:var(--font-orbitron)] text-[14px] uppercase tracking-[0.08em] text-[color:var(--primitive-colors-gray-200)]">
           {copy.systemsHeading}
         </div>
-        <p className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+        <p className="mt-10 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
           {copy.systemsLead}
         </p>
-        <HowItWorksLink className="mt-8 px-[37px]" href="#como-aprende">
+        <HowItWorksLink className="mt-10 px-[37px]" href="#como-aprende">
           {dict.common.seeHowItWorks}
         </HowItWorksLink>
       </div>
 
       <div className="mt-16 -mx-6 bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] pt-0">
-        <div className="border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-7 py-9">
+        <div className="border border-b-0 border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-7 py-9">
           <div className="flex items-center justify-center gap-6">
             <div className="[font-family:var(--font-orbitron)] text-[12px] font-bold text-[color:var(--primitive-colors-primary-400)]">
               [ APIs ]
