@@ -123,7 +123,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
 
           <div className="flex items-end justify-between">
-            <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
+            <a className="text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#como-aprende">
               {copy.linkLabel} <span className="opacity-70">›</span>
             </a>
             <div className="ml-auto max-w-[696px] text-left">

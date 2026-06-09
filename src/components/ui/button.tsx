@@ -1,6 +1,14 @@
 import type { ComponentPropsWithoutRef, ReactNode } from "react";
 
-type Props = Omit<ComponentPropsWithoutRef<"button">, "children"> & {
+type ButtonLikeProps =
+  | ({
+      as?: "button";
+    } & Omit<ComponentPropsWithoutRef<"button">, "children">)
+  | ({
+      as: "a";
+    } & Omit<ComponentPropsWithoutRef<"a">, "children">);
+
+type Props = ButtonLikeProps & {
   children: ReactNode;
   className?: string;
   containerClassName?: string;
@@ -16,6 +24,7 @@ function DefaultChevronRight() {
 }
 
 export function Button({
+  as = "button",
   children,
   className,
   containerClassName,
@@ -27,15 +36,17 @@ export function Button({
   type = "button",
   ...props
 }: Props) {
+  const Component = as;
+
   return (
-    <button
+    <Component
       className={[
         "group relative h-[46px] min-h-[46px] max-h-[46px] w-[235px] min-w-[235px] max-w-[235px] flex-none appearance-none border-0 bg-transparent p-0 align-top",
         className,
       ]
         .filter(Boolean)
         .join(" ")}
-      type={type}
+      {...(as === "button" ? { type } : {})}
       {...props}
     >
       <span
@@ -87,6 +98,6 @@ export function Button({
           <span className="absolute bottom-0 left-[0.5px] h-px w-[98px] bg-gradient-to-r from-[rgba(255,255,255,0)] via-[rgba(255,255,255,0.4)] to-[rgba(255,255,255,0)] transition-opacity duration-300 group-hover:opacity-100" />
         </span>
       )}
-    </button>
+    </Component>
   );
 }

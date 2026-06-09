@@ -26,7 +26,7 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
           {copy.lead}
         </span>
       </p>
-      <HowItWorksLink className="mt-10 px-[37px]" href="#">
+      <HowItWorksLink className="mt-10 px-[37px]" href="#como-aprende">
         {dict.common.seeHowItWorks}
       </HowItWorksLink>
 

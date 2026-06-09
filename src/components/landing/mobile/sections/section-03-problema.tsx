@@ -102,7 +102,10 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
           {copy.lead}
         </span>
       </p>
-      <a className="mt-10 inline-flex items-center gap-2 px-[37px] text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]" href="#">
+      <a
+        className="mt-10 inline-flex items-center gap-2 px-[37px] text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)]"
+        href="#como-aprende"
+      >
         {copy.linkLabel} <img alt="" className="size-4 opacity-80" src={imgCaret} />
       </a>
 

@@ -44,7 +44,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
       <div className="relative w-full">
         <div className="mx-auto w-full max-w-[1216px] px-6 lg:px-0">
           <div className="flex items-end justify-between">
-            <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+            <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
             <div className="flex w-full max-w-[696px] flex-col items-end gap-10">
               <h2 className="[font-family:var(--font-orbitron)] w-full bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] font-semibold leading-[0] text-[24px] text-transparent to-[128.98%] to-[rgba(167,184,198,0)] tracking-[0.24px] uppercase whitespace-pre-wrap">
                 {headingLines.map((line, idx) => (
@@ -93,7 +93,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
 
               <div className="flex items-center gap-10">
                 <CtaPrimary label={dict.common.talkToSpecialist} />
-                <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+                <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
               </div>
             </div>
           </div>

@@ -54,7 +54,7 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
 
           <div className="absolute left-0 top-[428px] z-10 flex w-[235px] flex-col gap-[55px]">
             <CtaPrimary label={dict.common.talkToSpecialist} />
-            <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+            <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
           </div>
         </div>
 

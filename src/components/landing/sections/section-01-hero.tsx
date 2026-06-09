@@ -21,17 +21,17 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 	      <div className="absolute inset-0 bg-[radial-gradient(900px_500px_at_50%_-40%,rgba(255,255,255,0.16),rgba(255,255,255,0)_60%)]" />
 	      <div className="relative w-full overflow-hidden">
 	        <div className="h-[1000px] w-full">
-          <div className="pointer-events-none absolute inset-y-[216px] left-1/2 z-0 w-[calc(100vw+24px)] -translate-x-1/2">
-            <div className="absolute inset-y-0 left-[-12px] w-[240px]">
-              <div className="absolute inset-y-0 left-0 w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] via-[rgba(5,9,13,0.84)] via-[72%] to-[#05090d]" />
-              <div className="absolute inset-y-0 left-0 w-[228px] bg-[linear-gradient(90deg,#05090d_0%,rgba(5,9,13,0.92)_34%,rgba(5,9,13,0.42)_74%,rgba(5,9,13,0)_100%)]" />
-              <div className="absolute inset-y-0 left-[18px] w-[96px] bg-[radial-gradient(ellipse_at_left,rgba(108,181,255,0.08),rgba(108,181,255,0)_72%)] mix-blend-screen" />
+          <div className="pointer-events-none absolute left-1/2 top-[216px] z-0 h-[822px] w-[calc(100vw+24px)] -translate-x-1/2">
+            <div className="absolute left-[-12px] top-0 h-[822px] w-[240px]">
+              <div className="absolute left-0 top-0 h-[822px] w-[183px] bg-[linear-gradient(270deg,rgba(5,9,13,0)_0%,rgba(5,9,13,0.14)_18%,rgba(5,9,13,0.58)_52%,rgba(5,9,13,0.9)_82%,#05090d_100%)]" />
+              <div className="absolute left-0 top-0 h-[822px] w-[236px] bg-[linear-gradient(90deg,#05090d_0%,rgba(5,9,13,0.88)_28%,rgba(5,9,13,0.44)_62%,rgba(5,9,13,0.12)_84%,rgba(5,9,13,0)_100%)]" />
+              <div className="absolute left-[22px] top-0 h-[822px] w-[104px] bg-[radial-gradient(ellipse_at_left,rgba(108,181,255,0.07),rgba(108,181,255,0.02)_42%,rgba(108,181,255,0)_74%)] mix-blend-screen" />
             </div>
 
-            <div className="absolute inset-y-0 right-[-12px] w-[240px]">
-              <div className="absolute inset-y-0 right-0 w-[183px] bg-gradient-to-l from-[rgba(5,9,13,0)] via-[rgba(5,9,13,0.84)] via-[72%] to-[#05090d] rotate-180" />
-              <div className="absolute inset-y-0 right-0 w-[228px] bg-[linear-gradient(270deg,#05090d_0%,rgba(5,9,13,0.92)_34%,rgba(5,9,13,0.42)_74%,rgba(5,9,13,0)_100%)]" />
-              <div className="absolute inset-y-0 right-[18px] w-[96px] bg-[radial-gradient(ellipse_at_right,rgba(108,181,255,0.08),rgba(108,181,255,0)_72%)] mix-blend-screen" />
+            <div className="absolute right-[-12px] top-0 h-[822px] w-[240px]">
+              <div className="absolute right-0 top-0 h-[822px] w-[183px] bg-[linear-gradient(90deg,rgba(5,9,13,0)_0%,rgba(5,9,13,0.14)_18%,rgba(5,9,13,0.58)_52%,rgba(5,9,13,0.9)_82%,#05090d_100%)]" />
+              <div className="absolute right-0 top-0 h-[822px] w-[236px] bg-[linear-gradient(270deg,#05090d_0%,rgba(5,9,13,0.88)_28%,rgba(5,9,13,0.44)_62%,rgba(5,9,13,0.12)_84%,rgba(5,9,13,0)_100%)]" />
+              <div className="absolute right-[22px] top-0 h-[822px] w-[104px] bg-[radial-gradient(ellipse_at_right,rgba(108,181,255,0.07),rgba(108,181,255,0.02)_42%,rgba(108,181,255,0)_74%)] mix-blend-screen" />
             </div>
           </div>
 
@@ -130,7 +130,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
                 </p>
                 <div className="mt-6 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
                   <CtaPrimary label={dict.common.talkToSpecialist} />
-                  <HowItWorksLink href="#">{dict.common.seeHowItWorks}</HowItWorksLink>
+                  <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
                 </div>
               </div>
             </div>

@@ -51,7 +51,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
           {copy.lead}
         </span>
       </p>
-      <HowItWorksLink className="mt-10 px-[37px]" href="#">
+      <HowItWorksLink className="mt-10 px-[37px]" href="#como-aprende">
         {dict.common.seeHowItWorks}
       </HowItWorksLink>
 
@@ -112,7 +112,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
         <p className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
           {copy.systemsLead}
         </p>
-        <HowItWorksLink className="mt-8 px-[37px]" href="#">
+        <HowItWorksLink className="mt-8 px-[37px]" href="#como-aprende">
           {dict.common.seeHowItWorks}
         </HowItWorksLink>
       </div>

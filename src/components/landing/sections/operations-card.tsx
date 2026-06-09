@@ -16,8 +16,7 @@ type Props = {
 // - Video surround structure: 300:4864
 const imgCardTop = "/figma-assets/bb91a341-c74a-4e5a-9115-ce61e8fbe3ee.png";
 const imgCardDustTop = "/figma-assets/9a4a5b28-bd46-4231-81e9-225f35659d32.png";
-const cardDividerClassName =
-  "h-[0.5px] w-full bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.26)_8%,rgba(118,131,143,0.26)_92%,rgba(118,131,143,0)_100%)]";
+const cardDividerClassName = "h-[0.5px] w-full bg-[rgba(118,131,143,0.28)]";
 
 export function OperationsCard({
   tag,
