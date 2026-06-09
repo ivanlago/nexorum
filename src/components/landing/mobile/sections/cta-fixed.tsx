@@ -6,11 +6,11 @@ const specialistHref =
 
 export function MobileFixedCta({ dict }: { dict: LandingDictionary }) {
   return (
-    <div className="fixed bottom-6 left-1/2 z-50 w-[326px] -translate-x-1/2">
+    <div className="fixed inset-x-0 bottom-0 z-50 flex justify-center pb-9">
       <Button
         as="a"
-        className="w-full"
-        containerClassName="w-[334px]"
+        className="h-[54px] min-h-[54px] max-h-[54px] w-[331px] min-w-[331px] max-w-[331px]"
+        containerClassName="h-[54px] min-h-[54px] max-h-[54px] w-[331px]"
         leftClassName="w-[273px]"
         borderClassName="border border-[rgba(0,78,155,0.7)]"
         href={specialistHref}
