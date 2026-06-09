@@ -4,7 +4,8 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
-const imgDivider = "https://www.figma.com/api/mcp/asset/cde66716-d2c7-4e82-8e4c-c9ce50556c9c";
+const dividerClassName =
+  "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
 
 const socialIcons = [
   { alt: "Instagram", src: "/instagram.svg" },
@@ -19,7 +20,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
   return (
     <footer className="relative overflow-hidden px-6 pb-12 pt-0">
       <LandingSectionBackground />
-      <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+      <div aria-hidden className={dividerClassName} />
 
       <div className="mt-12 flex items-center gap-2">
         <a
@@ -36,7 +37,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </p>
 
       <div className="mt-10">
-        <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+        <div aria-hidden className={dividerClassName} />
       </div>
 
       <div className="mt-[10px] mb-[50px]">
@@ -70,7 +71,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </div>
 
       <div className="mt-12">
-        <img alt="" className="h-px w-full opacity-40" src={imgDivider} />
+        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
       </div>
 
       <div className="mt-10 flex items-center justify-between">
@@ -90,7 +91,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </div>
 
       <div className="mt-12">
-        <img alt="" className="h-px w-full opacity-40" src={imgDivider} />
+        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
       </div>
 
       <a className="mt-10 inline-flex items-center gap-3 text-[12px] text-[color:var(--primitive-colors-gray-200)]" href="#">
@@ -101,7 +102,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </a>
 
       <div className="mt-12">
-        <img alt="" className="h-px w-full opacity-40" src={imgDivider} />
+        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
       </div>
 
       <div className="mt-12 text-[10px] text-[color:var(--primitive-colors-gray-200)]">
@@ -109,7 +110,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </div>
 
       <div className="mt-12">
-        <img alt="" className="h-px w-full opacity-40" src={imgDivider} />
+        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
       </div>
 
       <p className="mt-12 text-[10px] font-normal leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
@@ -117,7 +118,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       </p>
 
       <div className="mt-12">
-        <img alt="" className="h-px w-full opacity-40" src={imgDivider} />
+        <div aria-hidden className="h-px w-full opacity-40 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.22)_8%,rgba(118,131,143,0.22)_92%,rgba(118,131,143,0)_100%)]" />
       </div>
     </footer>
   );

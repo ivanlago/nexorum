@@ -4,9 +4,10 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
-const imgDivider = "https://www.figma.com/api/mcp/asset/7af0d948-cb2c-4bc8-b1cb-df9bef6b3474";
 const imgMenu = "/menu.png";
 const imgWelcome = "/header-bemvindo.png";
+const dividerClassName =
+  "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
 
 export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const headlineLines = [
@@ -17,7 +18,7 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
   return (
     <section className="relative overflow-hidden px-6 pt-0">
       <div className="pt-6">
-        <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+        <div aria-hidden className={dividerClassName} />
         <div className="flex items-center justify-between py-6">
           <a
             className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
@@ -44,7 +45,7 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
             {dict.common.welcome}
           </span>
         </div>
-        <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+        <div aria-hidden className={dividerClassName} />
       </div>
 
       <div className="mt-8 flex flex-col gap-10">

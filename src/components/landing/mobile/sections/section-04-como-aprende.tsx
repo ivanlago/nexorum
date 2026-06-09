@@ -17,7 +17,7 @@ const whatCards = [
   { icon: "/aprende-imagem-4.svg" },
   { icon: "/aprende-imagem-5.svg" }
 ];
-const sideTexture = "https://www.figma.com/api/mcp/asset/0f5652ee-b81d-42f6-a4fb-7bb931aa124d";
+const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
 
 export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section04 as any;

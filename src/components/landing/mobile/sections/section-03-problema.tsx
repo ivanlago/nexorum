@@ -4,8 +4,9 @@ import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
-const imgCaret = "https://www.figma.com/api/mcp/asset/a86cfda8-89fd-4823-9ebb-38085f2c4488";
-const imgDivider = "https://www.figma.com/api/mcp/asset/a5fcbc2c-ca3d-4933-9ed7-49484d1fd6ed";
+const imgCaret = "/chevron.svg";
+const dividerClassName =
+  "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
 const negativeIcon = "/nagativo-imagem.svg";
 const positiveIcon = "/positivo-imagem.svg";
 
@@ -133,7 +134,7 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
           </button>
         </div>
 
-        <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+        <div aria-hidden className={dividerClassName} />
 
         <div
           className={[

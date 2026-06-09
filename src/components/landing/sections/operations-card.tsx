@@ -14,11 +14,10 @@ type Props = {
 // - Dust layer outside card: 300:4887
 // - Top text+divider: 300:4859
 // - Video surround structure: 300:4864
-const imgCardTop = "https://www.figma.com/api/mcp/asset/bb91a341-c74a-4e5a-9115-ce61e8fbe3ee";
-const imgCardDustTop = "https://www.figma.com/api/mcp/asset/9a4a5b28-bd46-4231-81e9-225f35659d32";
-const imgCardDivider = "https://www.figma.com/api/mcp/asset/ce244b82-85a8-4a4a-b342-e47ccdfb2e2c";
-const imgCardTexture01 = "https://www.figma.com/api/mcp/asset/7be2047f-b412-4ac4-bc01-ce10cdfcdc6b";
-const imgCardTexture02 = "https://www.figma.com/api/mcp/asset/0b60c6d8-aeec-46ba-854b-a62fabcd6838";
+const imgCardTop = "/figma-assets/bb91a341-c74a-4e5a-9115-ce61e8fbe3ee.png";
+const imgCardDustTop = "/figma-assets/9a4a5b28-bd46-4231-81e9-225f35659d32.png";
+const cardDividerClassName =
+  "h-[0.5px] w-full bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.26)_8%,rgba(118,131,143,0.26)_92%,rgba(118,131,143,0)_100%)]";
 
 export function OperationsCard({
   tag,
@@ -62,27 +61,15 @@ export function OperationsCard({
             </div>
           </div>
 
-          <div className="absolute bottom-0 left-0 h-[0.5px] w-[280px]">
-            <div className="absolute inset-0">
-              <img alt="" className="block size-full max-w-none" src={imgCardDivider} />
-            </div>
-          </div>
+          <div aria-hidden className={["absolute bottom-0 left-0 w-[280px]", cardDividerClassName].join(" ")} />
         </div>
 
         <div className="absolute left-1/2 top-[143px] z-10 h-[171px] w-[175px] -translate-x-1/2">
           <div className="pointer-events-none absolute left-[-53.5px] top-[-136px] h-[97px] w-[280px] opacity-30">
-            <img
-              alt=""
-              className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none rotate-180"
-              src={imgCardTexture02}
-            />
+            <div className="absolute left-[-72px] top-[-26px] h-[148px] w-[424px] rotate-180 bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.3)_0%,rgba(108,181,255,0.14)_28%,rgba(108,181,255,0.03)_56%,rgba(108,181,255,0)_76%)] blur-[18px]" />
           </div>
           <div className="pointer-events-none absolute left-[-53.5px] top-[182px] h-[173px] w-[280px] opacity-30">
-            <img
-              alt=""
-              className="absolute left-[-5.14px] top-[42px] h-[131px] w-[430.246px] max-w-none rotate-180"
-              src={imgCardTexture01}
-            />
+            <div className="absolute left-[-72px] top-[18px] h-[148px] w-[424px] rotate-180 bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.28)_0%,rgba(108,181,255,0.13)_30%,rgba(108,181,255,0.03)_58%,rgba(108,181,255,0)_76%)] blur-[18px]" />
           </div>
 
           <div
@@ -102,11 +89,7 @@ export function OperationsCard({
           </div>
         </div>
 
-        <div className="absolute left-0 top-[358px] z-10 h-[0.5px] w-[280px]">
-          <div className="absolute inset-0">
-            <img alt="" className="block size-full max-w-none" src={imgCardDivider} />
-          </div>
-        </div>
+        <div aria-hidden className={["absolute left-0 top-[358px] z-10 w-[280px]", cardDividerClassName].join(" ")} />
 
         <div className="absolute left-8 right-8 top-[398px] z-10 h-[62px]">
           <div className="flex h-[10px] w-full items-center overflow-hidden [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[0] text-[color:var(--primitive-colors-gray-200)]">

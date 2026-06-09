@@ -41,7 +41,7 @@ const transformIcons = [
   "/funcao-imagem-5.svg",
   "/funcao-imagem-6.svg",
 ];
-const sideTexture = "https://www.figma.com/api/mcp/asset/0f5652ee-b81d-42f6-a4fb-7bb931aa124d";
+const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
 
 export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -145,8 +145,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
               <div
                 className="absolute inset-0 bg-cover bg-center bg-no-repeat"
                 style={{
-                  backgroundImage:
-                    "url(https://www.figma.com/api/mcp/asset/d3b24f5c-d64d-4e15-8db2-1e3d039aab7d)",
+                  backgroundImage: `url(${sideTexture})`,
                 }}
               />
             </div>
@@ -299,7 +298,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
                   <img
                     alt=""
                     className="absolute left-[-7px] top-[-26px] h-[131px] w-[430.246px] max-w-none"
-                    src="https://www.figma.com/api/mcp/asset/b50ab1ca-61a7-44ea-a59d-44716252e794"
+                    src="/figma-assets/b50ab1ca-61a7-44ea-a59d-44716252e794.svg"
                   />
                 </div>
 

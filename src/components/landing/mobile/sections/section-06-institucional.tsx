@@ -2,9 +2,10 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
 const imgMap = "/mapa.png";
-const imgPillarsTexture = "https://www.figma.com/api/mcp/asset/e2a3d064-253e-492f-a3b6-cb0e4e02e0f5";
-const imgTexture = "https://www.figma.com/api/mcp/asset/e3314f31-61f0-42df-a27f-e6fe05af7ace";
-const imgDivider = "https://www.figma.com/api/mcp/asset/23d2bdc2-1217-4366-9242-868d1d2034f5";
+const imgPillarsTexture = "/figma-assets/e2a3d064-253e-492f-a3b6-cb0e4e02e0f5.png";
+const imgTexture = "/figma-assets/e3314f31-61f0-42df-a27f-e6fe05af7ace.svg";
+const dividerClassName =
+  "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
 
 export function MobileSection06Institucional({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section06 as any;
@@ -67,7 +68,7 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
           </div>
 
           <div className="w-[calc(100%+64px)]">
-            <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+            <div aria-hidden className={dividerClassName} />
           </div>
 
           <div className="w-full">

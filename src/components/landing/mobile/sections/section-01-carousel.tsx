@@ -1,24 +1,20 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
-const imgDivider = "https://www.figma.com/api/mcp/asset/4bb21cb0-3d1f-4d49-87c4-5311bcb87e87";
-const imgBgVector1 = "https://www.figma.com/api/mcp/asset/d4aa8cc6-b602-4995-bbb4-2b24dccb2473";
-const imgBgVector2 = "https://www.figma.com/api/mcp/asset/684386e2-e653-490a-92ae-32ea07dfa3f6";
-
 const items = [
   {
-    icon: "/detecta.png",
+    icon: "/hero-imagem-1.svg",
   },
   {
-    icon: "/alerta.png",
+    icon: "/hero-imagem-2.svg",
   },
   {
-    icon: "/recomenda.png",
+    icon: "/hero-imagem-3.svg",
   },
   {
-    icon: "/simula.png",
+    icon: "/hero-imagem-4.svg",
   },
   {
-    icon: "/governa.png",
+    icon: "/hero-imagem-5.svg",
   },
 ];
 
@@ -28,10 +24,13 @@ export function MobileSection01Carousel({ dict }: { dict: LandingDictionary }) {
   return (
     <section className="relative mt-8 overflow-hidden">
       <div className="pointer-events-none absolute inset-0 opacity-45">
-        <img alt="" className="absolute inset-0 size-full object-cover" src={imgBgVector1} />
-        <img alt="" className="absolute inset-0 size-full object-cover mix-blend-lighten" src={imgBgVector2} />
+        <div className="absolute inset-0 bg-[radial-gradient(58%_260%_at_50%_-24%,rgba(84,150,255,0.68),rgba(36,82,152,0.34)_18%,rgba(7,13,20,0.16)_36%,rgba(5,9,13,0)_62%)]" />
+        <div className="absolute inset-0 bg-[radial-gradient(72%_230%_at_50%_-36%,rgba(129,184,255,0.18),rgba(36,82,152,0.12)_26%,rgba(5,9,13,0)_60%)] mix-blend-lighten" />
       </div>
-      <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+      <div
+        aria-hidden
+        className="h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]"
+      />
       <div className="relative mt-6 overflow-x-auto px-6">
         <div className="flex w-max gap-8 pb-6">
           {items.map((item, idx) => (
@@ -49,7 +48,10 @@ export function MobileSection01Carousel({ dict }: { dict: LandingDictionary }) {
           ))}
         </div>
       </div>
-      <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+      <div
+        aria-hidden
+        className="h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]"
+      />
     </section>
   );
 }

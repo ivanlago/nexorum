@@ -3,7 +3,8 @@ import { LandingSectionBackground } from "@/components/landing/landing-section-b
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
-const imgDivider = "https://www.figma.com/api/mcp/asset/f4bf4418-d9f2-4524-ba78-ed7b5af4794f";
+const dividerClassName =
+  "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
 
 const cards = [
   {
@@ -127,11 +128,11 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
             </div>
           </div>
         </div>
-        <img alt="" className="mt-5 h-px w-full opacity-60" src={imgDivider} />
+        <div aria-hidden className={["mt-5", dividerClassName].join(" ")} />
         <div className="mt-4 overflow-hidden px-6 opacity-80">
           <LogoCarousel logos={logoRow} durationSeconds={18} itemClassName="h-8" />
         </div>
-        <img alt="" className="mt-4 h-px w-full opacity-60" src={imgDivider} />
+        <div aria-hidden className={["mt-4", dividerClassName].join(" ")} />
       </div>
     </section>
   );

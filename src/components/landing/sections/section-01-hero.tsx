@@ -9,14 +9,6 @@ import { Suspense } from "react";
 const imgWelcome = "/header-bemvindo.png";
 const imgMenu = "/menu.png";
 
-const imgGlowA = "https://www.figma.com/api/mcp/asset/6bbbdb76-dc06-44ae-a9e1-3759c71a4046";
-const imgGlowB = "https://www.figma.com/api/mcp/asset/90c7f464-0c0c-42fe-8a75-f369dce989a3";
-const imgGlowC = "https://www.figma.com/api/mcp/asset/862871ea-2f19-44f7-9e14-7d78bac6535a";
-
-const imgGlowD = "https://www.figma.com/api/mcp/asset/3ede7e49-c585-4441-8862-3f9ba5c3c47a";
-const imgGlowE = "https://www.figma.com/api/mcp/asset/8696c4d5-9129-4f26-89e7-9bd9775044c5";
-const imgGlowF = "https://www.figma.com/api/mcp/asset/8436e0b0-6b76-4883-8e0a-1a16504a9657";
-
 export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const headlineLines = dict.hero.headline.split("\n");
   const headlineClassName =
@@ -63,34 +55,22 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
 
           <div className="pointer-events-none absolute left-1/2 top-0 z-0 h-[1000px] w-[1441px] -translate-x-1/2 overflow-visible opacity-70">
             <div className="absolute left-[-138px] top-0 h-[910px] w-[1208px] overflow-hidden opacity-[0.15] mix-blend-screen">
-              <div className="absolute inset-0">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowA} />
-              </div>
-              <div className="absolute inset-0">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowB} />
-              </div>
-              <div className="absolute inset-0">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowC} />
-              </div>
+              <div className="absolute left-[-12%] top-[-16%] h-[132%] w-[118%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.4)_0%,rgba(108,181,255,0.16)_26%,rgba(108,181,255,0.03)_48%,rgba(108,181,255,0)_72%)] blur-[28px]" />
+              <div className="absolute left-[8%] top-[-8%] h-[118%] w-[92%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(171,210,255,0.28)_0%,rgba(171,210,255,0.1)_30%,rgba(171,210,255,0)_62%)] blur-[34px]" />
+              <div className="absolute left-[16%] top-[6%] h-[98%] w-[72%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(87,144,255,0.22)_0%,rgba(87,144,255,0.06)_34%,rgba(87,144,255,0)_68%)] blur-[40px]" />
             </div>
 
             <div className="absolute left-[-428px] top-0 h-[960px] w-[1208px] overflow-hidden opacity-[0.15] mix-blend-plus-lighter">
-              <div className="absolute inset-0">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowA} />
-              </div>
-              <div className="absolute inset-0">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowB} />
-              </div>
-              <div className="absolute inset-0">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowC} />
-              </div>
+              <div className="absolute left-[-18%] top-[-14%] h-[136%] w-[124%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.36)_0%,rgba(108,181,255,0.14)_26%,rgba(108,181,255,0.03)_50%,rgba(108,181,255,0)_74%)] blur-[30px]" />
+              <div className="absolute left-[4%] top-[-10%] h-[120%] w-[96%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(171,210,255,0.24)_0%,rgba(171,210,255,0.08)_32%,rgba(171,210,255,0)_62%)] blur-[36px]" />
+              <div className="absolute left-[18%] top-[4%] h-[102%] w-[74%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(87,144,255,0.2)_0%,rgba(87,144,255,0.05)_36%,rgba(87,144,255,0)_70%)] blur-[42px]" />
             </div>
 
             <div className="absolute right-[-422px] top-[486px] flex h-[1080px] w-[1559px] -translate-y-1/2 items-center justify-center mix-blend-screen">
               <div className="relative h-[1080px] w-[1559px] rotate-180 overflow-hidden opacity-30 [-webkit-transform:rotate(180deg)_scaleY(-1)] [transform:rotate(180deg)_scaleY(-1)]">
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowD} />
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowE} />
-                <img alt="" className="absolute -inset-1 size-[calc(100%+8px)] max-w-none object-contain" src={imgGlowF} />
+                <div className="absolute left-[6%] top-[10%] h-[84%] w-[88%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.26)_0%,rgba(108,181,255,0.08)_32%,rgba(108,181,255,0)_68%)] blur-[40px]" />
+                <div className="absolute left-[22%] top-[18%] h-[66%] w-[58%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(184,217,255,0.2)_0%,rgba(184,217,255,0.05)_38%,rgba(184,217,255,0)_70%)] blur-[34px]" />
+                <div className="absolute left-[34%] top-[28%] h-[44%] w-[34%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(118,188,255,0.18)_0%,rgba(118,188,255,0.04)_40%,rgba(118,188,255,0)_72%)] blur-[30px]" />
               </div>
             </div>
 

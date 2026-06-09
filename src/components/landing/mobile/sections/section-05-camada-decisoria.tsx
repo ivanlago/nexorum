@@ -2,7 +2,7 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 
-const imgWhyDifferentTexture = "https://www.figma.com/api/mcp/asset/38242fdd-85b2-4adf-b496-71a90066a7fc";
+const imgWhyDifferentTexture = "/figma-assets/38242fdd-85b2-4adf-b496-71a90066a7fc.svg";
 
 type Row = { not: string; why: string; does: string };
 

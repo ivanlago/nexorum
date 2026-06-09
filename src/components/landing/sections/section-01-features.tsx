@@ -1,24 +1,20 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
-const imgBgVector1 = "https://www.figma.com/api/mcp/asset/d4aa8cc6-b602-4995-bbb4-2b24dccb2473";
-const imgBgVector2 = "https://www.figma.com/api/mcp/asset/684386e2-e653-490a-92ae-32ea07dfa3f6";
-const imgDivider = "https://www.figma.com/api/mcp/asset/112fe459-2ef0-4e47-9934-ba3743afd721";
-
 const items = [
   {
-    icon: "https://www.figma.com/api/mcp/asset/82800e39-c1fb-467d-a2c7-a06ceafbef3a",
+    icon: "/hero-imagem-1.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/d88a6581-62a0-4ee7-9b1f-506f2fed8796",
+    icon: "/hero-imagem-2.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/2c01e099-3e68-4a02-9e4f-c60ff067a5d5",
+    icon: "/hero-imagem-3.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/dd065b5c-d02e-4068-8ac4-29341966d676",
+    icon: "/hero-imagem-4.svg",
   },
   {
-    icon: "https://www.figma.com/api/mcp/asset/fc64979a-f4f6-4f1c-b587-81c501643811",
+    icon: "/hero-imagem-5.svg",
   },
 ];
 
@@ -30,12 +26,15 @@ export function LandingSection01Features({ dict }: { dict: LandingDictionary }) 
       <div className="relative w-full px-6 lg:px-0">
         <div className="relative w-full overflow-hidden">
           <div className="pointer-events-none absolute inset-0 opacity-70">
-            <img alt="" className="absolute inset-0 size-full object-cover" src={imgBgVector1} />
-            <img alt="" className="absolute inset-0 size-full object-cover mix-blend-lighten" src={imgBgVector2} />
+            <div className="absolute inset-0 bg-[radial-gradient(46%_260%_at_50%_-34%,rgba(84,150,255,0.72),rgba(36,82,152,0.38)_18%,rgba(7,13,20,0.18)_32%,rgba(5,9,13,0)_58%)]" />
+            <div className="absolute inset-0 bg-[radial-gradient(62%_240%_at_50%_-44%,rgba(129,184,255,0.22),rgba(36,82,152,0.14)_24%,rgba(5,9,13,0)_58%)] mix-blend-lighten" />
           </div>
 
           <div className="flex w-full flex-col items-center gap-12">
-            <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+            <div
+              aria-hidden
+              className="h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]"
+            />
 
             <div className="flex w-[1216px] items-center gap-8">
               {items.map((item, idx) => (
@@ -53,7 +52,10 @@ export function LandingSection01Features({ dict }: { dict: LandingDictionary }) 
               ))}
             </div>
 
-            <img alt="" className="h-px w-full opacity-60" src={imgDivider} />
+            <div
+              aria-hidden
+              className="h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]"
+            />
           </div>
         </div>
       </div>

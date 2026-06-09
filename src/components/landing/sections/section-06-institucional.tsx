@@ -5,8 +5,8 @@ import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const imgUsMap = "/mapa.png";
-const imgDustLayer01 = "https://www.figma.com/api/mcp/asset/90970330-97fd-4a07-9f7f-660b2da68917";
-const imgDustLayer02 = "https://www.figma.com/api/mcp/asset/9a52aaec-c1fd-43c0-abc6-56b334d6f46a";
+const imgDustLayer01 = "/figma-assets/90970330-97fd-4a07-9f7f-660b2da68917.png";
+const imgDustLayer02 = "/figma-assets/9a52aaec-c1fd-43c0-abc6-56b334d6f46a.png";
 
 export function LandingSection06Institucional({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section06 as any;

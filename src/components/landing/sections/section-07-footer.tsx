@@ -10,8 +10,8 @@ const socialIcons = [
   { alt: "YouTube", src: "/youtube.svg" },
   { alt: "LinkedIn", src: "/linkedin.svg" },
 ];
-const imgFooterTopDivider = "https://www.figma.com/api/mcp/asset/70ec18e5-f333-40f0-bf8e-0233b0407f14";
-const imgFooterMiddleDivider = "https://www.figma.com/api/mcp/asset/6fcb7a99-e67e-431d-a8ae-801ccd3f150d";
+const imgFooterTopDivider = "/figma-assets/70ec18e5-f333-40f0-bf8e-0233b0407f14.svg";
+const imgFooterMiddleDivider = "/figma-assets/6fcb7a99-e67e-431d-a8ae-801ccd3f150d.svg";
 
 export function LandingSection07Footer({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const copy = dict.footer as any;
