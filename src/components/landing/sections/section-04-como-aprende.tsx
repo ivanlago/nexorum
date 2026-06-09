@@ -134,7 +134,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
   }, []);
 
   return (
-    <section ref={sectionRef} id="como-aprende" className="relative mt-[52px] w-full overflow-hidden pb-0 pt-[76px] lg:overflow-visible lg:pt-0">
+    <section ref={sectionRef} id="como-aprende" className="relative mt-[52px] w-full overflow-hidden pb-0 pt-[76px] lg:overflow-visible lg:pb-[76px] lg:pt-0">
       <LandingSectionBackground />
 
       <div className="relative w-full lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden">
