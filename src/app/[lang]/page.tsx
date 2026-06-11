@@ -26,7 +26,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
       </div>
       <div className="hidden lg:block">
         <LandingSection01Hero dict={dict} locale={locale} />
-        <LandingSection01Features dict={dict} />
+        <LandingSection01Features dict={dict} locale={locale} />
         <LandingSection02Operacoes dict={dict} />
         <LandingSection03Problema dict={dict} />
         <LandingSection04ComoAprende dict={dict} />

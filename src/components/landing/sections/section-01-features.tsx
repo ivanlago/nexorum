@@ -1,4 +1,5 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import type { SupportedLocale } from "@/i18n/locales";
 
 const items = [
   {
@@ -18,7 +19,7 @@ const items = [
   },
 ];
 
-export function LandingSection01Features({ dict }: { dict: LandingDictionary }) {
+export function LandingSection01Features({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const features = dict.features;
 
   return (
@@ -38,7 +39,13 @@ export function LandingSection01Features({ dict }: { dict: LandingDictionary }) 
 
             <div className="flex w-[1216px] items-center gap-8">
               {items.map((item, idx) => (
-                <div key={item.icon} className="flex min-w-0 flex-1 flex-col items-start gap-8">
+                <div
+                  key={item.icon}
+                  className={[
+                    "flex min-w-0 flex-col items-start gap-8",
+                    locale === "en-US" && idx === 3 ? "flex-[1.18]" : "flex-1",
+                  ].join(" ")}
+                >
                   <div className="[font-family:var(--font-orbitron)] bg-clip-text text-[14px] font-semibold leading-[1.6] text-transparent [background-image:linear-gradient(0deg,#A7B8C6,#A7B8C6)]">
                     {features.items[idx]?.title}
                   </div>
