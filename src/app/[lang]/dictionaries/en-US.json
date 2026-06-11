@@ -6,7 +6,16 @@
     "welcome": "Welcome!",
     "seeHowItWorks": "See how it works",
     "talkToSpecialist": "Talk to a specialist",
-    "videoUnsupported": "Your browser does not support video playback."
+    "videoUnsupported": "Your browser does not support video playback.",
+    "benefits": [
+      "Recoverable schedule",
+      "Protected margin",
+      "Traceable evidence",
+      "Anticipated decisions",
+      "Integrated data",
+      "Action by owner",
+      "Auditable governance"
+    ]
   },
   "hero": {
     "headline": "ANTICIPATE IMPACTS, PROTECT\nMARGIN AND GOVERN DECISIONS\nWITH ARTIFICIAL INTELLIGENCE",

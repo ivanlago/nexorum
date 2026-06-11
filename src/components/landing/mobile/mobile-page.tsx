@@ -13,16 +13,6 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import type { SupportedLocale } from "@/i18n/locales";
 
 export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
-  const benefits = [
-    "Prazo recuperável",
-    "Margem protegida",
-    "Evidência rastreável",
-    "Decisão antecipada",
-    "Dados integrados",
-    "Ação por responsável",
-    "Governança auditável",
-  ] as const;
-
   return (
     <div className="relative w-full">
       <MobileSection01Hero dict={dict} locale={locale} />
@@ -32,13 +22,13 @@ export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; l
       <MobileSection03Problema dict={dict} />
       <LandingBenefitsMarquee
         className="relative left-1/2 mb-[88px] mt-[88px] w-screen -translate-x-1/2 bg-[#081018] px-0"
-        labels={benefits}
+        labels={dict.common.benefits}
         marqueeClassName="[mask-image:none] [-webkit-mask-image:none]"
       />
       <MobileSection04ComoAprende dict={dict} />
       <LandingBenefitsMarquee
         className="relative left-1/2 mb-[88px] mt-[78px] w-screen -translate-x-1/2 bg-[#081018] px-0"
-        labels={benefits}
+        labels={dict.common.benefits}
         marqueeClassName="[mask-image:none] [-webkit-mask-image:none]"
       />
       <MobileSection05CamadaDecisoria dict={dict} />

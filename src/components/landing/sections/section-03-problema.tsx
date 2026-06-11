@@ -93,16 +93,6 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
     "bars",
   ];
 
-  const benefits = [
-    "Prazo recuperável",
-    "Margem protegida",
-    "Evidência rastreável",
-    "Decisão antecipada",
-    "Dados integrados",
-    "Ação por responsável",
-    "Governança auditável",
-  ] as const;
-
   return (
     <section id="problema" className="relative w-full overflow-hidden pb-0 pt-5">
       <LandingSectionBackground />
@@ -252,7 +242,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
 
-        <LandingBenefitsMarquee className="mt-[128px]" labels={benefits} />
+        <LandingBenefitsMarquee className="mt-[128px]" labels={dict.common.benefits} />
       </div>
     </section>
   );

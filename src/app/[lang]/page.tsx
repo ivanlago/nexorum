@@ -12,16 +12,6 @@ import { LandingSection07Footer } from "@/components/landing/sections/section-07
 import { defaultLocale, isSupportedLocale, type SupportedLocale } from "@/i18n/locales";
 import { getDictionary, hasLocale } from "./dictionaries";
 
-const benefits = [
-  "Prazo recuperável",
-  "Margem protegida",
-  "Evidência rastreável",
-  "Decisão antecipada",
-  "Dados integrados",
-  "Ação por responsável",
-  "Governança auditável",
-] as const;
-
 export default async function Home({ params }: PageProps<"/[lang]">) {
   const { lang } = await params;
   if (!hasLocale(lang)) notFound();
@@ -40,7 +30,7 @@ export default async function Home({ params }: PageProps<"/[lang]">) {
         <LandingSection02Operacoes dict={dict} />
         <LandingSection03Problema dict={dict} />
         <LandingSection04ComoAprende dict={dict} />
-        <LandingBenefitsMarquee className="mt-[52px]" labels={benefits} />
+        <LandingBenefitsMarquee className="mt-[52px]" labels={dict.common.benefits} />
         <LandingSection05CamadaDecisoria dict={dict} />
         <LandingSection06Institucional dict={dict} />
         <LandingSection07Footer dict={dict} locale={locale} />
