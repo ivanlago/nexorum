@@ -10,18 +10,26 @@ const cards = [
   {
     tag: "[ 01 ]",
     image: "/operacoes-image1.png",
+    videoWebmSrc: "/card1-video.webm",
+    videoMp4Src: "/card1-video-h264.mp4",
   },
   {
     tag: "[ 02 ]",
     image: "/operacoes-image2.png",
+    videoWebmSrc: "/card2-video.webm",
+    videoMp4Src: "/card2-video-h264.mp4",
   },
   {
     tag: "[ 03 ]",
     image: "/operacoes-image3.png",
+    videoWebmSrc: "/card3-video.webm",
+    videoMp4Src: "/card3-video-h264.mp4",
   },
   {
     tag: "[ 04 ]",
     image: "/operacoes-image4.png",
+    videoWebmSrc: "/card4-video.webm",
+    videoMp4Src: "/card4-video-h264.mp4",
   },
 ];
 
@@ -86,7 +94,18 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
               <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
 
               <div className="relative flex h-[254px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
-                <img alt="" className="h-[175px] w-[175px] object-cover opacity-70 mix-blend-lighten" src={c.image} />
+                <video
+                  className="h-[175px] w-[175px] object-cover opacity-70 mix-blend-lighten"
+                  muted
+                  autoPlay
+                  loop
+                  playsInline
+                  poster={c.image}
+                >
+                  <source src={c.videoWebmSrc} type="video/webm" />
+                  <source src={c.videoMp4Src} type="video/mp4" />
+                  {dict.common.videoUnsupported}
+                </video>
                 <div className="absolute inset-0 bg-[#05090d]/20" />
                 <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
               </div>
