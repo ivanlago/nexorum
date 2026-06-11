@@ -23,6 +23,11 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">) {
   return {
     title,
     description,
+    icons: {
+      icon: "/logo.ico",
+      shortcut: "/logo.ico",
+      apple: "/logo.ico",
+    },
     alternates: {
       languages: {
         "pt-BR": "/pt-BR",
