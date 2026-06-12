@@ -76,14 +76,6 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section03 as any;
   const semInfra = (copy?.tables?.sem ?? []) as Row[];
   const comInfra = (copy?.tables?.com ?? []) as Row[];
-  const mobileComInfra: Row[] = [
-    { problem: "Dados conectados", appears: "Áreas e sistemas em uma base comum.", impact: "Decisões completas e no tempo certo." },
-    { problem: "Decisão antecipada", appears: "Desvios sinalizados com antecedência.", impact: "Antecipação em vez de reação." },
-    { problem: "Fluxo sem retrabalho", appears: "Fluxos auditáveis reduzem conciliações.", impact: "Produtividade preservada." },
-    { problem: "Medições rastreáveis", appears: "Evidências organizadas para comprovação.", impact: "Previsibilidade financeira." },
-    { problem: "Produtividade visível", appears: "Gargalos visíveis antes do impacto.", impact: "Cronograma protegido." },
-    { problem: "Previsibilidade", appears: "Prazo, custo e resultado em tempo real.", impact: "Margem mais governável." },
-  ];
   const appearsIcons: Array<"db" | "blocks" | "briefcase" | "doc" | "calendar" | "bars"> = [
     "db",
     "blocks",
@@ -94,7 +86,7 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   ];
 
   const [mode, setMode] = useState<"sem" | "com">("sem");
-  const rows = useMemo(() => (mode === "sem" ? semInfra : mobileComInfra), [mode, semInfra]);
+  const rows = useMemo(() => (mode === "sem" ? semInfra : comInfra), [comInfra, mode, semInfra]);
 
   return (
     <section className="relative mt-[68px] overflow-hidden px-6 pb-0 pt-[10px]">

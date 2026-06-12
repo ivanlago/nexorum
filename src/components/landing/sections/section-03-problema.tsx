@@ -1,6 +1,6 @@
 "use client";
 
-import { useMemo, useState } from "react";
+import { useMemo } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
