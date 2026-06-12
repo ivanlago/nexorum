@@ -3,10 +3,11 @@ import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import type { SupportedLocale } from "@/i18n/locales";
 
 const imgUsMap = "/mapa.png";
 
-export function LandingSection06Institucional({ dict }: { dict: LandingDictionary }) {
+export function LandingSection06Institucional({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const copy = dict.section06 as any;
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
@@ -51,7 +52,7 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
           </div>
 
           <div className="absolute left-0 top-[428px] z-10 flex w-[235px] flex-col gap-[55px]">
-            <CtaPrimary label={dict.common.talkToSpecialist} />
+            <CtaPrimary label={dict.common.talkToSpecialist} locale={locale} />
             <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
           </div>
         </div>

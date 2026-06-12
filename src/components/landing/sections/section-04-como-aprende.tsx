@@ -5,6 +5,7 @@ import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import type { SupportedLocale } from "@/i18n/locales";
 
 const leftPillars = [
   {
@@ -43,7 +44,7 @@ const transformIcons = [
 ];
 const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
 
-export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
+export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const sectionRef = useRef<HTMLElement | null>(null);
   const centerViewportRef = useRef<HTMLDivElement | null>(null);
   const centerContentRef = useRef<HTMLDivElement | null>(null);
@@ -193,7 +194,7 @@ export function LandingSection04ComoAprende({ dict }: { dict: LandingDictionary 
             </div>
 
             <div className="mt-6 flex w-[240px] justify-end">
-              <CtaPrimary label={dict.common.talkToSpecialist} />
+              <CtaPrimary label={dict.common.talkToSpecialist} locale={locale} />
             </div>
           </div>
 

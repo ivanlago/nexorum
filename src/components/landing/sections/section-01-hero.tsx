@@ -130,7 +130,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
                   {dict.hero.description}
                 </p>
                 <div className="mt-6 flex flex-col items-start gap-6 sm:flex-row sm:items-center sm:gap-10">
-                  <CtaPrimary label={dict.common.talkToSpecialist} />
+                  <CtaPrimary label={dict.common.talkToSpecialist} locale={locale} />
                   <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
                 </div>
               </div>

@@ -5,6 +5,7 @@ import { LandingSectionBackground } from "@/components/landing/landing-section-b
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import { OperationsCard } from "@/components/landing/sections/operations-card";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import type { SupportedLocale } from "@/i18n/locales";
 
 const cards = [
   {
@@ -34,7 +35,7 @@ const logoRow = [
   { alt: "anthropic", src: "/anthropic.png", width: 145.087, height: 30.89 },
 ];
 
-export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary }) {
+export function LandingSection02Operacoes({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const copy = dict.section02 as any;
   const headingLines = (copy.heading?.split?.("\n") ?? []) as string[];
 
@@ -92,7 +93,7 @@ export function LandingSection02Operacoes({ dict }: { dict: LandingDictionary })
               </p>
 
               <div className="flex items-center gap-10">
-                <CtaPrimary label={dict.common.talkToSpecialist} />
+                <CtaPrimary label={dict.common.talkToSpecialist} locale={locale} />
                 <HowItWorksLink href="#como-aprende">{dict.common.seeHowItWorks}</HowItWorksLink>
               </div>
             </div>

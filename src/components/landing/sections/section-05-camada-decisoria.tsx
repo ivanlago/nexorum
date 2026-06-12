@@ -2,8 +2,9 @@ import { CtaPrimary } from "@/components/landing/sections/cta-primary";
 import { SectionIndex } from "@/components/landing/sections/section-index";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import type { SupportedLocale } from "@/i18n/locales";
 
-export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDictionary }) {
+export function LandingSection05CamadaDecisoria({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const copy = dict.section05 as any;
   const rows = (copy?.rows ?? []) as Array<{ not: string; why: string; does: string }>;
   const titleLines = (copy.heading?.split?.("\n") ?? []) as string[];
@@ -59,7 +60,7 @@ export function LandingSection05CamadaDecisoria({ dict }: { dict: LandingDiction
                   ))}
                 </div>
 
-                <CtaPrimary label={dict.common.talkToSpecialist} />
+                <CtaPrimary label={dict.common.talkToSpecialist} locale={locale} />
                 </div>
             </div>
 

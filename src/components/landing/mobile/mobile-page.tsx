@@ -35,7 +35,7 @@ export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; l
       <MobileSection06Institucional dict={dict} />
       <MobileSection07Footer dict={dict} locale={locale} />
       <div className="h-[126px]" />
-      <MobileFixedCta dict={dict} />
+      <MobileFixedCta dict={dict} locale={locale} />
     </div>
   );
 }
