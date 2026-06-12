@@ -124,7 +124,7 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
           </div>
         </div>
 
-        <div className="relative left-1/2 mt-[88px] w-screen -translate-x-1/2">
+        <div className="mx-auto mt-[88px] w-full max-w-[1440px] px-6 lg:px-0">
           <div className="w-full border-y border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
             <div className="overflow-x-auto">
               <div className="relative min-w-[1437px]">

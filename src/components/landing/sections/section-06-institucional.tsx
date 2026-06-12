@@ -5,8 +5,6 @@ import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const imgUsMap = "/mapa.png";
-const imgDustLayer01 = "/figma-assets/90970330-97fd-4a07-9f7f-660b2da68917.png";
-const imgDustLayer02 = "/figma-assets/9a52aaec-c1fd-43c0-abc6-56b334d6f46a.png";
 
 export function LandingSection06Institucional({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section06 as any;
@@ -58,7 +56,7 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
           </div>
         </div>
 
-        <div className="mt-24 grid grid-cols-1 gap-14 lg:grid-cols-[417px_1fr] lg:gap-[71px]">
+        <div className="mt-24">
           <div>
             <h3 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase whitespace-pre-wrap">
               {copy.aboutHeading?.split?.("\n")?.map?.((line: string, idx: number, arr: string[]) => (
@@ -72,45 +70,6 @@ export function LandingSection06Institucional({ dict }: { dict: LandingDictionar
             <p className="mt-6 max-w-[592px] indent-12 text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
               {copy.aboutLead}
             </p>
-          </div>
-
-          <div className="relative flex h-[254px] flex-col justify-center gap-[41px] border-[0.5px] border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
-            <div className="pointer-events-none absolute left-1/2 top-[-72px] z-20 flex h-[168px] w-[728px] -translate-x-1/2 items-start justify-between opacity-60">
-              <div className="relative h-[168px] w-[349px] shrink-0">
-                <img
-                  alt=""
-                  className="absolute inset-0 h-full w-full max-w-none mix-blend-screen"
-                  src={imgDustLayer01}
-                />
-              </div>
-              <div className="relative h-[168px] w-[349px] shrink-0">
-                <img
-                  alt=""
-                  className="absolute inset-0 h-full w-full max-w-none mix-blend-screen"
-                  src={imgDustLayer02}
-                />
-              </div>
-            </div>
-
-            <div className="relative z-10 flex flex-col items-end gap-6 overflow-hidden">
-              <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
-                {copy.pillarsLabel}
-              </div>
-              <div className="w-[173px] text-right text-[10px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                {copy.pillarsLead}
-              </div>
-            </div>
-
-            <div className="relative z-10 -mx-8 h-px w-[calc(100%+64px)] overflow-hidden bg-[rgba(118,131,143,0.25)]" />
-
-            <div className="relative z-10 flex flex-col gap-4 overflow-hidden">
-              <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-                {copy.institutionalTitle}
-              </div>
-              <div className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                {copy.institutionalLead}
-              </div>
-            </div>
           </div>
         </div>
       </div>

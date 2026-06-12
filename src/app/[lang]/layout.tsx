@@ -27,9 +27,9 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
     title,
     description,
     icons: {
-      icon: "/logo.ico",
-      shortcut: "/logo.ico",
-      apple: "/logo.ico",
+      icon: "/new-logo.ico",
+      shortcut: "/new-logo.ico",
+      apple: "/new-logo.png",
     },
     alternates: {
       canonical: canonicalPath,
@@ -47,7 +47,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       description,
       images: [
         {
-          url: "/nexorum.png",
+          url: "/new-logo.png",
           width: 1200,
           height: 630,
           alt: "Nexorum",
@@ -58,7 +58,7 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Prom
       card: "summary_large_image",
       title,
       description,
-      images: ["/nexorum.png"],
+      images: ["/new-logo.png"],
     },
   };
 }
