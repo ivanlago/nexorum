@@ -2,7 +2,7 @@
 
 import { useEffect, useMemo, useRef, useState } from "react";
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
-import { supportedLocales, type SupportedLocale } from "@/i18n/locales";
+import { getLocalePath, supportedLocales, type SupportedLocale } from "@/i18n/locales";
 
 const imgLanguageIcon = "/globo.png";
 const imgFlagUs = "/eua.png";
@@ -81,7 +81,7 @@ export function LanguageSelector({
   function switchLocale(nextLocale: SupportedLocale) {
     const base = stripLocalePrefix(pathname);
     const query = searchParams.toString();
-    const href = `/${nextLocale}${base === "/" ? "" : base}${query ? `?${query}` : ""}`;
+    const href = `${getLocalePath(nextLocale, base)}${query ? `?${query}` : ""}`;
     router.replace(href);
     setOpen(false);
   }

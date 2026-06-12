@@ -3,7 +3,7 @@ import { LanguageSelector } from "@/components/landing/language-selector";
 import { HeroMenu } from "@/components/landing/hero-menu";
 import { HowItWorksLink } from "@/components/ui/how-it-works-link";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
-import type { SupportedLocale } from "@/i18n/locales";
+import { getLocalePath, type SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
 const imgWelcome = "/header-bemvindo.png";
@@ -86,7 +86,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
             <div className="relative mt-[39px] w-full max-w-[1216px] px-6 lg:px-0">
               <a
                 className="absolute left-0 top-0 -m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
-                href={`/${locale}`}
+                href={getLocalePath(locale)}
               >
                 <img alt="Nexorum" className="h-[20.933px] w-auto" src="/nexorum.png" />
               </a>
@@ -107,6 +107,7 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
               <div className="absolute right-0 top-0 flex items-center gap-2">
                 <HeroMenu
                   locale={locale}
+                  labels={dict.navigation}
                   iconSrc={imgMenu}
                   buttonClassName="size-8 opacity-90"
                   imgClassName="size-8"

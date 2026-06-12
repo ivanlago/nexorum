@@ -1,17 +1,20 @@
 "use client";
 
 import { useEffect, useId, useState } from "react";
-import type { SupportedLocale } from "@/i18n/locales";
+import type { LandingDictionary } from "@/i18n/landing-dictionary";
+import { getLocalePath, type SupportedLocale } from "@/i18n/locales";
 
 type Item = { label: string; href: string };
 
 export function HeroMenu({
   locale,
+  labels,
   iconSrc,
   buttonClassName,
   imgClassName,
 }: {
   locale: SupportedLocale;
+  labels: LandingDictionary["navigation"];
   iconSrc: string;
   buttonClassName?: string;
   imgClassName?: string;
@@ -29,13 +32,13 @@ export function HeroMenu({
   }, [open]);
 
   const items: Item[] = [
-    { label: "Home", href: `/${locale}` },
-    { label: "Operações", href: "#operacoes" },
-    { label: "Problema", href: "#problema" },
-    { label: "Como aprende", href: "#como-aprende" },
-    { label: "Camada decisória", href: "#camada-decisoria" },
-    { label: "Institucional", href: "#institucional" },
-    { label: "Contato", href: "#footer" },
+    { label: labels.home, href: getLocalePath(locale) },
+    { label: labels.operations, href: "#operacoes" },
+    { label: labels.problem, href: "#problema" },
+    { label: labels.howItLearns, href: "#como-aprende" },
+    { label: labels.decisionLayer, href: "#camada-decisoria" },
+    { label: labels.institutional, href: "#institucional" },
+    { label: labels.contact, href: "#footer" },
   ];
 
   return (
@@ -51,9 +54,10 @@ export function HeroMenu({
         aria-haspopup="dialog"
         aria-expanded={open}
         aria-controls={titleId}
+        aria-label={labels.menu}
         onClick={() => setOpen(true)}
       >
-        <img alt="Menu" className={imgClassName ?? ""} src={iconSrc} />
+        <img alt={labels.menu} className={imgClassName ?? ""} src={iconSrc} />
       </button>
 
       {open ? (
@@ -61,7 +65,7 @@ export function HeroMenu({
           <button
             type="button"
             className="absolute inset-0 bg-black/60"
-            aria-label="Fechar menu"
+            aria-label={labels.closeMenu}
             onClick={() => setOpen(false)}
           />
           <div className="absolute inset-0">
@@ -75,7 +79,7 @@ export function HeroMenu({
               >
                 <div className="flex items-center justify-between">
                   <a
-                    href={`/${locale}`}
+                    href={getLocalePath(locale)}
                     className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
                     aria-label="Home"
                   >
@@ -84,7 +88,7 @@ export function HeroMenu({
                   <button
                     type="button"
                     className="inline-flex size-10 items-center justify-center border border-[rgba(26,42,56,0.85)] text-[color:var(--primitive-colors-gray-200)]"
-                    aria-label="Fechar menu"
+                    aria-label={labels.closeMenu}
                     onClick={() => setOpen(false)}
                   >
                     <span className="text-[18px] leading-none">×</span>
@@ -92,7 +96,7 @@ export function HeroMenu({
                 </div>
 
                 <div id={`${titleId}-title`} className="sr-only">
-                  Menu
+                  {labels.menu}
                 </div>
 
                 <nav className="mt-10">

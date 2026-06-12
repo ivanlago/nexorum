@@ -1,5 +1,6 @@
+import type { Metadata } from "next";
 import { Inter, Orbitron } from "next/font/google";
-import { supportedLocales } from "@/i18n/locales";
+import { defaultLocale, supportedLocales } from "@/i18n/locales";
 import { getDictionary, hasLocale } from "./dictionaries";
 import "../globals.css";
 
@@ -13,14 +14,16 @@ const orbitron = Orbitron({
   subsets: ["latin"],
 });
 
-export async function generateMetadata({ params }: LayoutProps<"/[lang]">) {
+export async function generateMetadata({ params }: LayoutProps<"/[lang]">): Promise<Metadata> {
   const { lang } = await params;
   const locale = hasLocale(lang) ? lang : "en-US";
   const dict = await getDictionary(locale);
   const title = (dict as any).common?.siteTitle ?? "Nexorum";
   const description = (dict as any).common?.siteDescription ?? "Nexorum official website";
+  const canonicalPath = locale === defaultLocale ? "/" : `/${locale}`;
 
   return {
+    metadataBase: new URL("https://www.nexorum.io"),
     title,
     description,
     icons: {
@@ -29,10 +32,33 @@ export async function generateMetadata({ params }: LayoutProps<"/[lang]">) {
       apple: "/logo.ico",
     },
     alternates: {
+      canonical: canonicalPath,
       languages: {
         "pt-BR": "/pt-BR",
-        "en-US": "/en-US",
+        "en-US": defaultLocale === "en-US" ? "/" : `/${defaultLocale}`,
       },
+    },
+    openGraph: {
+      type: "website",
+      url: canonicalPath,
+      siteName: "Nexorum",
+      locale,
+      title,
+      description,
+      images: [
+        {
+          url: "/nexorum.png",
+          width: 1200,
+          height: 630,
+          alt: "Nexorum",
+        },
+      ],
+    },
+    twitter: {
+      card: "summary_large_image",
+      title,
+      description,
+      images: ["/nexorum.png"],
     },
   };
 }

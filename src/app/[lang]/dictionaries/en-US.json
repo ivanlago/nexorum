@@ -27,6 +27,17 @@
       "enUS": "USA - English"
     }
   },
+  "navigation": {
+    "home": "Home",
+    "operations": "Operations",
+    "problem": "Problem",
+    "howItLearns": "How it works",
+    "decisionLayer": "Decision layer",
+    "institutional": "Institutional",
+    "contact": "Contact",
+    "menu": "Menu",
+    "closeMenu": "Close menu"
+  },
   "features": {
     "items": [
       { "title": "Detect deviations", "description": "Identifies critical risks in operations." },

@@ -27,6 +27,17 @@
       "enUS": "USA - Inglês"
     }
   },
+  "navigation": {
+    "home": "Home",
+    "operations": "Operações",
+    "problem": "Problema",
+    "howItLearns": "Como aprende",
+    "decisionLayer": "Camada decisória",
+    "institutional": "Institucional",
+    "contact": "Contato",
+    "menu": "Menu",
+    "closeMenu": "Fechar menu"
+  },
   "features": {
     "items": [
       { "title": "Detecta desvios", "description": "Identifica riscos críticos na operação." },

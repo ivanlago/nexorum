@@ -19,6 +19,17 @@ export type LandingDictionary = {
       enUS: string;
     };
   };
+  navigation: {
+    home: string;
+    operations: string;
+    problem: string;
+    howItLearns: string;
+    decisionLayer: string;
+    institutional: string;
+    contact: string;
+    menu: string;
+    closeMenu: string;
+  };
   features: {
     items: Array<{
       title: string;

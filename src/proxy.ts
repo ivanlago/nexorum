@@ -1,25 +1,23 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import { supportedLocales } from "@/i18n/locales";
-
-function pickLocaleFromAcceptLanguage(headerValue: string | null) {
-  if (!headerValue) return "en-US";
-  const lower = headerValue.toLowerCase();
-  if (lower.includes("pt")) return "pt-BR";
-  return "en-US";
-}
+import { defaultLocale, supportedLocales } from "@/i18n/locales";
 
 function handleProxy(request: NextRequest) {
   const { pathname } = request.nextUrl;
+  if (pathname === `/${defaultLocale}` || pathname.startsWith(`/${defaultLocale}/`)) {
+    const nextUrl = request.nextUrl.clone();
+    nextUrl.pathname = pathname.slice(defaultLocale.length + 1) || "/";
+    return NextResponse.redirect(new URL(nextUrl.toString()));
+  }
+
   const pathnameHasLocale = supportedLocales.some(
     (locale) => pathname === `/${locale}` || pathname.startsWith(`/${locale}/`),
   );
   if (pathnameHasLocale) return NextResponse.next();
 
-  const locale = pickLocaleFromAcceptLanguage(request.headers.get("accept-language"));
   const nextUrl = request.nextUrl.clone();
-  nextUrl.pathname = `/${locale}${pathname}`;
-  return NextResponse.redirect(new URL(nextUrl.toString()));
+  nextUrl.pathname = `/${defaultLocale}${pathname}`;
+  return NextResponse.rewrite(new URL(nextUrl.toString()));
 }
 
 export default handleProxy;

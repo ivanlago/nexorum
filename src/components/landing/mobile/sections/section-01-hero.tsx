@@ -1,7 +1,7 @@
 import { LanguageSelector } from "@/components/landing/language-selector";
 import { HeroMenu } from "@/components/landing/hero-menu";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
-import type { SupportedLocale } from "@/i18n/locales";
+import { getLocalePath, type SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
 const imgMenu = "/menu.png";
@@ -22,7 +22,7 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
           <div className="flex h-6 w-full items-center justify-between">
             <a
               className="inline-flex h-6 items-center transition-colors duration-200 hover:bg-[#081018]"
-              href={`/${locale}`}
+              href={getLocalePath(locale)}
               aria-label="Home"
             >
               <img alt="Nexorum" className="h-[16.7257px] w-auto shrink-0" src="/nexorum.png" />
@@ -33,6 +33,7 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
               </Suspense>
               <HeroMenu
                 locale={locale}
+                labels={dict.navigation}
                 iconSrc={imgMenu}
                 buttonClassName="size-6 opacity-90"
                 imgClassName="size-6"

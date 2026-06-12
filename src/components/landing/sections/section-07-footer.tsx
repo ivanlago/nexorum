@@ -1,7 +1,7 @@
 import { LanguageSelector } from "@/components/landing/language-selector";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
-import type { SupportedLocale } from "@/i18n/locales";
+import { getLocalePath, type SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
 const socialIcons = [
@@ -27,7 +27,7 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
 	            <div className="w-full">
 	              <div className="flex items-start gap-2">
 	                <a
-                    href={`/${locale}`}
+                    href={getLocalePath(locale)}
                     aria-label="Home"
                     className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
                   >
