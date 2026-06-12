@@ -13,6 +13,7 @@ type Props = ButtonLikeProps & {
   className?: string;
   containerClassName?: string;
   leftClassName?: string;
+  labelClassName?: string;
   rightClassName?: string;
   borderClassName?: string;
   right?: ReactNode;
@@ -28,6 +29,7 @@ function ButtonInner({
   className,
   containerClassName,
   leftClassName,
+  labelClassName,
   rightClassName,
   borderClassName,
   right,
@@ -38,6 +40,7 @@ function ButtonInner({
   | "className"
   | "containerClassName"
   | "leftClassName"
+  | "labelClassName"
   | "rightClassName"
   | "borderClassName"
   | "right"
@@ -47,7 +50,7 @@ function ButtonInner({
     <>
       <span
         className={[
-          "absolute inset-0 box-border flex h-[46px] w-[235px] gap-1 p-1 transition-colors duration-300",
+          "absolute inset-0 box-border flex h-[54px] w-[235px] gap-1 p-1 transition-colors duration-300",
           "border-[0.5px] border-[color:var(--primitive-colors-primary-800)]",
           borderClassName,
           containerClassName,
@@ -57,7 +60,7 @@ function ButtonInner({
       >
         <span
           className={[
-            "relative flex h-[38px] w-[177px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#00619b] to-[#5092d3]",
+            "relative flex h-[46px] w-[177px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#00619b] to-[#5092d3]",
             "px-[18px] py-0",
             "shadow-[0px_4px_60px_rgba(38,90,127,0.6)] transition-all duration-300",
             "group-hover:from-[#005487] group-hover:to-[#3f81bd] group-hover:shadow-[0px_5px_44px_rgba(27,63,88,0.58)]",
@@ -67,12 +70,18 @@ function ButtonInner({
             .join(" ")}
         >
           <span className="pointer-events-none absolute inset-0 bg-[rgba(2,17,29,0.18)] opacity-0 transition-opacity duration-300 group-hover:opacity-100" />
-          <span className="relative whitespace-nowrap text-[14px] font-medium leading-none text-white">{children}</span>
+          <span
+            className={["relative whitespace-nowrap text-[14px] font-medium leading-none text-white", labelClassName]
+              .filter(Boolean)
+              .join(" ")}
+          >
+            {children}
+          </span>
         </span>
 
         <span
           className={[
-            "relative flex h-[38px] w-[46px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#5092d3] to-[#00619b]",
+            "relative flex h-[46px] w-[46px] items-center justify-center overflow-hidden bg-gradient-to-r from-[#5092d3] to-[#00619b]",
             "p-[15px]",
             "shadow-[0px_4px_60px_rgba(38,90,127,0.6)] transition-all duration-300",
             "group-hover:from-[#3f81bd] group-hover:to-[#005487] group-hover:shadow-[0px_5px_44px_rgba(27,63,88,0.58)]",
@@ -105,6 +114,7 @@ export function Button(props: Props) {
     className,
     containerClassName,
     leftClassName,
+    labelClassName,
     rightClassName,
     borderClassName,
     right,
@@ -112,7 +122,7 @@ export function Button(props: Props) {
   } = props;
 
   const sharedClassName = [
-    "group relative h-[46px] min-h-[46px] max-h-[46px] w-[235px] min-w-[235px] max-w-[235px] flex-none appearance-none border-0 bg-transparent p-0 align-top",
+    "group relative h-[54px] min-h-[54px] max-h-[54px] w-[235px] min-w-[235px] max-w-[235px] flex-none appearance-none border-0 bg-transparent p-0 align-top",
     className,
   ]
     .filter(Boolean)
@@ -123,6 +133,7 @@ export function Button(props: Props) {
     className,
     containerClassName,
     leftClassName,
+    labelClassName,
     rightClassName,
     borderClassName,
     right,
@@ -136,6 +147,7 @@ export function Button(props: Props) {
       className: _className,
       containerClassName: _containerClassName,
       leftClassName: _leftClassName,
+      labelClassName: _labelClassName,
       rightClassName: _rightClassName,
       borderClassName: _borderClassName,
       right: _right,
@@ -155,6 +167,7 @@ export function Button(props: Props) {
     className: _className,
     containerClassName: _containerClassName,
     leftClassName: _leftClassName,
+    labelClassName: _labelClassName,
     rightClassName: _rightClassName,
     borderClassName: _borderClassName,
     right: _right,
