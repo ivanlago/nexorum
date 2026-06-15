@@ -9,7 +9,7 @@ const dividerClassName =
   "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
 
 export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
-  const headlineLines = dict.hero.headline.split("\n");
+  const headline = dict.hero.headline.replace(/\n/g, " ");
 
   return (
     <section className="relative overflow-hidden px-6 pt-0">
@@ -42,12 +42,8 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
       </div>
 
       <div className="mt-8 flex flex-col gap-[40px]">
-        <h1 className="[font-family:var(--font-orbitron)] text-[20px] font-semibold uppercase leading-[1.4] tracking-[0.2px] text-[color:var(--primitive-colors-gray-200)]">
-          {headlineLines.map((line, index) => (
-            <span key={line} className={index === 0 ? "block indent-[37px]" : "block"}>
-              {line}
-            </span>
-          ))}
+        <h1 className="[font-family:var(--font-orbitron)] max-w-[300px] bg-clip-text bg-gradient-to-r from-[color:var(--primitive-colors-gray-200)] text-[20px] font-semibold uppercase leading-[1.25] tracking-[0.01em] text-transparent to-[119.04%] to-[rgba(195,210,218,0)] indent-[37px]">
+          {headline}
         </h1>
         <p className="text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
           <span className="inline-block indent-[38px]">
