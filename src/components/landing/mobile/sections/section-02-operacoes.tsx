@@ -8,28 +8,16 @@ const dividerClassName =
 
 const cards = [
   {
-    tag: "[ 01 ]",
-    image: "/operacoes-image1.png",
-    videoWebmSrc: "/card1-video.webm",
-    videoMp4Src: "/card1-video-h264.mp4",
+    image: "/figma-assets/mobile-operacoes-card-01.png",
   },
   {
-    tag: "[ 02 ]",
-    image: "/operacoes-image2.png",
-    videoWebmSrc: "/card2-video.webm",
-    videoMp4Src: "/card2-video-h264.mp4",
+    image: "/figma-assets/mobile-operacoes-card-02.png",
   },
   {
-    tag: "[ 03 ]",
-    image: "/operacoes-image3.png",
-    videoWebmSrc: "/card3-video.webm",
-    videoMp4Src: "/card3-video-h264.mp4",
+    image: "/figma-assets/mobile-operacoes-card-03.png",
   },
   {
-    tag: "[ 04 ]",
-    image: "/operacoes-image4.png",
-    videoWebmSrc: "/card4-video.webm",
-    videoMp4Src: "/card4-video-h264.mp4",
+    image: "/figma-assets/mobile-operacoes-card-04.png",
   },
 ];
 
@@ -73,52 +61,18 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
         <div className="flex gap-6">
           {cards.map((c, idx) => (
             <div
-              key={c.tag}
+              key={c.image}
               className={[
                 "relative snap-start shrink-0",
                 "h-[500px] w-[280px]",
-                "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
+                "overflow-visible",
               ].join(" ")}
             >
-              <div className="flex h-[103px] items-end px-8 pb-10">
-                <div className="flex w-full items-center gap-6">
-                  <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
-                    {c.tag}
-                  </div>
-                  <div className="w-[158px] text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                    {copy.cards?.[idx]?.subtitle}
-                  </div>
-                </div>
-              </div>
-
-              <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-
-              <div className="relative flex h-[254px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
-                <video
-                  className="h-[175px] w-[175px] object-cover opacity-70 mix-blend-lighten"
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  poster={c.image}
-                >
-                  <source src={c.videoWebmSrc} type="video/webm" />
-                  <source src={c.videoMp4Src} type="video/mp4" />
-                  {dict.common.videoUnsupported}
-                </video>
-                <div className="absolute inset-0 bg-[#05090d]/20" />
-                <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
-              </div>
-
-              <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-              <div className="absolute left-8 top-[398px] h-[62px] w-[216px]">
-                <div className="flex h-[10px] items-center [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-                  <span>{copy.cards?.[idx]?.title}</span>
-                </div>
-                <div className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                  {copy.cards?.[idx]?.description}
-                </div>
-              </div>
+              <img
+                alt={copy.cards?.[idx]?.title ?? ""}
+                className="absolute left-1/2 top-1/2 h-[500px] w-[338px] max-w-none -translate-x-1/2 -translate-y-1/2 object-cover"
+                src={c.image}
+              />
             </div>
           ))}
         </div>
