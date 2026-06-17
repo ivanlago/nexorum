@@ -1,4 +1,5 @@
 import { MobileFixedCta } from "@/components/landing/mobile/sections/cta-fixed";
+import { MobileHeroLighting } from "@/components/landing/mobile/sections/mobile-hero-lighting";
 import { MobileSection01Carousel } from "@/components/landing/mobile/sections/section-01-carousel";
 import { MobileSection01Hero } from "@/components/landing/mobile/sections/section-01-hero";
 import { MobileSection01Image } from "@/components/landing/mobile/sections/section-01-image";
@@ -15,8 +16,11 @@ import type { SupportedLocale } from "@/i18n/locales";
 export function LandingMobilePage({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   return (
     <div className="relative w-full">
-      <MobileSection01Hero dict={dict} locale={locale} />
-      <MobileSection01Image dict={dict} />
+      <div className="relative overflow-hidden">
+        <MobileHeroLighting />
+        <MobileSection01Hero dict={dict} locale={locale} />
+        <MobileSection01Image dict={dict} />
+      </div>
       <MobileSection01Carousel dict={dict} />
       <MobileSection02Operacoes dict={dict} />
       <MobileSection03Problema dict={dict} />

@@ -85,10 +85,14 @@ export function LandingSection01Hero({ dict, locale }: { dict: LandingDictionary
             <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
             <div className="relative mt-[39px] w-full max-w-[1216px] px-6 lg:px-0">
               <a
-                className="absolute left-0 top-0 -m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
+                className="group absolute left-0 top-0 -m-4 inline-flex items-center gap-2 p-4 transition-colors duration-300 hover:text-white"
                 href={getLocalePath(locale)}
               >
-                <img alt="Nexorum" className="h-[20.933px] w-auto" src="/nexorum.png" />
+                <img
+                  alt="Nexorum"
+                  className="h-[20.933px] w-auto transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                  src="/nexorum.png"
+                />
               </a>
 
               <div className="absolute left-[728px] top-0 flex items-center gap-2">

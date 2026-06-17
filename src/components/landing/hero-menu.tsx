@@ -46,7 +46,7 @@ export function HeroMenu({
       <button
         type="button"
         className={[
-          "inline-flex cursor-pointer items-center justify-center transition-colors duration-200 hover:bg-[#081018]",
+          "group inline-flex cursor-pointer items-center justify-center text-[color:var(--primitive-colors-gray-200)] transition-colors duration-300 hover:text-white",
           buttonClassName,
         ]
           .filter(Boolean)
@@ -57,7 +57,16 @@ export function HeroMenu({
         aria-label={labels.menu}
         onClick={() => setOpen(true)}
       >
-        <img alt={labels.menu} className={imgClassName ?? ""} src={iconSrc} />
+        <img
+          alt={labels.menu}
+          className={[
+            "transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100",
+            imgClassName ?? "",
+          ]
+            .filter(Boolean)
+            .join(" ")}
+          src={iconSrc}
+        />
       </button>
 
       {open ? (
@@ -80,10 +89,14 @@ export function HeroMenu({
                 <div className="flex items-center justify-between">
                   <a
                     href={getLocalePath(locale)}
-                    className="-m-4 inline-flex items-center gap-2 p-4 transition-colors duration-200 hover:bg-[#081018]"
+                    className="group -m-4 inline-flex items-center gap-2 p-4 transition-colors duration-300 hover:text-white"
                     aria-label="Home"
                   >
-                    <img alt="Nexorum" className="h-5 w-auto" src="/nexorum.png" />
+                    <img
+                      alt="Nexorum"
+                      className="h-5 w-auto transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                      src="/nexorum.png"
+                    />
                   </a>
                   <button
                     type="button"

@@ -18,11 +18,15 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
         <div className="flex h-[72px] items-center">
           <div className="flex h-6 w-full items-center justify-between">
             <a
-              className="inline-flex h-6 items-center transition-colors duration-200 hover:bg-[#081018]"
+              className="group inline-flex h-6 items-center transition-colors duration-300 hover:text-white"
               href={getLocalePath(locale)}
               aria-label="Home"
             >
-              <img alt="Nexorum" className="h-[16.7257px] w-auto shrink-0" src="/nexorum.png" />
+              <img
+                alt="Nexorum"
+                className="h-[16.7257px] w-auto shrink-0 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+                src="/nexorum.png"
+              />
             </a>
             <div className="flex h-6 items-center gap-4">
               <Suspense fallback={<div className="h-6 w-10" aria-hidden />}>

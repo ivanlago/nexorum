@@ -1,7 +1,7 @@
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
-const imgMap = "/mapa.png";
+const imgInstitutionalMap = "/figma-assets/mobile-institutional-map.png";
 
 export function MobileSection06Institucional({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section06 as any;
@@ -22,8 +22,7 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
       </p>
 
       <div className="relative mt-[63px] h-[235px] w-full overflow-hidden">
-        <img alt="" className="h-full w-full object-cover object-[center_18px] opacity-70 mix-blend-lighten" src={imgMap} />
-        <div className="absolute left-1/2 top-[calc(50%+0px)] h-[235px] w-[385px] -translate-x-1/2 -translate-y-1/2 bg-[rgba(108,181,255,0.12)] mix-blend-color" />
+        <img alt="" className="h-full w-full object-cover" src={imgInstitutionalMap} />
       </div>
 
       <div className="mt-[23px]">

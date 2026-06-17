@@ -91,16 +91,22 @@ export function LanguageSelector({
       <button
         type="button"
         className={[
-          "flex cursor-pointer items-center gap-2 text-[color:var(--primitive-colors-gray-200)]",
+          "group flex cursor-pointer items-center gap-2 text-[color:var(--primitive-colors-gray-200)] transition-colors duration-300 hover:text-white",
           variant === "footer" ? "text-[14px]" : "",
         ].join(" ")}
         onClick={() => setOpen((v) => !v)}
         aria-haspopup="menu"
         aria-expanded={open}
       >
-        {variant === "header" ? <img alt="" className="size-6" src={imgLanguageIcon} /> : null}
+        {variant === "header" ? (
+          <img
+            alt=""
+            className="size-6 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100"
+            src={imgLanguageIcon}
+          />
+        ) : null}
         <span className="text-[14px] font-medium leading-[1.4]">{currentLabel}</span>
-        <span className="inline-flex size-4 items-center justify-center opacity-70">
+        <span className="inline-flex size-4 items-center justify-center opacity-70 transition-all duration-300 group-hover:translate-x-0.5 group-hover:opacity-100">
           <span className="rotate-90">
             <svg aria-hidden="true" className="size-4" viewBox="0 0 16 16">
               <path d="M6 3.5 10.5 8 6 12.5l-1-1L8.5 8 5 4.5l1-1Z" fill="currentColor" />

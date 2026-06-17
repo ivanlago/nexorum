@@ -4,11 +4,6 @@ export function MobileSection01Image({ dict }: { dict: LandingDictionary }) {
   return (
     <section className="relative mt-6 overflow-hidden">
       <div className="relative h-[369px] w-full overflow-hidden">
-        <div className="pointer-events-none absolute inset-0 opacity-35 mix-blend-screen">
-          <div className="absolute left-[-42%] top-[-10%] h-[128%] w-[118%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.36)_0%,rgba(108,181,255,0.14)_28%,rgba(108,181,255,0.03)_50%,rgba(108,181,255,0)_74%)] blur-[28px]" />
-          <div className="absolute left-[-30%] top-[-4%] h-[118%] w-[86%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(184,217,255,0.22)_0%,rgba(184,217,255,0.06)_34%,rgba(184,217,255,0)_66%)] blur-[30px]" />
-          <div className="absolute right-[-38%] top-[-16%] h-[146%] w-[106%] rounded-full bg-[radial-gradient(ellipse_at_center,rgba(108,181,255,0.28)_0%,rgba(108,181,255,0.08)_32%,rgba(108,181,255,0)_70%)] blur-[34px]" />
-        </div>
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-plus-lighter"
           muted
