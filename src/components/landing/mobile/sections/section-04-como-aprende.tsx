@@ -1,3 +1,6 @@
+"use client";
+
+import { useEffect, useRef } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
 
@@ -15,12 +18,60 @@ const whatCards = [
   { icon: "/aprende-imagem-2.svg" },
   { icon: "/aprende-imagem-3.svg" },
   { icon: "/aprende-imagem-4.svg" },
-  { icon: "/aprende-imagem-5.svg" }
+  { icon: "/aprende-imagem-5.svg" },
 ];
 const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
 
 export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
+  const videoRef = useRef<HTMLVideoElement | null>(null);
   const copy = dict.section04 as any;
+
+  useEffect(() => {
+    const video = videoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    const tryPlay = () => {
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {});
+      }
+    };
+
+    tryPlay();
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") {
+        tryPlay();
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          tryPlay();
+        }
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(video);
+    video.addEventListener("loadeddata", tryPlay);
+    video.addEventListener("canplay", tryPlay);
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("pageshow", tryPlay);
+
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("pageshow", tryPlay);
+    };
+  }, []);
 
   return (
     <section className="relative overflow-hidden px-6 pb-[10px] pt-[10px]">
@@ -48,12 +99,14 @@ export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }
             />
           </div>
           <video
+            ref={videoRef}
             className="absolute left-1/2 top-[calc(50%-30px)] z-10 h-[580px] w-[580px] max-w-none -translate-x-1/2 -translate-y-1/2 object-contain opacity-75 mix-blend-lighten"
             style={{ clipPath: "inset(0 72px)" }}
             muted
             autoPlay
             loop
             playsInline
+            preload="auto"
           >
             <source src="/aprende-video.webm" type="video/webm" />
             <source src="/aprende-video-h264.mp4" type="video/mp4" />

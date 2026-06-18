@@ -134,6 +134,53 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
     };
   }, []);
 
+  useEffect(() => {
+    const video = centerVideoRef.current;
+
+    if (!video) {
+      return;
+    }
+
+    const tryPlay = () => {
+      video.muted = true;
+      const playPromise = video.play();
+      if (playPromise && typeof playPromise.catch === "function") {
+        playPromise.catch(() => {});
+      }
+    };
+
+    tryPlay();
+
+    const handleVisibility = () => {
+      if (document.visibilityState === "visible") {
+        tryPlay();
+      }
+    };
+
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry?.isIntersecting) {
+          tryPlay();
+        }
+      },
+      { threshold: 0.35 },
+    );
+
+    observer.observe(video);
+    video.addEventListener("loadeddata", tryPlay);
+    video.addEventListener("canplay", tryPlay);
+    document.addEventListener("visibilitychange", handleVisibility);
+    window.addEventListener("pageshow", tryPlay);
+
+    return () => {
+      observer.disconnect();
+      video.removeEventListener("loadeddata", tryPlay);
+      video.removeEventListener("canplay", tryPlay);
+      document.removeEventListener("visibilitychange", handleVisibility);
+      window.removeEventListener("pageshow", tryPlay);
+    };
+  }, []);
+
   return (
     <section ref={sectionRef} id="como-aprende" className="relative mt-[52px] w-full overflow-hidden pb-0 pt-[76px] lg:overflow-visible lg:pb-[76px] lg:pt-0">
       <LandingSectionBackground />
@@ -225,6 +272,7 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
                         autoPlay
                         loop
                         playsInline
+                        preload="auto"
                       >
                         <source src="/aprende-video.webm" type="video/webm" />
                         <source src="/aprende-video-h264.mp4" type="video/mp4" />
