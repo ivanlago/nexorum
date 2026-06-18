@@ -65,7 +65,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
 
       <div
         className={[
-          "mt-14 overflow-x-auto",
+          "mt-14 -mx-6 overflow-x-auto px-6 [scroll-padding-left:24px]",
           "snap-x snap-mandatory",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         ].join(" ")}
