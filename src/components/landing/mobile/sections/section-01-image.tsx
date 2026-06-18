@@ -2,7 +2,7 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 export function MobileSection01Image({ dict }: { dict: LandingDictionary }) {
   return (
-    <section className="relative mt-6 overflow-hidden">
+    <section className="relative left-1/2 mt-6 w-screen -translate-x-1/2 overflow-hidden">
       <div className="relative h-[369px] w-full overflow-hidden">
         <video
           className="absolute inset-0 h-full w-full object-cover opacity-70 mix-blend-plus-lighter"
