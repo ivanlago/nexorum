@@ -125,11 +125,11 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
       </div>
 
       <div className="mt-20">
-        <div className="[font-family:var(--font-orbitron)] text-[14px] uppercase tracking-[0.08em] text-[color:var(--primitive-colors-gray-200)]">
+        <div className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r font-semibold uppercase leading-[1.6] text-[16px] text-transparent from-[#C3D2DA] to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.16px] indent-[37px]">
           {copy.systemsHeading}
         </div>
         <p className="mt-10 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-          {copy.systemsLead}
+          <span className="inline-block indent-[39px]">{copy.systemsLead}</span>
         </p>
         <HowItWorksLink className="mt-10 px-[37px]" href="#como-aprende">
           {dict.common.seeHowItWorks}
