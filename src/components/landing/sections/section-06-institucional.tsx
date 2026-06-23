@@ -57,22 +57,6 @@ export function LandingSection06Institucional({ dict, locale }: { dict: LandingD
           </div>
         </div>
 
-        <div className="mt-24">
-          <div>
-            <h3 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em] uppercase whitespace-pre-wrap">
-              {copy.aboutHeading?.split?.("\n")?.map?.((line: string, idx: number, arr: string[]) => (
-                <span key={idx}>
-                  {idx === 0 ? <span className="inline-block w-[48px]" /> : null}
-                  {line}
-                  {idx < arr.length - 1 ? <br /> : null}
-                </span>
-              ))}
-            </h3>
-            <p className="mt-6 max-w-[592px] indent-12 text-[14px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-              {copy.aboutLead}
-            </p>
-          </div>
-        </div>
       </div>
     </section>
   );

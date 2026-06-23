@@ -7,7 +7,7 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
   const copy = dict.section06 as any;
 
   return (
-    <section className="relative mt-[78px] overflow-hidden px-6 pb-24 pt-[10px]">
+    <section className="relative mt-[78px] overflow-hidden px-6 pb-8 pt-[10px]">
       <LandingSectionBackground />
       <h2 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.01em]">
         <span className="mr-3 inline-block align-baseline text-[10px] font-bold leading-[1.6] text-[color:var(--primitive-colors-primary-400)]">
@@ -23,17 +23,6 @@ export function MobileSection06Institucional({ dict }: { dict: LandingDictionary
 
       <div className="relative mt-[63px] h-[235px] w-full overflow-hidden">
         <img alt="" className="h-full w-full object-cover" src={imgInstitutionalMap} />
-      </div>
-
-      <div className="mt-[23px]">
-        <h3 className="[font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[16px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.16px] indent-[37px]">
-          {copy.aboutHeading?.replaceAll?.("\n", " ")}
-        </h3>
-        <p className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300,#76838f)]">
-          <span className="inline-block indent-[39px]">
-            {copy.aboutLead}
-          </span>
-        </p>
       </div>
     </section>
   );
