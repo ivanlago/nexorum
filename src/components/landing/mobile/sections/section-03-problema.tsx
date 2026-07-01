@@ -3,6 +3,7 @@
 import { useMemo, useState } from "react";
 import type { LandingDictionary } from "@/i18n/landing-dictionary";
 import { LandingSectionBackground } from "@/components/landing/landing-section-background";
+import { ProblemAppearsIcon, type ProblemAppearsIconName } from "@/components/landing/problem-appears-icon";
 
 const imgCaret = "/chevron.svg";
 const dividerClassName =
@@ -16,71 +17,15 @@ type Row = {
   impact: string;
 };
 
-function TableIcon({ name, className = "" }: { name: "db" | "blocks" | "briefcase" | "doc" | "calendar" | "bars"; className?: string }) {
-  const common = { className: ["size-6", className].join(" "), "aria-hidden": true, viewBox: "0 0 32 32" } as const;
-
-  switch (name) {
-    case "db":
-      return (
-        <svg {...common} fill="none">
-          <path d="M7 10c0 2.2 4 4 9 4s9-1.8 9-4-4-4-9-4-9 1.8-9 4Z" stroke="currentColor" strokeWidth="2" />
-          <path d="M7 10v6c0 2.2 4 4 9 4s9-1.8 9-4v-6" stroke="currentColor" strokeWidth="2" />
-          <path d="M7 16v6c0 2.2 4 4 9 4s9-1.8 9-4v-6" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      );
-    case "blocks":
-      return (
-        <svg {...common} fill="none">
-          <path d="M7 10h6v6H7v-6Zm12 0h6v6h-6v-6ZM13 16h6v6h-6v-6Z" stroke="currentColor" strokeWidth="2" />
-          <path d="M13 13h6M16 16v-3M10 16v6M22 16v6" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      );
-    case "briefcase":
-      return (
-        <svg {...common} fill="none">
-          <path d="M10 10V9c0-1.7 1.3-3 3-3h6c1.7 0 3 1.3 3 3v1" stroke="currentColor" strokeWidth="2" />
-          <path d="M6 12h20v12a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2V12Z" stroke="currentColor" strokeWidth="2" />
-          <path d="M6 18h20" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      );
-    case "doc":
-      return (
-        <svg {...common} fill="none">
-          <path d="M10 6h9l5 5v15a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2Z" stroke="currentColor" strokeWidth="2" />
-          <path d="M19 6v6h6" stroke="currentColor" strokeWidth="2" />
-          <path d="M12 16h10M12 20h10M12 24h8" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      );
-    case "calendar":
-      return (
-        <svg {...common} fill="none">
-          <path d="M10 6v4M22 6v4" stroke="currentColor" strokeWidth="2" />
-          <path d="M8 10h16v16a2 2 0 0 1-2 2H10a2 2 0 0 1-2-2V10Z" stroke="currentColor" strokeWidth="2" />
-          <path d="M8 14h16" stroke="currentColor" strokeWidth="2" />
-          <path d="M12 18h4M12 22h4M18 18h4" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      );
-    case "bars":
-      return (
-        <svg {...common} fill="none">
-          <path d="M12 26V14M16 26V10M20 26V18" stroke="currentColor" strokeWidth="2" />
-          <path d="M10 26h12" stroke="currentColor" strokeWidth="2" />
-          <path d="M16 6c2.2 0 4 1.8 4 4v0" stroke="currentColor" strokeWidth="2" />
-          <path d="M16 6c-2.2 0-4 1.8-4 4v0" stroke="currentColor" strokeWidth="2" />
-        </svg>
-      );
-  }
-}
-
 export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
   const copy = dict.section03 as any;
   const semInfra = (copy?.tables?.sem ?? []) as Row[];
   const comInfra = (copy?.tables?.com ?? []) as Row[];
-  const appearsIcons: Array<"db" | "blocks" | "briefcase" | "doc" | "calendar" | "bars"> = [
+  const appearsIcons: ProblemAppearsIconName[] = [
     "db",
-    "blocks",
+    "flow",
     "briefcase",
-    "doc",
+    "document",
     "calendar",
     "bars",
   ];
@@ -192,7 +137,7 @@ export function MobileSection03Problema({ dict }: { dict: LandingDictionary }) {
                   </div>
                   <div className="relative z-10 flex items-start gap-3 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                     <span className="shrink-0 text-[color:var(--primitive-colors-primary-400)]">
-                      <TableIcon name={appearsIcons[idx] ?? "db"} />
+                      <ProblemAppearsIcon className="size-6" name={appearsIcons[idx] ?? "db"} />
                     </span>
                     <span>{row.appears}</span>
                   </div>

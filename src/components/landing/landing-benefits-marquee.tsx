@@ -17,16 +17,17 @@ export function LandingBenefitsMarquee({ labels, className = "", marqueeClassNam
       <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
       <div className="flex h-[109px] w-full items-center">
         <TextMarquee className={marqueeClassName} durationSeconds={26} contentClassName="gap-16 whitespace-nowrap">
-          {labels.map((label, idx) => (
+          {labels.map((label) => (
             <div key={label} className="flex items-center gap-16">
               <div className="[font-family:var(--font-orbitron)] text-[16px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-300)]">
                 {label}
               </div>
-              {idx < labels.length - 1 ? (
-                <div className="[font-family:var(--font-orbitron)] text-[28px] font-black leading-[1.4] text-[color:var(--primitive-colors-primary-500)]">
-                  /
-                </div>
-              ) : null}
+              <div
+                aria-hidden="true"
+                className="[font-family:var(--font-orbitron)] text-[28px] font-black leading-[1.4] text-[color:var(--primitive-colors-primary-500)]"
+              >
+                /
+              </div>
             </div>
           ))}
         </TextMarquee>
