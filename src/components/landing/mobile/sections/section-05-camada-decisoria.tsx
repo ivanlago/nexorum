@@ -13,7 +13,7 @@ export function MobileSection05CamadaDecisoria({ dict }: { dict: LandingDictiona
   const mobileHeading = String(copy.heading ?? "").replaceAll("\n", " ");
 
   return (
-    <section className="relative overflow-hidden px-6 pb-[10px] pt-[10px]">
+    <section id="camada-decisoria" className="relative overflow-hidden px-6 pb-[10px] pt-[10px]">
       <LandingSectionBackground />
       <div>
         <h2 className="w-[237px] [font-family:var(--font-orbitron)] bg-clip-text bg-gradient-to-r from-[#C3D2DA] font-semibold uppercase leading-[1.6] text-[18px] text-transparent to-[128.98%] to-[rgba(195,207,218,0)] tracking-[0.18px]">

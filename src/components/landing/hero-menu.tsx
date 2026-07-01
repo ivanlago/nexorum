@@ -31,6 +31,28 @@ export function HeroMenu({
     return () => window.removeEventListener("keydown", onKeyDown);
   }, [open]);
 
+  function handleItemClick(href: string) {
+    setOpen(false);
+
+    if (!href.startsWith("#")) {
+      return;
+    }
+
+    const id = href.slice(1);
+    const target = Array.from(document.querySelectorAll<HTMLElement>(`[id="${id}"]`)).find((element) => {
+      const rect = element.getBoundingClientRect();
+      return rect.width > 0 && rect.height > 0;
+    });
+
+    if (!target) {
+      return;
+    }
+
+    requestAnimationFrame(() => {
+      target.scrollIntoView({ behavior: "smooth", block: "start" });
+    });
+  }
+
   const items: Item[] = [
     { label: labels.home, href: getLocalePath(locale) },
     { label: labels.operations, href: "#operacoes" },
@@ -46,7 +68,7 @@ export function HeroMenu({
       <button
         type="button"
         className={[
-          "group inline-flex cursor-pointer items-center justify-center text-[color:var(--primitive-colors-gray-200)] transition-colors duration-300 hover:text-white",
+          "relative z-20 group inline-flex cursor-pointer items-center justify-center text-[color:var(--primitive-colors-gray-200)] transition-colors duration-300 hover:text-white",
           buttonClassName,
         ]
           .filter(Boolean)
@@ -55,7 +77,7 @@ export function HeroMenu({
         aria-expanded={open}
         aria-controls={titleId}
         aria-label={labels.menu}
-        onClick={() => setOpen(true)}
+        onClick={() => setOpen((prev) => !prev)}
       >
         <img
           alt={labels.menu}
@@ -119,7 +141,12 @@ export function HeroMenu({
                         <a
                           className="block rounded px-3 py-3 text-[14px] font-medium text-[color:var(--primitive-colors-gray-200)] hover:bg-[rgba(26,42,56,0.35)]"
                           href={item.href}
-                          onClick={() => setOpen(false)}
+                          onClick={(event) => {
+                            if (item.href.startsWith("#")) {
+                              event.preventDefault();
+                            }
+                            handleItemClick(item.href);
+                          }}
                         >
                           {item.label}
                         </a>

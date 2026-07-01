@@ -17,7 +17,7 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
   const copy = dict.footer as any;
 
   return (
-    <footer className="relative overflow-hidden px-6 pb-0 pt-[40px]">
+    <footer id="footer" className="relative overflow-hidden px-6 pb-0 pt-[40px]">
       <LandingSectionBackground />
       <div aria-hidden className={footerDividerClassName} />
 

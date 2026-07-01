@@ -1,3 +1,5 @@
+"use client";
+
 import type { ReactNode } from "react";
 
 type Props = {
@@ -16,6 +18,24 @@ export function HowItWorksLink({ children, href, className }: Props) {
         .filter(Boolean)
         .join(" ")}
       href={href}
+      onClick={(event) => {
+        if (!href.startsWith("#")) {
+          return;
+        }
+
+        const id = href.slice(1);
+        const target = Array.from(document.querySelectorAll<HTMLElement>(`[id="${id}"]`)).find((element) => {
+          const rect = element.getBoundingClientRect();
+          return rect.width > 0 && rect.height > 0;
+        });
+
+        if (!target) {
+          return;
+        }
+
+        event.preventDefault();
+        target.scrollIntoView({ behavior: "smooth", block: "start" });
+      }}
     >
       <span className="block leading-none">{children}</span>
       <img

@@ -13,7 +13,7 @@ export function MobileSection01Hero({ dict, locale }: { dict: LandingDictionary;
 
   return (
     <section className="relative overflow-hidden px-6 pt-0">
-      <div>
+      <div className="relative z-20">
         <div aria-hidden className={dividerClassName} />
         <div className="flex h-[72px] items-center">
           <div className="flex h-6 w-full items-center justify-between">
