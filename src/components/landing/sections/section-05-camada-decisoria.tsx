@@ -9,8 +9,8 @@ export function LandingSection05CamadaDecisoria({ dict, locale }: { dict: Landin
   const rows = (copy?.rows ?? []) as Array<{ not: string; why: string; does: string }>;
   const titleLines = (copy.heading?.split?.("\n") ?? []) as string[];
   const tableHeader = copy.tableHeaders ?? {};
-  const divider = "h-px w-full bg-[rgba(118,131,143,0.25)]";
-  const clippedDivider = "h-px w-full bg-[rgba(118,131,143,0.25)] lg:w-[1016px]";
+  const divider = "h-[0.5px] w-full bg-[rgba(118,131,143,0.25)]";
+  const clippedDivider = "h-[0.5px] w-full bg-[rgba(118,131,143,0.25)] lg:w-[1016px]";
 
   return (
     <section id="camada-decisoria" className="relative w-full overflow-hidden py-28">
