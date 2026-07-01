@@ -10,6 +10,7 @@ export function LandingSection05CamadaDecisoria({ dict, locale }: { dict: Landin
   const titleLines = (copy.heading?.split?.("\n") ?? []) as string[];
   const tableHeader = copy.tableHeaders ?? {};
   const divider = "h-px w-full bg-[rgba(118,131,143,0.25)]";
+  const clippedDivider = "h-px w-full bg-[rgba(118,131,143,0.25)] lg:w-[1016px]";
 
   return (
     <section id="camada-decisoria" className="relative w-full overflow-hidden py-28">
@@ -92,7 +93,7 @@ export function LandingSection05CamadaDecisoria({ dict, locale }: { dict: Landin
                       ].join(" ")}
                     >
                       <div className="flex flex-col gap-[32px]">
-                        <div className={divider} />
+                        <div className={idx === 1 || idx === 2 ? clippedDivider : divider} />
                         <div className="relative h-[32px] w-full">
                           <div className="absolute left-[703px] top-1/2 w-[258px] -translate-y-1/2 text-[16px] font-light leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                             {r.does}
@@ -109,7 +110,7 @@ export function LandingSection05CamadaDecisoria({ dict, locale }: { dict: Landin
                             {r.why}
                           </div>
                         </div>
-                        <div className={divider} />
+                        <div className={idx === 0 || idx === 1 ? clippedDivider : divider} />
                       </div>
                     </div>
                   ))}
