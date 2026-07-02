@@ -37,7 +37,7 @@ export function LandingSection05CamadaDecisoria({ dict, locale }: { dict: Landin
               </div>
             </div>
 
-            <div className="mt-12 lg:absolute lg:right-[112px] lg:top-[108px] lg:mt-0 lg:h-[595px] lg:w-[312px]">
+            <div className="relative z-10 mt-12 lg:absolute lg:right-[112px] lg:top-[108px] lg:mt-0 lg:h-[595px] lg:w-[312px]">
               <div className="relative flex h-full flex-col justify-between border-[0.5px] border-[rgba(26,42,56,1)] bg-gradient-to-b from-[rgba(8,15,22,0.28)] to-[rgba(8,15,22,0.72)] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.45)]">
                 <div className="flex flex-col items-end justify-center gap-6">
                   <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)] whitespace-nowrap">
