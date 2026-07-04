@@ -5,6 +5,7 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const dividerClassName =
   "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
+const imgCardTopTexture = "/figma-assets/operations-card-texture-top-300-4871.png";
 
 const cards = [
   {
@@ -80,7 +81,11 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
                 "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
               ].join(" ")}
             >
-              <div className="flex h-[103px] items-end px-8 pb-10">
+              <div className="pointer-events-none absolute left-0 top-0 h-[97px] w-full overflow-hidden">
+                <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
+              </div>
+
+              <div className="relative z-10 flex h-[103px] items-end px-8 pb-10">
                 <div className="flex w-full items-center gap-6">
                   <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
                     {c.tag}
@@ -111,6 +116,17 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
               </div>
 
               <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+              <div
+                className="pointer-events-none absolute bottom-0 left-0 h-[97px] w-full overflow-hidden opacity-75"
+                style={{
+                  WebkitMaskImage:
+                    "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
+                  maskImage:
+                    "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
+                }}
+              >
+                <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
+              </div>
               <div className="absolute left-8 top-[398px] h-[62px] w-[216px]">
                 <div className="flex h-[10px] items-center [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                   <span>{copy.cards?.[idx]?.title}</span>

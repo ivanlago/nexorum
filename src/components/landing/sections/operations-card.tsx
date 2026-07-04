@@ -87,6 +87,15 @@ export function OperationsCard({
         </div>
 
         <div aria-hidden className={["absolute left-0 top-[358px] z-10 w-[280px]", cardDividerClassName].join(" ")} />
+        <div
+          className="pointer-events-none absolute bottom-0 left-0 z-0 h-[97px] w-[280px] overflow-hidden opacity-75"
+          style={{
+            WebkitMaskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
+            maskImage: "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
+          }}
+        >
+          <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
+        </div>
 
         <div className="absolute left-8 right-8 top-[398px] z-10 h-[62px]">
           <div className="flex h-[10px] w-full items-center overflow-hidden [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[0] text-[color:var(--primitive-colors-gray-200)]">
