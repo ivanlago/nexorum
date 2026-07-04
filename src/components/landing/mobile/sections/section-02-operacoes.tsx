@@ -5,6 +5,7 @@ import type { LandingDictionary } from "@/i18n/landing-dictionary";
 
 const dividerClassName =
   "h-px w-full opacity-60 bg-[linear-gradient(90deg,rgba(118,131,143,0)_0%,rgba(118,131,143,0.28)_8%,rgba(118,131,143,0.28)_92%,rgba(118,131,143,0)_100%)]";
+const imgCardDustTop = "/figma-assets/9a4a5b28-bd46-4231-81e9-225f35659d32.png";
 const imgCardTopTexture = "/figma-assets/operations-card-texture-top-300-4871.png";
 
 const cards = [
@@ -66,78 +67,93 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
 
       <div
         className={[
-          "mt-14 -mx-6 overflow-x-auto px-6 [scroll-padding-left:24px]",
+          "-mx-6 overflow-x-auto px-6 [scroll-padding-left:24px]",
           "snap-x snap-mandatory",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         ].join(" ")}
       >
-        <div className="flex gap-6">
+          <div className="flex gap-6">
           {cards.map((c, idx) => (
             <div
               key={c.tag}
               className={[
                 "relative snap-start shrink-0",
-                "h-[500px] w-[280px]",
-                "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
+                "h-[564px] w-[280px]",
               ].join(" ")}
             >
-              <div className="pointer-events-none absolute left-0 top-0 h-[97px] w-full overflow-hidden">
-                <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
-              </div>
-
-              <div className="relative z-10 flex h-[103px] items-end px-8 pb-10">
-                <div className="flex w-full items-center gap-6">
-                  <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
-                    {c.tag}
-                  </div>
-                  <div className="w-[158px] text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
-                    {copy.cards?.[idx]?.subtitle}
-                  </div>
-                </div>
-              </div>
-
-              <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
-
-              <div className="relative flex h-[254px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
-                <video
-                  className="h-[175px] w-[175px] object-cover opacity-70 mix-blend-lighten"
-                  muted
-                  autoPlay
-                  loop
-                  playsInline
-                  poster={c.image}
-                >
-                  <source src={c.videoWebmSrc} type="video/webm" />
-                  <source src={c.videoMp4Src} type="video/mp4" />
-                  {dict.common.videoUnsupported}
-                </video>
-                <div className="absolute inset-0 bg-[#05090d]/20" />
-                <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
-              </div>
-
-              <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
               <div
-                className="pointer-events-none absolute bottom-0 left-0 h-[97px] w-full overflow-hidden opacity-75"
-                style={{
-                  WebkitMaskImage:
-                    "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
-                  maskImage:
-                    "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
-                }}
+                className="pointer-events-none absolute left-0 top-0 z-20 h-[64px] w-[280px] overflow-hidden opacity-50"
               >
-                <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
-              </div>
-              <div className="absolute left-8 top-[398px] h-[62px] w-[216px]">
-                <div className="flex h-[10px] items-center [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-                  <span>{copy.cards?.[idx]?.title}</span>
+                <div className="absolute inset-0 overflow-hidden">
+                  <img alt="" className="absolute right-[-8.57%] top-0 h-[168px] w-[140%] max-w-none" src={imgCardDustTop} />
                 </div>
-                <div className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                  {copy.cards?.[idx]?.description}
+              </div>
+
+              <div
+                className={[
+                  "absolute left-0 top-[64px]",
+                  "h-[500px] w-[280px]",
+                  "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
+                ].join(" ")}
+              >
+                <div className="pointer-events-none absolute left-0 top-0 h-[97px] w-full overflow-hidden">
+                  <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
+                </div>
+
+                <div className="relative z-10 flex h-[103px] items-end px-8 pb-10">
+                  <div className="flex w-full items-center gap-6">
+                    <div className="[font-family:var(--font-orbitron)] shrink-0 whitespace-nowrap text-[10px] font-bold leading-[1.39] text-[color:var(--primitive-colors-primary-400)]">
+                      {c.tag}
+                    </div>
+                    <div className="w-[158px] text-[10px] font-light italic leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
+                      {copy.cards?.[idx]?.subtitle}
+                    </div>
+                  </div>
+                </div>
+
+                <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+
+                <div className="relative flex h-[254px] items-center justify-center overflow-hidden bg-[rgba(8,15,22,0.18)]">
+                  <video
+                    className="h-[175px] w-[175px] object-cover opacity-70 mix-blend-lighten"
+                    muted
+                    autoPlay
+                    loop
+                    playsInline
+                    poster={c.image}
+                  >
+                    <source src={c.videoWebmSrc} type="video/webm" />
+                    <source src={c.videoMp4Src} type="video/mp4" />
+                    {dict.common.videoUnsupported}
+                  </video>
+                  <div className="absolute inset-0 bg-[#05090d]/20" />
+                  <div className="absolute inset-0 bg-[color:var(--primitive-colors-primary-300)] opacity-15 mix-blend-color" />
+                </div>
+
+                <div className="h-px w-full bg-[rgba(118,131,143,0.25)]" />
+                <div
+                  className="pointer-events-none absolute bottom-0 left-0 h-[97px] w-full overflow-hidden opacity-75"
+                  style={{
+                    WebkitMaskImage:
+                      "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
+                    maskImage:
+                      "linear-gradient(to bottom, rgba(0,0,0,0) 0%, rgba(0,0,0,0.72) 28%, rgba(0,0,0,1) 58%)",
+                  }}
+                >
+                  <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
+                </div>
+                <div className="absolute left-8 top-[398px] h-[62px] w-[216px]">
+                  <div className="flex h-[10px] items-center [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                    <span>{copy.cards?.[idx]?.title}</span>
+                  </div>
+                  <div className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                    {copy.cards?.[idx]?.description}
+                  </div>
                 </div>
               </div>
             </div>
           ))}
-        </div>
+          </div>
       </div>
 
       <div className="mt-20">
