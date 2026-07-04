@@ -81,6 +81,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
                 "h-[564px] w-[280px]",
               ].join(" ")}
             >
+              <div className="pointer-events-none absolute left-[55px] top-0 z-0 h-[596px] w-[170px] rounded-[999px] bg-[#6cb5ff] opacity-5 blur-[50px]" />
               <div
                 className="pointer-events-none absolute left-0 top-0 z-20 h-[64px] w-[280px] overflow-hidden opacity-50"
               >
