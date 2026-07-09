@@ -7,6 +7,8 @@ import { LandingSectionBackground } from "@/components/landing/landing-section-b
 import { LandingBenefitsMarquee } from "@/components/landing/landing-benefits-marquee";
 import { ProblemAppearsIcon, type ProblemAppearsIconName } from "@/components/landing/problem-appears-icon";
 
+const imgProblemRowTexture = "/figma-assets/38242fdd-85b2-4adf-b496-71a90066a7fc.svg";
+
 type Row = {
   problem: string;
   appears: string;
@@ -98,13 +100,49 @@ export function LandingSection03Problema({ dict }: { dict: LandingDictionary }) 
                       <div className="pointer-events-none absolute inset-x-0 bottom-0 z-10 h-px bg-[rgba(118,131,143,0.14)]" />
                       {idx % 2 === 0 ? (
                         <>
-                          <div className="pointer-events-none absolute left-0 top-0 z-0 h-[97px] w-[196px] overflow-hidden opacity-20">
-                            <div className="absolute left-[-8px] top-[-30px] h-[58px] w-[90px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
-                            <div className="absolute left-[-4px] top-[14px] h-[87px] w-[202px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.18)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                          <div className="pointer-events-none absolute left-0 top-0 z-0 h-[97px] w-[196px] overflow-hidden">
+                            <div className="absolute left-[48.88px] top-[-48.29px] h-[57.935px] w-[89.545px] overflow-hidden">
+                              <div className="relative h-full w-full rotate-180 opacity-30">
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  className="absolute left-[-291.571px] top-[-100.647px] h-[157.971px] w-[430.246px] max-w-none"
+                                  src={imgProblemRowTexture}
+                                />
+                              </div>
+                            </div>
+                            <div className="absolute left-[-4.75px] top-[12.84px] h-[86.771px] w-[201.622px] overflow-hidden">
+                              <div className="relative h-full w-full rotate-180 opacity-30">
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  className="absolute left-[-223.624px] top-[-54.32px] h-[157.971px] w-[430.246px] max-w-none"
+                                  src={imgProblemRowTexture}
+                                />
+                              </div>
+                            </div>
                           </div>
-                          <div className="pointer-events-none absolute right-0 top-0 z-0 h-[97px] w-[196px] overflow-hidden opacity-20">
-                            <div className="absolute right-[-8px] top-[-30px] h-[58px] w-[90px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.24)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
-                            <div className="absolute right-[-4px] top-[14px] h-[87px] w-[202px] rounded-full bg-[radial-gradient(circle,rgba(118,131,143,0.18)_0.8px,transparent_0.8px)] [background-size:8px_8px]" />
+                          <div className="pointer-events-none absolute right-0 top-0 z-0 h-[97px] w-[196px] overflow-hidden">
+                            <div className="absolute right-[48.88px] top-[-48.29px] h-[57.935px] w-[89.545px] overflow-hidden">
+                              <div className="relative h-full w-full rotate-180 opacity-30">
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  className="absolute left-[-291.571px] top-[-100.647px] h-[157.971px] w-[430.246px] max-w-none"
+                                  src={imgProblemRowTexture}
+                                />
+                              </div>
+                            </div>
+                            <div className="absolute right-[-4.75px] top-[12.84px] h-[86.771px] w-[201.622px] overflow-hidden">
+                              <div className="relative h-full w-full rotate-180 opacity-30">
+                                <img
+                                  alt=""
+                                  aria-hidden="true"
+                                  className="absolute left-[-223.624px] top-[-54.32px] h-[157.971px] w-[430.246px] max-w-none"
+                                  src={imgProblemRowTexture}
+                                />
+                              </div>
+                            </div>
                           </div>
                         </>
                       ) : null}
