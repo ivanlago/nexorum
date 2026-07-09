@@ -67,7 +67,8 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
 
       <div
         className={[
-          "-mx-6 overflow-x-auto px-6 [scroll-padding-left:24px]",
+          "mt-12",
+          "-mx-6 overflow-x-auto overflow-y-hidden px-6 [scroll-padding-left:24px]",
           "snap-x snap-mandatory",
           "[-ms-overflow-style:none] [scrollbar-width:none] [&::-webkit-scrollbar]:hidden",
         ].join(" ")}
@@ -97,7 +98,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
                   "overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.55)] to-[#080f16]",
                 ].join(" ")}
               >
-                <div className="pointer-events-none absolute left-0 top-0 h-[97px] w-full overflow-hidden">
+                <div className="pointer-events-none absolute left-0 top-0 h-[103px] w-full overflow-hidden">
                   <img alt="" className="block h-full w-full max-w-none" src={imgCardTopTexture} />
                 </div>
 
@@ -147,7 +148,7 @@ export function MobileSection02Operacoes({ dict }: { dict: LandingDictionary }) 
                   <div className="flex h-[10px] items-center [font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                     <span>{copy.cards?.[idx]?.title}</span>
                   </div>
-                  <div className="mt-6 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                  <div className="mt-6 h-[24px] overflow-hidden text-[12px] font-light leading-3 text-[color:var(--primitive-colors-gray-300)]">
                     {copy.cards?.[idx]?.description}
                   </div>
                 </div>
