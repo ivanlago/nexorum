@@ -21,6 +21,7 @@ const whatCards = [
   { icon: "/aprende-imagem-5.svg" },
 ];
 const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
+const rightCardTexture = "/figma-assets/38242fdd-85b2-4adf-b496-71a90066a7fc.svg";
 
 export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }) {
   const videoRef = useRef<HTMLVideoElement | null>(null);
@@ -167,17 +168,33 @@ export function MobileSection04ComoAprende({ dict }: { dict: LandingDictionary }
           {whatCards.map((c, idx) => (
             <div
               key={idx}
-              className="flex items-start gap-4 border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-6 py-6"
+              className="relative overflow-hidden border border-[rgba(26,42,56,0.85)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-6 py-6"
             >
-              <div className="relative size-14 shrink-0 border border-[rgba(26,42,56,0.9)] bg-[radial-gradient(circle_at_50%_50%,rgba(11,22,32,0.0),rgba(11,22,32,0.5))]">
-                <img alt="" className="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2" src={c.icon} />
+              <div className="pointer-events-none absolute bottom-[-18px] right-[-18px] h-[118px] w-[322px] overflow-hidden opacity-40">
+                <img
+                  alt=""
+                  aria-hidden="true"
+                  className="absolute left-[-32px] top-[-30px] h-[138px] w-[453.24px] max-w-none"
+                  style={{
+                    transform: "scaleY(-1)",
+                    transformOrigin: "center",
+                  }}
+                  src={rightCardTexture}
+                />
               </div>
-              <div>
-                <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold text-[color:var(--primitive-colors-gray-200)]">
-                  {copy.cards?.[idx]?.title}
+
+              <div className="relative flex h-14 w-full items-start gap-4">
+                <div className="relative size-14 shrink-0 border border-[rgba(26,42,56,0.9)] bg-[radial-gradient(circle_at_50%_50%,rgba(11,22,32,0.0),rgba(11,22,32,0.5))]">
+                  <img alt="" className="absolute left-1/2 top-1/2 size-8 -translate-x-1/2 -translate-y-1/2" src={c.icon} />
                 </div>
-                <div className="mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                  {copy.cards?.[idx]?.description}
+
+                <div className="relative flex min-w-0 flex-1 flex-col items-start gap-4 self-stretch">
+                  <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [font-family:var(--font-orbitron)] text-[14px] font-semibold not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                    {copy.cards?.[idx]?.title}
+                  </div>
+                  <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] w-full text-[12px] font-light not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                    {copy.cards?.[idx]?.description}
+                  </div>
                 </div>
               </div>
             </div>
