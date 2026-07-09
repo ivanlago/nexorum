@@ -100,10 +100,10 @@ export function LandingSection02Operacoes({ dict, locale }: { dict: LandingDicti
           </div>
         </div>
 
-        <div className="mx-auto mt-[88px] w-full max-w-[1440px] px-6 lg:px-0">
+        <div className="relative left-1/2 mt-[88px] w-screen -translate-x-1/2">
           <div className="h-[145px] w-full overflow-hidden border-y border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16]">
             <div className="flex h-full w-full items-center px-0">
-              <div className="flex h-full w-[430px] shrink-0 items-center justify-center gap-6 border-[0.5px] border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10">
+              <div className="ml-px flex h-full w-[430px] shrink-0 items-center justify-center gap-6 border-[0.5px] border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10">
                 <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">
                   [ APIs ]
                 </div>
