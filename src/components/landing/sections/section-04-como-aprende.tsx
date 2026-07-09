@@ -42,8 +42,10 @@ const transformIcons = [
   "/funcao-imagem-5.svg",
   "/funcao-imagem-6.svg",
 ];
+const imgCardDustTop = "/figma-assets/9a4a5b28-bd46-4231-81e9-225f35659d32.png";
 const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
 const rightCardTexture = "/figma-assets/38242fdd-85b2-4adf-b496-71a90066a7fc.svg";
+const leftPillarsDivider = "relative left-[-32px] h-[0.5px] w-[237px] bg-[rgba(26,42,56,1)]";
 
 export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -189,6 +191,11 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
       <div className="relative w-full lg:sticky lg:top-0 lg:h-screen lg:overflow-hidden">
         <div className="mx-auto grid w-full max-w-[1216px] grid-cols-1 gap-14 px-6 lg:h-[690px] lg:grid-cols-[240px_520px_312px] lg:justify-center lg:items-start lg:px-0 lg:pt-[76px]">
           <div className="relative flex flex-col lg:h-[611px] lg:w-[240px] lg:self-start">
+            <div className="pointer-events-none absolute left-0 top-[-85px] z-20 h-[168px] w-[240px] opacity-50">
+              <div className="absolute inset-0 overflow-hidden">
+                <img alt="" className="absolute right-[-8.57%] top-0 h-full w-[140%] max-w-none" src={imgCardDustTop} />
+              </div>
+            </div>
             <div className="pointer-events-none absolute left-[33px] top-[-52px] z-0 h-[614px] w-[170px] rounded-full bg-[#6cb5ff] opacity-[0.05] blur-[50px]" />
             <div className="pointer-events-none absolute left-0 top-[-85px] z-10 h-[168px] w-[237px] opacity-80">
               <div
@@ -200,7 +207,7 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
             </div>
 
             <div className="relative z-0 flex h-[541px] min-h-0 flex-col overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] px-8 py-10 shadow-[0px_24px_120px_rgba(0,0,0,0.5)]">
-              <div className="flex flex-col items-end gap-6">
+              <div className="flex flex-col items-end gap-6 pt-0">
                 <div className="[font-family:var(--font-orbitron)] text-[14px] font-bold text-[color:var(--primitive-colors-primary-400)]">
                   {copy.pillarsLabel}
                 </div>
@@ -218,24 +225,28 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
                 </div>
               </div>
 
-              <div className="mt-10 flex flex-1 flex-col divide-y divide-[rgba(26,42,56,0.9)]">
+              <div className="mt-[40px] flex flex-1 flex-col">
+                <div className={leftPillarsDivider} />
                 {leftPillars.map((p, idx) => (
-                  <div key={idx} className="flex flex-1 flex-col justify-center py-6">
-                    <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-                      {copy.pillars?.items?.[idx]?.title}
+                  <div key={idx} className="flex flex-1 flex-col">
+                    <div className="flex flex-1 flex-col pt-10 pb-10">
+                      <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [font-family:var(--font-orbitron)] w-full text-[14px] font-semibold not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                        {copy.pillars?.items?.[idx]?.title}
+                      </div>
+                      <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] relative mt-4 w-full text-[10px] font-light not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                        {copy.pillars?.items?.[idx]?.description}
+                        {idx === leftPillars.length - 1 ? (
+                          <div className="pointer-events-none absolute left-[-32px] top-[-26px] h-[97px] w-[237px] opacity-30">
+                            <img
+                              alt=""
+                              className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
+                              src={sideTexture}
+                            />
+                          </div>
+                        ) : null}
+                      </div>
                     </div>
-                    <div className="relative mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                      {copy.pillars?.items?.[idx]?.description}
-                      {idx === leftPillars.length - 1 ? (
-                        <div className="pointer-events-none absolute left-[-32px] top-[-26px] h-[97px] w-[237px] opacity-30">
-                          <img
-                            alt=""
-                            className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
-                            src={sideTexture}
-                          />
-                        </div>
-                      ) : null}
-                    </div>
+                    {idx < leftPillars.length - 1 ? <div className={leftPillarsDivider} /> : null}
                   </div>
                 ))}
               </div>
