@@ -344,17 +344,17 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
                 key={idx}
                 className="relative flex h-[104px] min-h-[104px] overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] p-6"
               >
-                <div className="pointer-events-none absolute bottom-[-25.5px] right-[-232.5px] flex h-[105px] w-[310px] items-center justify-center">
-                  <div className="flex-none -scale-y-100 rotate-180 opacity-30">
-                    <div className="relative h-[105px] w-[310px] overflow-hidden">
-                      <img
-                        alt=""
-                        aria-hidden="true"
-                        className="absolute left-[-7.14px] top-[-26px] h-[131px] w-[430.246px] max-w-none"
-                        src={rightCardTexture}
-                      />
-                    </div>
-                  </div>
+                <div className="pointer-events-none absolute bottom-[-18px] right-[-18px] h-[118px] w-[322px] overflow-hidden opacity-40">
+                  <img
+                    alt=""
+                    aria-hidden="true"
+                    className="absolute left-[-32px] top-[-30px] h-[138px] w-[453.24px] max-w-none"
+                    style={{
+                      transform: "scaleY(-1)",
+                      transformOrigin: "center",
+                    }}
+                    src={rightCardTexture}
+                  />
                 </div>
 
                 <div className="relative flex h-14 w-full items-start gap-6">
