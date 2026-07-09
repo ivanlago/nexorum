@@ -215,11 +215,11 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
                   <p className="ml-auto max-w-[173px] text-right text-[10px] italic font-light leading-[1.6] text-[color:var(--primitive-colors-gray-200)]">
                     {copy.pillarsLead}
                   </p>
-                  <div className="pointer-events-none absolute left-[-29px] top-[-34px] h-[97px] w-[237px] opacity-30">
+                  <div className="pointer-events-none absolute bottom-[-42px] right-[-32px] h-[97px] w-[237px] overflow-hidden opacity-40">
                     <img
                       alt=""
-                      className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
-                      src={sideTexture}
+                      className="absolute left-[-132px] top-[42px] h-[131px] w-[430.246px] max-w-none"
+                      src={rightCardTexture}
                     />
                   </div>
                 </div>
@@ -236,11 +236,11 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
                       <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] relative mt-4 w-full text-[10px] font-light not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                         {copy.pillars?.items?.[idx]?.description}
                         {idx === leftPillars.length - 1 ? (
-                          <div className="pointer-events-none absolute left-[-32px] top-[-26px] h-[97px] w-[237px] opacity-30">
+                          <div className="pointer-events-none absolute bottom-[-42px] right-[-32px] h-[97px] w-[237px] overflow-hidden opacity-40">
                             <img
                               alt=""
-                              className="absolute left-[-5.14px] top-[-34px] h-[131px] w-[430.246px] max-w-none -scale-y-100 rotate-180"
-                              src={sideTexture}
+                              className="absolute left-[-132px] top-[42px] h-[131px] w-[430.246px] max-w-none"
+                              src={rightCardTexture}
                             />
                           </div>
                         ) : null}
