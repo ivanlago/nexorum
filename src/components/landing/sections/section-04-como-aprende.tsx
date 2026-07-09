@@ -45,7 +45,7 @@ const transformIcons = [
 const imgCardDustTop = "/figma-assets/9a4a5b28-bd46-4231-81e9-225f35659d32.png";
 const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
 const rightCardTexture = "/figma-assets/38242fdd-85b2-4adf-b496-71a90066a7fc.svg";
-const leftPillarsDivider = "relative left-[-32px] h-[0.5px] w-[237px] bg-[rgba(26,42,56,1)]";
+const leftPillarsDivider = "relative left-[-32px] h-[0.5px] w-[240px] bg-[rgba(26,42,56,1)]";
 
 export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const sectionRef = useRef<HTMLElement | null>(null);
