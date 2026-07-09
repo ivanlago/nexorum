@@ -43,6 +43,7 @@ const transformIcons = [
   "/funcao-imagem-6.svg",
 ];
 const sideTexture = "/figma-assets/0f5652ee-b81d-42f6-a4fb-7bb931aa124d.svg";
+const rightCardTexture = "/figma-assets/38242fdd-85b2-4adf-b496-71a90066a7fc.svg";
 
 export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
   const sectionRef = useRef<HTMLElement | null>(null);
@@ -223,7 +224,7 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
                     <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
                       {copy.pillars?.items?.[idx]?.title}
                     </div>
-                    <div className="relative mt-3 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
+                    <div className="relative mt-4 text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
                       {copy.pillars?.items?.[idx]?.description}
                       {idx === leftPillars.length - 1 ? (
                         <div className="pointer-events-none absolute left-[-32px] top-[-26px] h-[97px] w-[237px] opacity-30">
@@ -341,25 +342,32 @@ export function LandingSection04ComoAprende({ dict, locale }: { dict: LandingDic
             {rightCards.map((c, idx) => (
               <div
                 key={idx}
-                className="relative flex h-[104px] min-h-[104px] items-start gap-6 overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] p-6"
+                className="relative flex h-[104px] min-h-[104px] overflow-hidden border border-[rgba(26,42,56,0.9)] bg-gradient-to-b from-[rgba(8,15,22,0.4)] to-[#080f16] p-6"
               >
-                <div className="pointer-events-none absolute bottom-[-26px] right-[-31px] h-[105px] w-[310px] opacity-30">
-                  <img
-                    alt=""
-                    className="absolute left-[-7px] top-[-26px] h-[131px] w-[430.246px] max-w-none"
-                    src="/figma-assets/b50ab1ca-61a7-44ea-a59d-44716252e794.svg"
-                  />
+                <div className="pointer-events-none absolute bottom-[-25.5px] right-[-232.5px] flex h-[105px] w-[310px] items-center justify-center">
+                  <div className="flex-none -scale-y-100 rotate-180 opacity-30">
+                    <div className="relative h-[105px] w-[310px] overflow-hidden">
+                      <img
+                        alt=""
+                        aria-hidden="true"
+                        className="absolute left-[-7.14px] top-[-26px] h-[131px] w-[430.246px] max-w-none"
+                        src={rightCardTexture}
+                      />
+                    </div>
+                  </div>
                 </div>
 
-                <div className="relative inline-flex size-14 shrink-0 items-center justify-center border border-[rgba(26,42,56,0.9)] bg-[radial-gradient(circle_at_50%_50%,rgba(11,22,32,0)_0%,rgba(11,22,32,0.5)_100%)]">
-                  <img alt="" className="max-h-8 max-w-8" src={c.icon} />
-                </div>
-                <div className="relative min-w-0 flex-1 pt-[2px]">
-                  <div className="[font-family:var(--font-orbitron)] text-[14px] font-semibold leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
-                    {copy.cards?.[idx]?.title}
+                <div className="relative flex h-14 w-full items-start gap-6">
+                  <div className="relative inline-flex size-14 shrink-0 items-center justify-center border border-[rgba(26,42,56,0.9)] bg-[radial-gradient(circle_at_50%_50%,rgba(11,22,32,0)_0%,rgba(11,22,32,0.5)_100%)]">
+                    <img alt="" className="max-h-8 max-w-8" src={c.icon} />
                   </div>
-                  <div className="mt-3 max-w-[184px] text-[12px] font-light leading-[1.6] text-[color:var(--primitive-colors-gray-300)]">
-                    {copy.cards?.[idx]?.description}
+                  <div className="relative flex min-w-0 flex-1 flex-col items-start gap-4 self-stretch">
+                    <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] [font-family:var(--font-orbitron)] text-[14px] font-semibold not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                      {copy.cards?.[idx]?.title}
+                    </div>
+                    <div className="[text-box-edge:cap_alphabetic] [text-box-trim:trim-both] w-full text-[12px] font-light not-italic leading-[1.4] text-[color:var(--primitive-colors-gray-200)]">
+                      {copy.cards?.[idx]?.description}
+                    </div>
                   </div>
                 </div>
               </div>
