@@ -7,10 +7,7 @@ import { Suspense } from "react";
 const footerDividerClassName = "-mx-6 h-[0.5px] bg-[rgba(118,131,143,0.25)]";
 
 const socialIcons = [
-  { alt: "Instagram", src: "/instagram.svg" },
-  { alt: "Facebook", src: "/facebook.svg" },
-  { alt: "YouTube", src: "/youtube.svg" },
-  { alt: "LinkedIn", src: "/linkedin.svg" },
+  { alt: "LinkedIn", href: "https://www.linkedin.com/company/nexorum-io", src: "/linkedin.svg" },
 ];
 
 export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionary; locale: SupportedLocale }) {
@@ -82,12 +79,16 @@ export function MobileSection07Footer({ dict, locale }: { dict: LandingDictionar
       <div className="mt-12 flex items-center justify-between">
         <div className="flex items-center gap-4">
           {socialIcons.map((s) => (
-            <div
+            <a
               key={s.alt}
+              href={s.href}
+              target="_blank"
+              rel="noreferrer"
+              aria-label={s.alt}
               className="flex size-8 items-center justify-center bg-[color:var(--primitive-colors-gray-600)]"
             >
               <img alt={s.alt} className="max-h-[18px] max-w-[18px]" src={s.src} />
-            </div>
+            </a>
           ))}
         </div>
         <Suspense fallback={<div className="h-6 w-10" aria-hidden />}>

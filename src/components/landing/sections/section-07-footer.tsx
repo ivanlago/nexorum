@@ -5,10 +5,7 @@ import { getLocalePath, type SupportedLocale } from "@/i18n/locales";
 import { Suspense } from "react";
 
 const socialIcons = [
-  { alt: "Instagram", src: "/instagram.svg" },
-  { alt: "Facebook", src: "/facebook.svg" },
-  { alt: "YouTube", src: "/youtube.svg" },
-  { alt: "LinkedIn", src: "/linkedin.svg" },
+  { alt: "LinkedIn", href: "https://www.linkedin.com/company/nexorum-io", src: "/linkedin.svg" },
 ];
 const imgFooterTopDivider = "/figma-assets/70ec18e5-f333-40f0-bf8e-0233b0407f14.svg";
 const imgFooterMiddleDivider = "/figma-assets/6fcb7a99-e67e-431d-a8ae-801ccd3f150d.svg";
@@ -80,12 +77,16 @@ export function LandingSection07Footer({ dict, locale }: { dict: LandingDictiona
           <div className="mt-[64px] flex flex-col items-start gap-8 lg:grid lg:grid-cols-[244px_1fr] lg:items-center">
             <div className="flex items-center gap-4">
               {socialIcons.map((s) => (
-                <div
+                <a
                   key={s.alt}
+                  href={s.href}
+                  target="_blank"
+                  rel="noreferrer"
+                  aria-label={s.alt}
                   className="flex size-8 items-center justify-center bg-[color:var(--primitive-colors-gray-600)]"
                 >
                   <img alt={s.alt} className="max-h-[18px] max-w-[18px]" src={s.src} />
-                </div>
+                </a>
               ))}
               <div className="ml-4">
                 <Suspense fallback={<div className="h-6 w-10" aria-hidden />}>
